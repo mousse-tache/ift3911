@@ -172,6 +172,13 @@ Réserver ne peut se faire que pour un siège libre. Identifiez la postcondition
 		<h2>Diagramme de paquets</h2>
 		<h2>Diagramme d'état</h2>
 		<h2>Justifications</h2>
+        <ul>
+            <li> <h4>LiveStorage</h4> <p> L'unique instance de cette classe représente simplement l'état du système en temps réel, et ne fait que charger la base de données en mémoire et garde une référence vers les vols, desquels on peut accèder à tout le reste. Nous avons opter pour cette approche car, bien que l'idéal serait de créer une base de donnée de laquelle on fait toutes les requêtes, ceci ne semblait pas être le but de ce projet. Cette représentation permet effectivement de véritablement modéliser toutes les classes du système et leurs interactions.
+            <li> <h4>FlightSearcher</h4> <p> Pour tenter de diminuer le couplage de la majorité des classes devant rechercher une information sur les vols, nous avons décider de créer une classe utilitaire statique exactement pour ces cas. Aussi, cette classe se veut très cohésive de par le simple fait qu'elle ne s'occupe que de cette fonctionalité.</li>
+            <li> <h4>Plane</h4> <p> Cette classe, représentant un avion, ne contient qu'une instance de chaque section possible. Cette représentation permet en effet de forcer la contrainte qu'il ne peut y avoir qu'une seule section de chaque type. Un des attributs à 'null' veut simplement dire que cette section n'est pas présente dans l'avion et ainsi la contrainte est implicitement respectée. </li>
+            <li> <h4>UserUI, ClientUI, AdminUI et PersistantStorage</h4> <p> Puisqu'il n'était pas spécifié de modéliser une interface utilisateur ainsi qu'une base de données, nous n'avons que placer ces classes aux endroits appropriés sans entrer dans leur détails. Ainsi, celles-ci sont très simpliste et ne représente en rien la réalité si nous devions les implanter réellement.</li>
+        </ul>
+
 	</main>
 
 </body>
