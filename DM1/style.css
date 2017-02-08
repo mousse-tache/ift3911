@@ -1,5 +1,6 @@
 body {
-	width: 100%;
+	width: 90%;
+	margin: auto;
 }
 h1 {
 	text-align: center;
@@ -7,3 +8,7 @@ h1 {
 }
 
 dd {display: inline;}
+
+img{
+	display:block;
+	max-width: 100%;}
