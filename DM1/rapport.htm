@@ -37,7 +37,7 @@
 					<dt>Courriel:</dt>
 					<dd>gevrai.jodoin-tremblay@umontreal.ca</dd>
 					<dt>Temps mis:</dt>
-					<dd>12 heures</dd>
+					<dd>~15 heures</dd>
 				</dl>
 			</div>
 		</div>
@@ -94,40 +94,55 @@
 		<img title="Diagramme de classe conceptuel" src="Domaine/diagramme_conceptuel.jpg"/>
 		
 		<h2>DSS et contrats</h2>
+
+        <h3>Création de compagnie aérienne</h3>
 		<img title="Création de compagnie aérienne" src="Domaine/DSS/Airline_creation.jpg"/>
-		
+        
+        <h3>Suppression de compagnie aérienne</h3>
 		<img title="Suppression de compagnie aérienne" src="Domaine/DSS/Airline_deletion.jpg"/>
 		
+        <h3>Modification de compagnie aérienne</h3>
 		<img title="Modification de compagnie aérienne" src="Domaine/DSS/Airline_modification.jpg"/>
 		
-		
+        <h3>Création d'aéroports</h3>
 		<img title="Création d'aéroports" src="Domaine/DSS/Airport_creation.jpg"/>
 		
+        <h3>Suppression d'aéroports</h3>
 		<img title="Suppression d'aéroports" src="Domaine/DSS/Airport_deletion.jpg"/>
 		
+        <h3>Modification d'aéroports</h3>
 		<img title="Modification d'aéroports" src="Domaine/DSS/Airport_modification.jpg"/>
 
-		<img src="Domaine/DSS/Client_cancelReservation.jpg"/>
-
-		<img src="Domaine/DSS/Client_makeReservation.jpg"/>
-
-		<img src="Domaine/DSS/Client_modifyReservation.jpg"/>
-
-		<img src="Domaine/DSS/Client_payReservation.jpg"/>
-
-		<img src="Domaine/DSS/Client_seeFlightAvailability.jpg"/>
-
-		<img src="Domaine/DSS/FlightBoard_consultation.jpg"/>
-
-		<img src="Domaine/DSS/FlightBoard_consultationAirline.jpg"/>
-
-		<img src="Domaine/DSS/FlightBoard_consultationAirport.jpg"/>
-
+        <h3>Création d'un vol</h3>
 		<img src="Domaine/DSS/Flight_creation.jpg"/>
 
+        <h3>Suppression d'un vol</h3>
 		<img src="Domaine/DSS/Flight_deletion.jpg"/>
 
+        <h3>Modification d'un vol</h3>
 		<img src="Domaine/DSS/Flight_modification.jpg"/>
+
+        <h3>Annulation d'une réservation</h3>
+		<img src="Domaine/DSS/Client_cancelReservation.jpg"/>
+
+        <h3>Faire une réservation</h3>
+		<img src="Domaine/DSS/Client_makeReservation.jpg"/>
+
+        <h3>Modifier une réservation</h3>
+		<img src="Domaine/DSS/Client_modifyReservation.jpg"/>
+
+        <h3>Payer une réservation</h3>
+		<img src="Domaine/DSS/Client_payReservation.jpg"/>
+
+        <h3>Vérifier les vols disponibles</h3>
+		<img src="Domaine/DSS/Client_seeFlightAvailability.jpg"/>
+
+        <h3>Consultation des compagnies aériennes </h3>
+		<img src="Domaine/DSS/FlightBoard_consultationAirline.jpg"/>
+
+        <h3>Consultation des aéroports </h3>
+		<img src="Domaine/DSS/FlightBoard_consultationAirport.jpg"/>
+
 		<h1>Design logiciel</h1>
 
 		<a href="Design/design_logiciel.vpp">Fichier visual paradigm</a>
@@ -165,21 +180,27 @@ Réserver ne peut se faire que pour un siège libre. Identifiez la postcondition
 		</ul>
 	</pre>
 		<h2>Diagramme de séquence ou de collaboration</h2>
-		<img title="Réserver un siège" src="Design/images/ClientSession_reserveSeat.jpg"/>
-		<img title="Vérification des vols disponibles" src="Design/images/Flight_verifyAvailableFlights.jpg"/>
-		<img title="Annulation d'une réservation" src="Design/images/Reservation_cancel.jpg"/>
-		<img title="Modification d'une réservation" src="Design/images/Reservation_modify.jpg"/>
-		<img title="Paiement d'une réservation" src="Design/images/Reservation_paySeat.jpg"/>
+            <h3>Réserver un siège</h3>
+            <img title="Réserver un siège" src="Design/images/ClientSession_reserveSeat.jpg"/>
+            <h3>Vérification des vols disponibles</h3>
+            <img title="Vérification des vols disponibles" src="Design/images/Flight_verifyAvailableFlights.jpg"/>
+            <h3>Annulation d'une réservation</h3>
+            <img title="Annulation d'une réservation" src="Design/images/Reservation_cancel.jpg"/>
+            <h3>Modification d'une réservation</h3>
+            <img title="Modification d'une réservation" src="Design/images/Reservation_modify.jpg"/>
+            <h3>Paiement d'une réservation</h3>
+            <img title="Paiement d'une réservation" src="Design/images/Reservation_paySeat.jpg"/>
 		
 		<h2>Diagramme de paquets</h2>
 		<img title="Diagramme de paquet" src="Design/images/package_diagram.jpg"/>
-		<h2>Diagramme d'état</h2>
+		<h2>Diagramme d'état d'un siège</h2>
 		<img title="Diagramme d'état de la réservation d'un siège" src="Design/images/state_machine.jpg"/>
 
 		
 		
 		<h2>Justifications</h2>
         <ul>
+            <li> <h4>Getter/Setter</h4> <p> Les getter et setter de chaque opérations ne sont pas directement affichées dans le diagramme de classe simplement pour alléger celui-ci. Visual Paradigm permet, dans les spécifications des attributs, de spécifier si on désire générer ou non un get/set public, sans avoir à afficher celui-ci dans la classe. </li>
             <li> <h4>LiveStorage</h4> <p> L'unique instance de cette classe représente simplement l'état du système en temps réel, et ne fait que charger la base de données en mémoire et garde une référence vers les vols, desquels on peut accèder à tout le reste. Nous avons opter pour cette approche car, bien que l'idéal serait de créer une base de donnée de laquelle on fait toutes les requêtes, ceci ne semblait pas être le but de ce projet. Cette représentation permet effectivement de véritablement modéliser toutes les classes du système et leurs interactions.
             <li> <h4>FlightSearcher</h4> <p> Pour tenter de diminuer le couplage de la majorité des classes devant rechercher une information sur les vols, nous avons décider de créer une classe utilitaire statique exactement pour ces cas. Aussi, cette classe se veut très cohésive de par le simple fait qu'elle ne s'occupe que de cette fonctionalité.</li>
             <li> <h4>Plane</h4> <p> Cette classe, représentant un avion, ne contient qu'une instance de chaque section possible. Cette représentation permet en effet de forcer la contrainte qu'il ne peut y avoir qu'une seule section de chaque type. Un des attributs à 'null' veut simplement dire que cette section n'est pas présente dans l'avion et ainsi la contrainte est implicitement respectée. </li>
