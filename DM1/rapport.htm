@@ -88,8 +88,8 @@
 		</div>
 
 		<h1>Modèle de conception du domaine</h1>
-		<a href="Domaine/conception_domaine.vpp">Fichier visual paradigm</a>
-		<h2>Hypothèses</h2>
+		<a href="Domaine/conception_domaine.vpp">Fichier visual paradigm pour le modèle de conception du domaine</a>
+
 		<h2>Diagramme de classes conceptuel</h2>
 		<img title="Diagramme de classe conceptuel" src="Domaine/diagramme_conceptuel.jpg"/>
 		
@@ -144,38 +144,35 @@
 		<img src="Domaine/DSS/FlightBoard_consultationAirport.jpg"/>
 
 		<h1>Design logiciel</h1>
+		<a href="Design/design_logiciel.vpp">Fichier visual paradigm pour le modèle de design logiciel</a>
 
-		<a href="Design/design_logiciel.vpp">Fichier visual paradigm</a>
 		<h2>Diagramme de classe</h2>
 		<img title="Diagramme de classe logiciel" src="Design/images/class_diagram.jpg"/>
-		<h2>Contraintes</h2>
-		<pre>
+		<h2>Contraintes OCL</h2>
 		<ul>
-			<li>
-context Flight inv: self.arrivalAirport \= self.departureAirport
-L'aéroport de départ et d'arrivée sont différents.
+			<li> L'aéroport de départ et d'arrivée sont différents.
+		<pre>context Flight inv: self.arrivalAirport \= self.departureAirport </pre>
 			</li>
-			<li>
-context Flight init: 
-	if (alphaIsUnique(self.id)&numIsUniqueInCompany(self.id)) return true
-	else return false
-La partie alphabétique de l'ID d'un vol est unique à chaque compagnie et la partie numérique est unique à chaque vol au sein de la même compagnie.
-			</li>	
-			<li>
-context PlaneSection inv:
- Self.seats->forAll(self.seatPrice=self.seats.price)
 
-Tous les sièges d'une même section ont le même prix dans la même compagnie.
+			<li> La partie alphabétique de l'ID d'un vol est unique à chaque compagnie et la partie numérique est unique à chaque vol au sein de la même compagnie.
+		<pre>context Flight init:
+	alphaIsUnique(self.id)&numIsUniqueInCompany(self.id)) 
+	
+		</pre>
+			</li>	
+			<li> Tous les sièges d'une même section ont le même prix dans la même compagnie.
+		<pre>context PlaneSection inv:
+ Self.seats->forAll(self.seatPrice=self.seats.price)
+		</pre>
 			</li>
-			<li>
-context Reservation::reserveSeat()
+			<li> Réserver ne peut se faire que pour un siège libre. Identifiez la postcondition de l'opération réserver().
+		<pre>context Reservation::reserveSeat()
 pre: 
-if(isEmpty(self.seat.clientID) = null) return true
-else return false
+    self.seat.clientID = null
 post:
-if(self.seat.clientID = self.clientID) return true
-else return false
-Réserver ne peut se faire que pour un siège libre. Identifiez la postcondition de l'opération réserver().
+    self.seat.clientID = self.clientID
+    
+		</pre>
 			</li>
 		</ul>
 	</pre>
@@ -196,17 +193,22 @@ Réserver ne peut se faire que pour un siège libre. Identifiez la postcondition
 		<h2>Diagramme d'état d'un siège</h2>
 		<img title="Diagramme d'état de la réservation d'un siège" src="Design/images/state_machine.jpg"/>
 
-		
-		
 		<h2>Justifications</h2>
         <ul>
-            <li> <h4>Getter/Setter</h4> <p> Les getter et setter de chaque opérations ne sont pas directement affichées dans le diagramme de classe simplement pour alléger celui-ci. Visual Paradigm permet, dans les spécifications des attributs, de spécifier si on désire générer ou non un get/set public, sans avoir à afficher celui-ci dans la classe. </li>
-            <li> <h4>LiveStorage</h4> <p> L'unique instance de cette classe représente simplement l'état du système en temps réel, et ne fait que charger la base de données en mémoire et garde une référence vers les vols, desquels on peut accèder à tout le reste. Nous avons opter pour cette approche car, bien que l'idéal serait de créer une base de donnée de laquelle on fait toutes les requêtes, ceci ne semblait pas être le but de ce projet. Cette représentation permet effectivement de véritablement modéliser toutes les classes du système et leurs interactions.
-            <li> <h4>FlightSearcher</h4> <p> Pour tenter de diminuer le couplage de la majorité des classes devant rechercher une information sur les vols, nous avons décider de créer une classe utilitaire statique exactement pour ces cas. Aussi, cette classe se veut très cohésive de par le simple fait qu'elle ne s'occupe que de cette fonctionalité.</li>
-            <li> <h4>Plane</h4> <p> Cette classe, représentant un avion, ne contient qu'une instance de chaque section possible. Cette représentation permet en effet de forcer la contrainte qu'il ne peut y avoir qu'une seule section de chaque type. Un des attributs à 'null' veut simplement dire que cette section n'est pas présente dans l'avion et ainsi la contrainte est implicitement respectée. </li>
-            <li> <h4>UserUI, ClientUI, AdminUI et PersistantStorage</h4> <p> Puisqu'il n'était pas spécifié de modéliser une interface utilisateur ainsi qu'une base de données, nous n'avons que placer ces classes aux endroits appropriés sans entrer dans leur détails. Ainsi, celles-ci sont très simpliste et ne représente en rien la réalité si nous devions les implanter réellement.</li>
+            <li> <h4>Getter/Setter</h4> 
+                <p> Les getter et setter de chaque opérations ne sont pas directement affichées dans le diagramme de classe simplement pour alléger celui-ci. Visual Paradigm permet, dans les spécifications des attributs, de spécifier si on désire générer ou non un get/set public, sans avoir à afficher celui-ci dans la classe. </p></li>
+            <li> <h4>LiveStorage</h4> 
+                <p> L'unique instance de cette classe représente simplement l'état du système en temps réel, et ne fait que charger la base de données en mémoire et garde une référence vers les vols, desquels on peut accèder à tout le reste. Nous avons opter pour cette approche car, bien que l'idéal serait de créer une base de donnée de laquelle on fait toutes les requêtes, ceci ne semblait pas être le but de ce projet. Cette représentation permet effectivement de véritablement modéliser toutes les classes du système et leurs interactions.</p></li>
+            <li> <h4>FlightSearcher</h4> 
+                <p> Pour tenter de diminuer le couplage de la majorité des classes devant rechercher une information sur les vols, nous avons décider de créer une classe utilitaire statique exactement pour ces cas. Aussi, cette classe se veut très cohésive de par le simple fait qu'elle ne s'occupe que de cette fonctionalité.</p></li>
+            <li> <h4>Plane</h4> 
+                <p> Cette classe, représentant un avion, ne contient qu'une instance de chaque section possible. Cette représentation permet en effet de forcer la contrainte qu'il ne peut y avoir qu'une seule section de chaque type. Un des attributs à 'null' veut simplement dire que cette section n'est pas présente dans l'avion et ainsi la contrainte est implicitement respectée. </p></li>
+            <li> <h4>UserUI, ClientUI, AdminUI et PersistantStorage</h4>
+                <p> Puisqu'il n'était pas spécifié de modéliser une interface utilisateur ainsi qu'une base de données, nous n'avons que placer ces classes aux endroits appropriés sans entrer dans leur détails. Ainsi, celles-ci sont très simpliste et ne représente en rien la réalité si nous devions les implanter réellement.</p></li>
             <li> <h4>ClientInfo</h4>
-            <p>Il n'était pas spéficié qu'il fallait conserver une trace des informations du client, mais nous avons décidé de créer une classe pour donner l'option au client de seulement valider à chaque transaction que ses informations étaient valides, plutôt que de devoir les réinscrire à chaque fois.</p></li>
+                <p>Il n'était pas spéficié qu'il fallait conserver une trace des informations du client, mais nous avons décidé de créer une classe pour donner l'option au client de seulement valider à chaque transaction que ses informations étaient valides, plutôt que de devoir les réinscrire à chaque fois.</p></li>
+            <li> <h4>Diagramme de paquets</h4>
+                <p>Visual Paradigm ne semblait pas permettre de visualiser les classes à l'intérieur de chacun des package, donc ce diagramme n'est pas exactement comme les exemples vus en cours. Ceci dit, vous pouvez voir cette information dans le <a href="Design/design_logiciel.vpp">projet vpp</a> directement.</p></li>
         </ul>
 
 	</main>
