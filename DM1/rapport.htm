@@ -164,7 +164,7 @@
 			<li> Tous les sièges d'une même section ont le même prix dans la même compagnie.
 		<pre>context Airline inv:
     self.flights.plane.sectionF.seatPrice.asSet().size() <= 1                       -- Notre implantation nous force un peu à vérifier pour chacune des sections séparément...
-    and self.flights.plane.sectionB.seatPrice.asSet().size() <= 1                   -- Puisqu'un 'set' n'a pas d'éléments dupliqués
+    and self.flights.plane.sectionB.seatPrice.asSet().size() <= 1                   -- On transforme en un set pour vérifier que tous les éléments sont égaux
     and self.flights.plane.sectionP.seatPrice.asSet().size() <= 1
     and self.flights.plane.sectionE.seatPrice.asSet().size() <= 1
         </pre>
