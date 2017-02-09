@@ -68,7 +68,7 @@
 							Classes, cardinalités
 						</td>
 						<td>
-							Associations, Diagrammes séquences système
+							Associations, Diagrammes séquence système
 						</td>
 					</tr>
 					<tr>
@@ -76,10 +76,10 @@
 							Design
 						</td>
 						<td>
-							Contraintes, Diagramme de classe logiciel, Diagramme de séquence
+							Contraintes OCL, diagramme de classe logiciel, diagrammes de séquence
 						</td>
 						<td>
-							Diagramme de classe logiciel, diagramme d'état et diagramme de paquet.
+							Diagramme de classe logiciel, diagrammes de séquence, diagramme d'état, diagramme de paquet et contraintes OCL.
 						</td>
 					</tr>
 				</tbody>
@@ -151,26 +151,30 @@
 		<h2>Contraintes OCL</h2>
 		<ul>
 			<li> L'aéroport de départ et d'arrivée sont différents.
-		<pre>context Flight inv: self.arrivalAirport \= self.departureAirport </pre>
+        <pre>context Flight inv: self.arrivalAirport <> self.departureAirport </pre>
 			</li>
 
 			<li> La partie alphabétique de l'ID d'un vol est unique à chaque compagnie et la partie numérique est unique à chaque vol au sein de la même compagnie.
-		<pre>context Flight init:
-	alphaIsUnique(self.id)&numIsUniqueInCompany(self.id)) 
-	
+		<pre>context Flight inv:
+    Flight.allInstances()->select(f | f.id.substring(1,2) = self.id.substring(1,2))->forAll(a | a.airline = self.airline)   -- Les deux premières lettres sont unique à chaque compagnie
+    and self.airline.flights->forAll(f | f.id.substring(1,2) = self.id.substring(1,2))                                      -- Tous les vols d'une compagnie commencent par les 2 même lettres
+    and Flight.allInstances()->isUnique(self.id)                                                                            -- Tous les id sont unique (suffisant avec les deux autres contraintes)
 		</pre>
 			</li>	
 			<li> Tous les sièges d'une même section ont le même prix dans la même compagnie.
-		<pre>context PlaneSection inv:
- Self.seats->forAll(self.seatPrice=self.seats.price)
-		</pre>
+		<pre>context Airline inv:
+    self.flights.plane.sectionF.seatPrice.asSet().size() <= 1                       -- Notre implantation nous force un peu à vérifier pour chacune des sections séparément...
+    and self.flights.plane.sectionB.seatPrice.asSet().size() <= 1                   -- Puisqu'un 'set' n'a pas d'éléments dupliqués
+    and self.flights.plane.sectionP.seatPrice.asSet().size() <= 1
+    and self.flights.plane.sectionE.seatPrice.asSet().size() <= 1
+        </pre>
 			</li>
 			<li> Réserver ne peut se faire que pour un siège libre. Identifiez la postcondition de l'opération réserver().
 		<pre>context Reservation::reserveSeat()
 pre: 
-    self.seat.getClientID() = null & self.seat.booked = false
+    self.seat.clientID = null and self.seat.booked = false
 post:
-    self.seat.clientID = self.clientID & self.seat.booked = true
+    self.seat.clientID = self.clientID and self.seat.booked = true
     
 		</pre>
 			</li>
