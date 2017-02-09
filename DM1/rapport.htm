@@ -168,9 +168,9 @@
 			<li> Réserver ne peut se faire que pour un siège libre. Identifiez la postcondition de l'opération réserver().
 		<pre>context Reservation::reserveSeat()
 pre: 
-    self.seat.clientID = null
+    self.seat.getClientID() = null & self.seat.booked = false
 post:
-    self.seat.clientID = self.clientID
+    self.seat.clientID = self.clientID & self.seat.booked = true
     
 		</pre>
 			</li>
