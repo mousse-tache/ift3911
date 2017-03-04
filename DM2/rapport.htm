@@ -118,10 +118,31 @@ post:
 		</ul>
 		<h2>Identification des modules réutilisables</h2>
 
+		<p>
+		Les modules réutilisables sont les paquets Travel, Reservation et Payment. Ces classes font parties du domaine métier du voyage pour Travel et Reservation et Payment est réutilisable pour la plupart des commerces. Ce sont des modules réutilisables pour ce domaine de métier. Le paquet PersistantStorage pourrait également être réutilisable et relève plutôt du domaine d'architecture puisqu'il correspond à une architecture 3-tiers avec. Les autres paquets relèvent plutôt du domaine d'application. Quand on regarde la paquet de UserSessions et Utils, on voit qu'ils sont très spécifiques au fonctionnement précis de cette application. 
+		</p>
+		
 		<h2>Discussion sur la cohérence et couplage</h2>
 
+		<p>
+		
+		Étant donné que le système est généralisé afin d'accomoder d'autres moyens de transport, il a fallu complètement revoir la façon que nous avions interprété les relations entre L'aéroport, le vol et l'avion. Procédé par héritage semblait allé de soi pour généralisé ces concepts. Nous avons donc le voyage (class Trip), le véhicule (class TransportVehicule) et le lieu (class TravelFacility) dont hérite les types spéficiques. À ce niveau, on a minimisé le couplage entre ces abstractions. De fait, elles font partie de paquet différents qui sont seulement reliés dans la mesure qu'un voyage s'effectue avec un véhicule à partir d'un lieu. Le tout fait partie d'un super-paquet Travel qui englobe tout ce qui relève de ces classes. On y trouve donc également la composition des véhicules et de leurs sections. Puisque que ce qui est réservable est assez différent l'un de l'autre, nous avons décidé de passer par une interface pour ce qui est de ce que l'usager pourra réserver. L'interface IReservable est donc implémentée par toutes les classes qui sont des objets qu'un usager pourrait réserver. Cela permet encore une fois de diminuer le couplage entre les classes et d'augmenter la cohérence. 
+		</p>
+		
+		<p>
+		D'un paquet à l'autre, le nombre de liens est tenu au minimum nécessaire. On tente de ne transmettre que l'information nécessaire au bon fonctionnement. Certainement, nous essayons d'atteindre un couplage informationnel
+		</p>
+		
 		<h2>Discussion sur le fardeau</h2>
-
+		<p>
+		Plus tôt, nous avons identifié DataBase comme étant du domaine d'architecture. De fait, son fardeau est faible, ne contenant qu'un attribut DataBase, des méthodes retournant des primitifs et utilisant en paramètre des éléments implantant une interface au fardeau faible. Cela est cohérent avec le domaine souhaité. 
+		</p>
+		<p>
+		Deux classes notables pour les fardeaux élevés sont AdminSession et ClientSession. Celles-ci travaillent sur des classes plus complexes et ont un plus grand nombre d'opérations. Elles avaient été également considérées comme étant du domaine d'application dans la discussion sur les réutilisabilité. C'est également ces deux classes qui ont, de loin, le plus de lien entre d'autres classes.
+		</p>
+		<p>
+		Du côté voyage, TravelFacility et ses enfants ont un fardeau assez faible, mais considérant leur implication, c'est assez normal. Le noeud du voyage justement la classe Trip et ses enfants. C'est d'ailleurs une des deux seules classes du paquet à posséder des méthodes. C'est donc le plus grand fardeau, mais c'est également ce qui est le plus directement relié au domaine de l'application au sein du paquet, ce qui se voit par son lien avec l'interface IReservable, à l'extérieur du paquet. Tout le reste s'articule donc autour de cette classe. Les véhicules ont aussi un assez lourd fardeau, du fait de la complexité de leur composition. 
+		</p>
 		<h2>Graphe IA et justification</h2>
 
 		<h2>Justification de l'application des principes de conception</h2>
@@ -130,10 +151,12 @@ post:
 		SRP, DIP, Loi de Demeter, LSP, ISP
 		</p> 
 		<p>
-			Section a été traduit par Class pour nos diagrammes. Pour ce qui est de voyager, on utilise le DIP pour dépendre des voyages (abstrait) plutôt que de leurs différentes implémentations. Les réservations sont effectuées sur des objets qui implémentent l'interface Reservable.
+			Pour ce qui est de voyager, on utilise le DIP pour dépendre des voyages (abstrait) plutôt que de leurs différentes implémentations. Les réservations sont effectuées sur des objets qui implémentent l'interface Reservable. On peut donc facilement étendre les fonctionnalités pour des types de voyages différents et implanter l'interface correspondante à l'objet qui pourra être réserver éventuellement sans devoir retravailler systématiquement le code.
 		</p>
 		
-		<p></p>
+		
+		<p>Nous tentons de respecter le plus possible la loi de Demeter, même si ce ne pourra réellement être apparent que dans le code. On garde un couplage aussi faible que possible entre les classes et les liens existants se font, dans la mesure du possible, au niveau informationnel pour restreindre à l'essentiel.</p>
+		<p>Une des plus grandes réflexions que nous avons effectués est au sujet du LSP et, par conséquent, à la façon de procéder pour la généralisation au niveau de Trip, TransportVehicule et TravelFacility. Nous en sommes venus à la conclusion que cet héritage était correct dans le mesure que n'importe quel Trip peut effectivement substituer Trip à tout moment, mais qu'au niveau du domaine, un vol se fait avec un avion et une croisière avec un paquebot. C'est donc un problème qui ne contredit pas le LSP, car on pourra réellement effectuer la substitution, mais on ne pourra pas substituer les enfants les uns aux autres, évidemment. Puisque la dépendance est également abstraite, il n'y a de cas réels de substitution, on s'attendra toujours à un enfant de Trip.</p>
 
 	</main>
 
