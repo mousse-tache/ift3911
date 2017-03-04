@@ -1,14 +1,59 @@
+html {
+	background-color:grey;
+	font-size:120%;
+}
 body {
 	width: 90%;
 	margin: auto;
+	padding: 1%;
+	background-color:white;
+}
+main {
+	width: 90%;
+	margin: auto;
+	text-align:justify;
 }
 h1 {
 	text-align: center;
 	margin: auto;
 }
 
-dd {display: inline;}
+h2 {
+	background-color:grey;
+	color:white;
+	font-style:bold;
+	padding:5px;
+	border-radius: 10px;
+}
+
+dt, dd {display: inline;}
+dt {display:none;}
 
 img{
 	display:block;
 	max-width: 100%;}
+	
+table, td, th {
+	border: 1px solid black;
+	border-collapse: collapse;
+}
+
+th {
+	background-color:black;
+	color:white;
+	border-color:grey;
+}
+
+.student > * {
+	width: 90%;
+	margin:auto;
+	background-color:lightgrey;
+	text-align:justify;
+	padding:1%;
+	border-radius: 10px;
+}
+
+
+
+
+	
