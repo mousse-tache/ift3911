@@ -1,6 +1,7 @@
 html {
-	background-color:grey;
+	background-color:white;
 	font-size:120%;
+	opacity:0.1;
 }
 body {
 	width: 90%;

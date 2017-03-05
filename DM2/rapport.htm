@@ -119,7 +119,7 @@ post:
 		<h2>Identification des modules réutilisables</h2>
 
 		<p>
-		Les modules réutilisables sont les paquets Travel, Reservation et Payment. Ces classes font parties du domaine métier du voyage pour Travel et Reservation et Payment est réutilisable pour la plupart des commerces. Ce sont des modules réutilisables pour ce domaine de métier. Le paquet PersistantStorage pourrait également être réutilisable et relève plutôt du domaine d'architecture puisqu'il correspond à une architecture 3-tiers avec. Les autres paquets relèvent plutôt du domaine d'application. Quand on regarde la paquet de UserSessions et Utils, on voit qu'ils sont très spécifiques au fonctionnement précis de cette application. 
+		Les modules réutilisables sont les paquets Travel et Reservation. Ces classes font parties du domaine métier du voyage pour Travel et Reservation et Payment est réutilisable pour la plupart des commerces. Ce sont des modules réutilisables pour ce domaine de métier. Le paquet PersistantStorage pourrait également être réutilisable et relève plutôt du domaine d'architecture puisqu'il correspond à une architecture 3-tiers avec. Les autres paquets relèvent plutôt du domaine d'application. Quand on regarde la paquet de UserSessions et Utils, on voit qu'ils sont très spécifiques au fonctionnement précis de cette application. 
 		</p>
 		
 		<h2>Discussion sur la cohérence et couplage</h2>
@@ -144,7 +144,18 @@ post:
 		Du côté voyage, TravelFacility et ses enfants ont un fardeau assez faible, mais considérant leur implication, c'est assez normal. Le noeud du voyage justement la classe Trip et ses enfants. C'est d'ailleurs une des deux seules classes du paquet à posséder des méthodes. C'est donc le plus grand fardeau, mais c'est également ce qui est le plus directement relié au domaine de l'application au sein du paquet, ce qui se voit par son lien avec l'interface IReservable, à l'extérieur du paquet. Tout le reste s'articule donc autour de cette classe. Les véhicules ont aussi un assez lourd fardeau, du fait de la complexité de leur composition. 
 		</p>
 		<h2>Graphe IA et justification</h2>
-
+		
+		<img src="./Design/graphia.png" alt="graphe ia"\>
+		<p>
+			La plupart de nos paquets se retrouvent sous l'axe principal, mais parviennent à éviter la "Zone of pain". Nos paquets les plus stables sont ceux de Storage et de Payment conséquemment avec leur degré de réutilisabilité potentiellement élevé. Le paquet le plus instable est celui des GUI qui est effectivement dépendant du reste du système pour son fonctionnement. S'il n'est pas complètement concret, c'est que nous avons décidé de généralisé les GUI pour augmenter la cohésion en diminuant la reproduction de code.
+		</p>
+		
+		<p>
+			Les paquets Transportation, Trip, Reservation, UserSessions et Utils se situent tous dans la même zone avec une abstraction allant de .23 à .33 et une instabilité de .55 à .67. Ce sont d'ailleurs les classes les plus spécifiques au domaine d'application et sont assez près de l'axe principal du graphique, donc assez équilibrés dans leur proportion Abstraction/Instabilité. Ce sont plutôt des classes concrètes, mais ce nombre est enflé par le choix spécifique pour la composition des véhicules dans le paquet Transportation.
+		</p>
+		
+		<p>Les paquets qui semblent les plus problématiques sont ceux reliés à la base de données. Ce sont les paquets les plus près du "Zone of pain" et on peut le comprendre à la nature même de leur travail. Nous nous sommes beaucoup penchés sur la question, mais n'avons pas trouvé de solutions concluantes pour les éloigner de cette zone.</p>
+		
 		<h2>Justification de l'application des principes de conception</h2>
 
 		<p>
