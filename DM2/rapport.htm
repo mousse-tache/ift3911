@@ -114,24 +114,24 @@
 		<h2>Contraintes OCL</h2>
         <ul>
 			<li> Le port de départ et d'arrivée d'une croisière doivent être les mêmes
-        <blockquote>context Cruise inv: self.stops->first().location = self.stops->last().location</blockquote>
+        <pre>context Cruise inv: self.stops->first().location = self.stops->last().location</pre>
 			</li>
 
 			<li> Un paquebot peut être affecté à plusieurs itinéraire tant qu'ils ne se chevauchent pas 
-		<blockquote>context Cruise
+		<pre>context Cruise
 inv:
     let otherCruisesForThisVehicle = Cruise.allInstances->forAll(c | self.vehicle = c.vehicle)->excluding(self)
     otherCruisesForThisVehicle->forAll(c | c.getArrivalTime < self.getDepartureTime or c.getDepartureTime > self.getArrivalTime)
-        </blockquote>
+        </pre>
 			</li>	
 			<li> Réserver ne peut se faire que pour un siège libre. Identifiez la postcondition de l'opération réserver().
-		<blockquote>context Reservation::Reservation(r : ReservableForTrip, c : client)
+		<pre>context Reservation::Reservation(r : ReservableForTrip, c : client)
 pre: 
     r.isAvailable
 post:
     !r.isAvailable and self.client = c and self.reservableForTrip = r
     
-		</blockquote>
+		</pre>
 			</li>
 		</ul>
 		<h2>Identification des modules réutilisables</h2>

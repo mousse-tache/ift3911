@@ -17,8 +17,7 @@ h1 {
 }
 
 h2 {
-	background-color:navy;
-	color:white;
+	background-color:#7acff5;
 	font-style:bold;
 	padding:5px;
 	border-radius: 10px;
@@ -57,7 +56,7 @@ th {
 nav{
 	position:fixed;
 	overflow: hidden;
-    background-color: navy;
+    background-color: #7acff5;
     position: fixed;
     bottom: 0; 
     width: 100%; 
@@ -79,8 +78,8 @@ nav li{
 	margin:0;}
 nav > ul a {
 	display:inline-block;
-	background-color:navy;
-	color:white;
+	background-color:#7acff5;
+	color:black;
 	padding:2%;
 	text-decoration:none;
 	width:100%;
@@ -89,8 +88,10 @@ nav > ul a {
 }
 
 nav > ul a:hover {
-	background-color:black;
+	background-color:white;
 
 }
+
+pre {white-space:pre-wrap;}
 
 	
