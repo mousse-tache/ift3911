@@ -99,17 +99,23 @@
 
 		</div>
 		<h2>Hypothèses</h2>
-		<p>Nous avons présumé qu'il était nécessaire de stocker l'information, nous avons donc des classes utilitaires qui n'ont d'autres but que de gérer une base de données.</p>
+		<p>Nous avons présumé qu'il était nécessaire de stocker l'information, nous avons un paquet qui n'a d'autre but que de gérer une base de données, offrant une interface pour définir les éléments qu'elle poeut gérer.</p>
 		<p>Le fichier visual paradigm se trouve <a href="./Design/design.vpp">ici</a> et contient l'ensemble des diagrammes demandés pour le devoir.</p>
 		<h2 id="diag">Diagramme de classes</h2>
 		<img src="./Design/diagramme_conceptuel.png" alt="diagramme logiciel de classe"/>
 		<h2>Diagrammes de séquence</h2>
+        <h3>Annulation d'une réservation</h3>
 		<img src="./Design/ClientSession_cancelReservation.png" alt="diagramme séquence cancel reservation"/>
+        <h3>Modification d'une réservation</h3>
 		<img src="./Design/ClientSession_modifyReservation.png" alt="diagramme séquence modifier réservation"/>
+        <h3>Payer une réservation</h3>
 		<img src="./Design/ClientSession_payReservation.png" alt="diagramme séquence payer réservation"/>
+        <h3>Effectuer une réservation pour une place</h3>
 		<img src="./Design/ClientSession_reserveSeatOrCabin.png" alt="diagramme séquence réserver"/>
+        <h3>Vérification des voyages disponibles</h3>
 		<img src="./Design/ClientSession_verifyTrips.png" alt="diagramme séquence regarder voyages"/>
 		<h2>Diagramme de paquets</h2>
+        Ce diagramme montre les dépendances entre les paquets de notre design. Se référer au diagramme de classes pour plus de détails sur les classes à l'intérieur de ceux-ci.
 		<img src="./Design/Package diagram.png" alt="diagramme de paquets"/>
 		<h2>Contraintes OCL</h2>
         <ul>
