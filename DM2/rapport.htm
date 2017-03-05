@@ -10,12 +10,17 @@
 
 	<h1>IFT3911 - Devoir 1</h1>
 	<nav>
+		<ul>
+			<li><a href="#top">Haut de page</a></li>
+			<li><a href="#diag">Design logiciel</a></li>
+			<li><a href="#qual">Qualité du design</a></li>
+		</ul>
 	</nav>
 
 	<main>
 
 		<div>
-			<h2>Informations générales</h2>
+			<h2 id="top">Informations générales</h2>
 			<div class="student">
 				 <dl>
 					<dt>Nom:</dt>
@@ -62,25 +67,32 @@
 				<tbody>
 					<tr>
 						<td class="first_col">
-							Domaine
+							Design
 						</td>
 						<td>
-							Classes, cardinalités
+							Modifications en fonction de l'analyse et des principes, Diagramme de paquets
 						</td>
 						<td>
-							Associations, Diagrammes séquence système
+							Diagramme logiciel, Diagrammes de séquence, Contraintes OCL
 						</td>
 					</tr>
 					<tr>
 						<td class="first_col">
-							Design
+							Qualité
 						</td>
 						<td>
-							Contraintes OCL, diagramme de classe logiciel, diagrammes de séquence
+							Discussions, graphes
 						</td>
 						<td>
-							Diagramme de classe logiciel, diagrammes de séquence, diagramme d'état, diagramme de paquet et contraintes OCL.
+							
 						</td>
+					</tr>
+					<tr>
+					<td>Autres</td>
+					
+					<td>Mise en page du rapport</td>
+					
+					<td></td>
 					</tr>
 				</tbody>
 			</table>
@@ -89,7 +101,7 @@
 		<h2>Hypothèses</h2>
 		<p>Nous avons présumé qu'il était nécessaire de stocker l'information, nous avons donc des classes utilitaires qui n'ont d'autres but que de gérer une base de données.</p>
 		<p>Le fichier visual paradigm se trouve <a href="./Design/design.vpp">ici</a> et contient l'ensemble des diagrammes demandés pour le devoir.</p>
-		<h2>Diagramme de classes</h2>
+		<h2 id="diag">Diagramme de classes</h2>
 		<img src="./Design/diagramme_conceptuel.png" alt="diagramme logiciel de classe"/>
 		<h2>Diagrammes de séquence</h2>
 		<img src="./Design/ClientSession_cancelReservation.png" alt="diagramme séquence cancel reservation"/>
@@ -128,7 +140,7 @@ post:
 		Les modules réutilisables sont les paquets Travel et Reservation. Ces classes font parties du domaine métier du voyage pour Travel et Reservation et Payment est réutilisable pour la plupart des commerces. Ce sont des modules réutilisables pour ce domaine de métier. Le paquet PersistantStorage pourrait également être réutilisable et relève plutôt du domaine d'architecture puisqu'il correspond à une architecture 3-tiers avec. Les autres paquets relèvent plutôt du domaine d'application. Quand on regarde la paquet de UserSessions et Utils, on voit qu'ils sont très spécifiques au fonctionnement précis de cette application. 
 		</p>
 		
-		<h2>Discussion sur la cohérence et couplage</h2>
+		<h2 id="qual">Discussion sur la cohérence et couplage</h2>
 
 		<p>
 		
