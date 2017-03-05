@@ -25,7 +25,7 @@
 					<dt>Courriel: </dt>
 					<dd>felix.belanger-robillard@umontreal.ca</dd>
 					<dt>Temps mis:</dt>
-					<dd>12 heures</dd>
+					<dd>14 heures</dd>
 				</dl>
 			</div>
 			<div class="student">
@@ -86,9 +86,11 @@
 			</table>
 
 		</div>
-
+		<h2>Hypothèses</h2>
+		<p>Nous avons présumé qu'il était nécessaire de stocker l'information, nous avons donc des classes utilitaires qui n'ont d'autres but que de gérer une base de données.</p>
+		<p>Le fichier visual paradigm se trouve <a href="./Design/design.vpp">ici</a> et contient l'ensemble des diagrammes demandés pour le devoir.</p>
 		<h2>Diagramme de classes</h2>
-
+		<img src="./Design/diagramme_conceptuel.png" alt="diagramme logiciel de classe"/>
 		<h2>Diagrammes de séquence</h2>
 
 		<h2>Diagramme de paquets</h2>
@@ -96,24 +98,24 @@
 		<h2>Contraintes OCL</h2>
         <ul>
 			<li> Le port de départ et d'arrivée d'une croisière doivent être les mêmes
-        <pre>context Cruise inv: self.stops->first().location = self.stops->last().location</pre>
+        <blockquote>context Cruise inv: self.stops->first().location = self.stops->last().location</blockquote>
 			</li>
 
 			<li> Un paquebot peut être affecté à plusieurs itinéraire tant qu'ils ne se chevauchent pas 
-		<pre>context Cruise
+		<blockquote>context Cruise
 inv:
     let otherCruisesForThisVehicle = Cruise.allInstances->forAll(c | self.vehicle = c.vehicle)->excluding(self)
     otherCruisesForThisVehicle->forAll(c | c.getArrivalTime < self.getDepartureTime or c.getDepartureTime > self.getArrivalTime)
-        </pre>
+        </blockquote>
 			</li>	
 			<li> Réserver ne peut se faire que pour un siège libre. Identifiez la postcondition de l'opération réserver().
-		<pre>context Reservation::Reservation(r : ReservableForTrip, c : client)
+		<blockquote>context Reservation::Reservation(r : ReservableForTrip, c : client)
 pre: 
     r.isAvailable
 post:
     !r.isAvailable and self.client = c and self.reservableForTrip = r
     
-		</pre>
+		</blockquote>
 			</li>
 		</ul>
 		<h2>Identification des modules réutilisables</h2>
@@ -151,16 +153,13 @@ post:
 		</p>
 		
 		<p>
-			Les paquets Transportation, Trip, Reservation, UserSessions et Utils se situent tous dans la même zone avec une abstraction allant de .23 à .33 et une instabilité de .55 à .67. Ce sont d'ailleurs les classes les plus spécifiques au domaine d'application et sont assez près de l'axe principal du graphique, donc assez équilibrés dans leur proportion Abstraction/Instabilité. Ce sont plutôt des classes concrètes, mais ce nombre est enflé par le choix spécifique pour la composition des véhicules dans le paquet Transportation.
+			Les paquets Transportation, Trip, Reservation, UserSessions et Utils se situent tous dans la même zone avec une abstraction allant de .23 à .33 et une instabilité de .5 à .83. Ce sont d'ailleurs les classes les plus spécifiques au domaine d'application et sont assez près de l'axe principal du graphique, donc assez équilibrés dans leur proportion Abstraction/Instabilité. Ce sont plutôt des classes concrètes, mais ce nombre est enflé par le choix spécifique pour la composition des véhicules dans le paquet Transportation. Autrement, on peut quand même noté que les paquets Reservation et Utils se situent exactement sur l'axe principal, ce qui idéal pour notre design.
 		</p>
 		
 		<p>Les paquets qui semblent les plus problématiques sont ceux reliés à la base de données. Ce sont les paquets les plus près du "Zone of pain" et on peut le comprendre à la nature même de leur travail. Nous nous sommes beaucoup penchés sur la question, mais n'avons pas trouvé de solutions concluantes pour les éloigner de cette zone.</p>
 		
 		<h2>Justification de l'application des principes de conception</h2>
-
-		<p>
-		SRP, DIP, Loi de Demeter, LSP, ISP
-		</p> 
+		
 		<p>
 			Pour ce qui est de voyager, on utilise le DIP pour dépendre des voyages (abstrait) plutôt que de leurs différentes implémentations. Les réservations sont effectuées sur des objets qui implémentent l'interface Reservable. On peut donc facilement étendre les fonctionnalités pour des types de voyages différents et implanter l'interface correspondante à l'objet qui pourra être réserver éventuellement sans devoir retravailler systématiquement le code.
 		</p>
@@ -168,7 +167,15 @@ post:
 		
 		<p>Nous tentons de respecter le plus possible la loi de Demeter, même si ce ne pourra réellement être apparent que dans le code. On garde un couplage aussi faible que possible entre les classes et les liens existants se font, dans la mesure du possible, au niveau informationnel pour restreindre à l'essentiel.</p>
 		<p>Une des plus grandes réflexions que nous avons effectués est au sujet du LSP et, par conséquent, à la façon de procéder pour la généralisation au niveau de Trip, TransportVehicule et TravelFacility. Nous en sommes venus à la conclusion que cet héritage était correct dans le mesure que n'importe quel Trip peut effectivement substituer Trip à tout moment, mais qu'au niveau du domaine, un vol se fait avec un avion et une croisière avec un paquebot. C'est donc un problème qui ne contredit pas le LSP, car on pourra réellement effectuer la substitution, mais on ne pourra pas substituer les enfants les uns aux autres, évidemment. Puisque la dépendance est également abstraite, il n'y a de cas réels de substitution, on s'attendra toujours à un enfant de Trip.</p>
+		
+		<p>
+		Nous nous sommes fiés au CRP pour gérer la composition des différents véhicules et, surtout, le prix attribué aux billets. Les véhicules sont composés de sections qui sont, elles, définies seront leur ratio.
+		</p>
 
+		<p>
+			Pour les principes de conception de paquets, nous nous sommes assurés d'éviter toute forme de cycle entre les paquets. Pour le SDP, après avoir vérifié s'il était respecté, nous avons effectué des modifications à notre design en constatant qu'il n'était pas respecté. C'est une des raisons, en plus de la réutilisabilité, qui nous a poussé à séparer Payment de Reservation dans nos paquets. Autrement, pour la mesure instabilité/abstraction, le graphe IA présenté plus tôt représente bien l'équilibre que nous avons rechercé.
+		</p>
+		
 	</main>
 
 </body>
