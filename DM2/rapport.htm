@@ -173,7 +173,7 @@ post:
 		<p>
 			La plupart de nos paquets se retrouvent sous l'axe principal, mais parviennent à éviter la "Zone of pain". Nos paquets les plus stables sont ceux de Storage et de Payment conséquemment avec leur degré de réutilisabilité potentiellement élevé. Le paquet le plus instable est celui des GUI qui est effectivement dépendant du reste du système pour son fonctionnement. S'il n'est pas complètement concret, c'est que nous avons décidé de généralisé les GUI pour augmenter la cohésion en diminuant la reproduction de code.
 		</p>
-		
+
 		<p>
 			Les paquets Transportation, Trip, Reservation, UserSessions et Utils se situent tous dans la même zone avec une abstraction allant de .23 à .33 et une instabilité de .5 à .83. Ce sont d'ailleurs les classes les plus spécifiques au domaine d'application et sont assez près de l'axe principal du graphique, donc assez équilibrés dans leur proportion Abstraction/Instabilité. Ce sont plutôt des classes concrètes, mais ce nombre est enflé par le choix spécifique pour la composition des véhicules dans le paquet Transportation. Autrement, on peut quand même noté que les paquets Reservation et Utils se situent exactement sur l'axe principal, ce qui idéal pour notre design.
 		</p>
