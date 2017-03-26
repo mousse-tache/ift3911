@@ -1,0 +1,97 @@
+html {
+	background-color:white;
+	font-size:120%;
+	margin-bottom:2%;
+}
+main {
+	width: 80%;
+	margin: auto;
+	padding: 1%;
+	background-color:white;
+	opacity:1;
+	text-align:justify;
+}
+h1 {
+	text-align: center;
+	margin: auto;
+}
+
+h2 {
+	background-color:#7acff5;
+	font-style:bold;
+	padding:5px;
+	border-radius: 10px;
+	
+}
+
+dt, dd {display: inline;}
+dt {display:none;}
+
+img{
+	display:block;
+	max-width: 100%;
+}
+	
+table, td, th {
+	border: 1px solid black;
+	border-collapse: collapse;
+}
+
+th {
+	background-color:black;
+	color:white;
+	border-color:grey;
+}
+
+.student > * {
+	width: 90%;
+	margin:auto;
+	background-color:lightgrey;
+	text-align:justify;
+	padding:1%;
+	border-radius: 10px;
+}
+
+
+nav{
+	position:fixed;
+	overflow: hidden;
+    background-color: #7acff5;
+    position: fixed;
+    bottom: 0; 
+    width: 100%; 
+	margin:0;
+	padding:0;
+	text-align:center; 
+	
+	}
+nav ul {width:100%; padding:0;
+ margin:0;}
+nav ul, nav li {
+	display:inline-block;
+	margin:0;
+
+}
+nav li{
+	width:25%;
+	height:4%;
+	margin:0;}
+nav > ul a {
+	display:inline-block;
+	background-color:#7acff5;
+	color:black;
+	padding:2%;
+	text-decoration:none;
+	width:100%;
+	height:100%;
+	font-size:1.5vm;
+}
+
+nav > ul a:hover {
+	background-color:white;
+
+}
+
+pre {white-space:pre-wrap;}
+
+	
