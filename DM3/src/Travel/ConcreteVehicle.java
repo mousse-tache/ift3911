@@ -27,4 +27,16 @@ public class ConcreteVehicle {
 		throw new UnsupportedOperationException();
 	}
 
+	public string getId() {
+		return this.id;
+	}
+
+	public List getTrips() {
+		return this.trips;
+	}
+
+	public TravelType getType() {
+		return this.type;
+	}
+
 }

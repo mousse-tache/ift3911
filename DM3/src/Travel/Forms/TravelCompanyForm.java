@@ -25,4 +25,12 @@ public class TravelCompanyForm extends BaseForm {
 		throw new UnsupportedOperationException();
 	}
 
+	public String getName() {
+		return this.name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
 }

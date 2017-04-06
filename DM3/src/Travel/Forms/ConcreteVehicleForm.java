@@ -26,4 +26,20 @@ public class ConcreteVehicleForm extends BaseForm {
 		throw new UnsupportedOperationException();
 	}
 
+	public String getModelID() {
+		return this.modelID;
+	}
+
+	public void setModelID(String modelID) {
+		this.modelID = modelID;
+	}
+
+	public String getOwnerID() {
+		return this.ownerID;
+	}
+
+	public void setOwnerID(String ownerID) {
+		this.ownerID = ownerID;
+	}
+
 }

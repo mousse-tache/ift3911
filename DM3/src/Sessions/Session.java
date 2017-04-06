@@ -43,4 +43,8 @@ public class Session implements IGUISubject {
 		throw new UnsupportedOperationException();
 	}
 
+	public Executor getExecutor() {
+		return this.executor;
+	}
+
 }

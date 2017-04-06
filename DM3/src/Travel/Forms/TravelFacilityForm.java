@@ -26,4 +26,20 @@ public class TravelFacilityForm extends BaseForm {
 		throw new UnsupportedOperationException();
 	}
 
+	public String getLocation() {
+		return this.location;
+	}
+
+	public void setLocation(String location) {
+		this.location = location;
+	}
+
+	public String getName() {
+		return this.name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
 }

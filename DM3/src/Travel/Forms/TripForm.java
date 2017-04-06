@@ -62,4 +62,12 @@ public class TripForm extends BaseForm {
 		throw new UnsupportedOperationException();
 	}
 
+	public TravelCompany getCompany() {
+		return this.company;
+	}
+
+	public void setCompany(TravelCompany company) {
+		this.company = company;
+	}
+
 }

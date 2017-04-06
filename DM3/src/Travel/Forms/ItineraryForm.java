@@ -26,4 +26,20 @@ public class ItineraryForm extends BaseForm {
 		throw new UnsupportedOperationException();
 	}
 
+	public List<String> getLocationIDs() {
+		return this.locationIDs;
+	}
+
+	public void setLocationIDs(List<String> locationIDs) {
+		this.locationIDs = locationIDs;
+	}
+
+	public List<DateTime> getTimes() {
+		return this.times;
+	}
+
+	public void setTimes(List<DateTime> times) {
+		this.times = times;
+	}
+
 }

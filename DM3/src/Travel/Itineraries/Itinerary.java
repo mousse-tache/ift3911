@@ -24,4 +24,8 @@ public abstract class Itinerary {
 		throw new UnsupportedOperationException();
 	}
 
+	public string getId() {
+		return this.id;
+	}
+
 }

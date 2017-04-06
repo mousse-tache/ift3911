@@ -17,4 +17,28 @@ public class VehicleSectionForm {
 		throw new UnsupportedOperationException();
 	}
 
+	public char getId() {
+		return this.id;
+	}
+
+	public void setId(char id) {
+		this.id = id;
+	}
+
+	public int getNbSpaces() {
+		return this.nbSpaces;
+	}
+
+	public void setNbSpaces(int nbSpaces) {
+		this.nbSpaces = nbSpaces;
+	}
+
+	public RowType getDisposition() {
+		return this.disposition;
+	}
+
+	public void setDisposition(RowType disposition) {
+		this.disposition = disposition;
+	}
+
 }
