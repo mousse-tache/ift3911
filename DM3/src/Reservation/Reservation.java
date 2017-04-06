@@ -12,6 +12,8 @@ public class Reservation implements IPayable {
 	private Client client;
 	Reservable reservable;
 	Payment payment;
+	private Double amount;
+	private ClientPaymentInfo paymentInfo;
 
 	/**
 	 * 
@@ -48,16 +50,6 @@ public class Reservation implements IPayable {
 		throw new UnsupportedOperationException();
 	}
 
-	public ClientPaymentInfo getPaymentInfo() {
-		// TODO - implement Reservation.getPaymentInfo
-		throw new UnsupportedOperationException();
-	}
-
-	public Double getAmount() {
-		// TODO - implement Reservation.getAmount
-		throw new UnsupportedOperationException();
-	}
-
 	public String getConfirmationNumber() {
 		// TODO - implement Reservation.getConfirmationNumber
 		throw new UnsupportedOperationException();
@@ -75,6 +67,14 @@ public class Reservation implements IPayable {
 	public Payment getPayment() {
 		// TODO Auto-generated method stub
 		throw new UnsupportedOperationException();
+	}
+
+	public Double getAmount() {
+		return this.amount;
+	}
+
+	public ClientPaymentInfo getPaymentInfo() {
+		return this.paymentInfo;
 	}
 
 }
