@@ -151,14 +151,18 @@
 			<img src="./images/pn.png"\>
 			marquage initial [k,0,k,0]. Tous les arcs sont pondérés à 1 sauf deux arcs pondérés à une constante k. 
 			<ol>
+				<li><img src="./images/gak1.png" />	Pour k=1</li>
+				
 				<li>Prouvez si le réseau est borné. </li>
-				Le réseau est borné. À partir du marquage initial, on peut répéter la transition <em>t1</em> jusqu'à atteindre un marquage [0,k,0,0]. Avec la transition <em>t2</em>, on peut obtenir un marquage [0,0,k,0] à partir de l'état initial. On ne peut jamais dépasser k dans P2 et P4 et on ne peut dépasser k dans P1 et P3, ce qui fait en sorte que le réseau est borné, c'est à dire qu'il existe un nombre fini de marquages pour ce réseau de pétri, le minimum de ressources étant k et le maximum 2k.
-				Pour n'importe quel k > 0, disons k = 1 :</br>
-				<img src="./images/gak1.png" />
-				Pour k=1, il n'existe que 3 états. Peu importe k, tant que k >0, à chaque transition effectuée, une transition suivante permet de retourner à l'état précédent et le graphe d'accessibilité se construit sous forme d'arbre où chaque marquage a, au maximum, 4 transitions possibles à effectuer ou, au minimum, 1 seule. 
+				Pour n'importe quel k > 0, :</br>
+				Si on regarde le AC pour k=1, on voit qu'on peut toujours retourner au marquage précédent à partir du marquage actuel. C'est également le cas pour toutes les valeurs de k subséquentes. À ce titre, le nombre de marquage possible est fonction de K+1 + |M(K-1)|, c'est à dire que M(K-1) est un sous-ensemble de M(K). On peut donc conclure est le réseau est borné, car son AC ne contient pas d'Omega peu un K de valeur quelconque.
+			
 				<li>Déterminez la vivacité des quatre transitions. </li>
-				Le réseau est borné, mais il n'a aucune configuration d'interblocage, ce qui lui permet de faire une infinité de transitions. À ce titre, l'ensemble des transitions sont L2-vivantes.
+				Le réseau est borné, mais il n'a aucune configuration d'interblocage, ce qui lui permet de faire une infinité de transitions. À ce titre, l'ensemble des transitions sont L2-vivantes, car aucune des transitions ne peut être faite infiniment, il y a une limite à ce qu'une transition peut être faite avant de devoir passer par une autre.
 				<li>Déterminez si le réseau est conservateur.</li>
+				Le réseau est conservateur. Le vecteur vertical [1/2,1,1/2,1] permet d'obtenir une constante sur l'ensemble des marquages du réseau. Par exemple: <br/>
+				[1/2,1,1/2,1] * [k,0,k,0] = k/2+0+k/2+0 <br/>
+				[1/2,1,1/2,1] * [k-1,1,k-1,0] = (k-1)/2 + 1 + (k-1)/2 + 0 = 2(k-1)/2 + 1 = k -1 + 1 = k
 			</ol>
 		
 			
