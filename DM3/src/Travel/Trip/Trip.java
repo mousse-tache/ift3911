@@ -43,7 +43,7 @@ public abstract class Trip implements IVisitable {
 	
 	private void assignReservables(){
 		for (PassengerSpace p : vehicle.getAllPassengerSpaces()){
-			
+			ReservableForTrip res = new ReservableForTrip();
 		}
 	}
 	

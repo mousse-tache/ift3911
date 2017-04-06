@@ -9,23 +9,23 @@ public class Reserved extends ReservableState {
 	private static long delay = TimeUnit.MILLISECONDS.toDays(1);
 	private Timer timer;
 
-	/**
-	 * 
-	 * @param ctx
-	 */
-	public void reserve(Reservable ctx) {
+	@Override
+	public void reserve(Reservable ctx, Reservation r) {
 		System.out.println("This place is already reserved");
 	}
 
-	/**
-	 * 
-	 * @param ctx
-	 */
+	@Override
 	public void cancel(Reservable ctx) {
 		ctx.setState(new Free());
 	}
 
-	Reserved(Reservable ctx){
+	@Override
+	public boolean isAvailable() {
+		return false;
+	}
+
+	Reserved(Reservable ctx, Reservation r){
+		this.reservation = r;
 		this.timer = new Timer();
 		TimerTask task = new TimerTask(){
 			@Override
@@ -36,4 +36,5 @@ public class Reserved extends ReservableState {
 
 		this.timer.schedule(task, delay);
 	}
+
 }

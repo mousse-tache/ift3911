@@ -1,17 +1,16 @@
 package Reservation;
 
 public abstract class ReservableState {
+	
+	protected Reservation reservation;
 
-	/**
-	 * 
-	 * @param ctx
-	 */
-	public abstract void reserve(Reservable ctx);
+	public abstract void reserve(Reservable ctx, Reservation r);
 
-	/**
-	 * 
-	 * @param ctx
-	 */
 	public abstract void cancel(Reservable ctx);
 
+	public abstract boolean isAvailable();
+	
+	public Reservation getReservation(){
+		return this.reservation;
+	}
 }
