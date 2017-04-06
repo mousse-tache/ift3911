@@ -1,9 +1,12 @@
 package Travel.VehicleModels.Vehicle;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.function.BiConsumer;
 
 import Travel.VehicleModels.Places.PassengerSpace;
 import Travel.VehicleModels.Sections.BaseSection;
@@ -40,6 +43,12 @@ public abstract class TransportVehicleModel {
 
 	public Map<String, BaseSection> getSections() {
 		return this.sections;
+	}
+
+	public Set<PassengerSpace> getAllPassengerSpaces() {
+		Set<PassengerSpace> spaces = new HashSet<PassengerSpace>();
+		sections.forEach( (k,v) -> spaces.addAll(v.getAllPassengerPlaces()));
+		return spaces;
 	}
 
 }

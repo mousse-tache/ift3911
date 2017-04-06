@@ -44,4 +44,8 @@ public class ConcreteVehicle {
 	public String getOwnerID() { return this.owner.getID(); }
 	public TravelCompany getOwner() { return this.owner; }
 
+	public Set<PassengerSpace> getAllPassengerSpaces() {
+		return this.vehicleModel.getAllPassengerSpaces();
+	}
+
 }
