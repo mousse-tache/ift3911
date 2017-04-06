@@ -50,8 +50,12 @@ public class TripForm extends BaseForm {
 	 * @param t
 	 */
 	public TripForm(Trip t) {
-		// TODO - implement TripForm.TripForm
-		throw new UnsupportedOperationException();
+		this.basePrice = t.getBasePrice();
+		this.departureTime = t.getArrivalTime();
+		this.itineraryID = t.getItinerary().getId();
+		this.vehicleID = t.getVehicle().getId();
+		this.company = t.getCompany();
+
 	}
 
 	public BaseForm createFromPrompt() {

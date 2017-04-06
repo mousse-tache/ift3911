@@ -11,7 +11,9 @@ public class TravelCompany {
 	public String getID() {
 		return id;
 	}
-	
+	public String getName(){
+		return name;
+	}
 	public String getName() {
 		return name;
 	}

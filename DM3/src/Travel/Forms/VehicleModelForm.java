@@ -1,21 +1,22 @@
 package Travel.Forms;
 
-import java.util.List;
+import java.util.Map;
 
+import Travel.VehicleModels.Sections.BaseSection;
 import Travel.VehicleModels.Vehicle.TransportVehicleModel;
 
 public class VehicleModelForm extends BaseForm {
 
 	private String modelName;
-	private List<VehicleSectionForm> sections;
+	private Map<String, BaseSection> sections;
 
 	/**
 	 * 
 	 * @param tv
 	 */
 	public VehicleModelForm(TransportVehicleModel tv) {
-		// TODO - implement VehicleModelForm.VehicleModelForm
-		throw new UnsupportedOperationException();
+		this.modelName = tv.getModelName();
+		this.sections = tv.getSections();
 	}
 
 	public BaseForm createFromPrompt() {
@@ -36,11 +37,11 @@ public class VehicleModelForm extends BaseForm {
 		this.modelName = modelName;
 	}
 
-	public List<VehicleSectionForm> getSections() {
+	public Map<String, BaseSection> getSections() {
 		return this.sections;
 	}
 
-	public void setSections(List<VehicleSectionForm> sections) {
+	public void setSections(Map<String, BaseSection> sections) {
 		this.sections = sections;
 	}
 
