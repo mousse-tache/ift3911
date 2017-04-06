@@ -14,8 +14,10 @@ public class VehicleSectionForm {
 	 * @param vs
 	 */
 	public VehicleSectionForm(BaseSection vs) {
-		// TODO - implement VehicleSectionForm.VehicleSectionForm
-		throw new UnsupportedOperationException();
+
+		//this.nbSpaces = vs.getTotalPassengerPlaces();
+		//this.disposition = vs.get
+		
 	}
 
 	public char getId() {

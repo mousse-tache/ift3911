@@ -12,8 +12,8 @@ public class TravelFacilityForm extends BaseForm {
 	 * @param tf
 	 */
 	public TravelFacilityForm(TravelFacility tf) {
-		// TODO - implement TravelFacilityForm.TravelFacilityForm
-		throw new UnsupportedOperationException();
+		this.location = tf.getLocation();
+		this.name = tf.getName();
 	}
 
 	public BaseForm createFromPrompt() {

@@ -15,8 +15,8 @@ public class ItineraryForm extends BaseForm {
 	 * @param i
 	 */
 	public ItineraryForm(Itinerary i) {
-		// TODO - implement ItineraryForm.ItineraryForm
-		throw new UnsupportedOperationException();
+		this.locationIDs.add(i.getId());
+		this.times.add(i.getTripTime());
 	}
 
 	public BaseForm createFromPrompt() {

@@ -37,9 +37,8 @@ public abstract class Trip implements IVisitable {
 		throw new UnsupportedOperationException();
 	}
 
-	public Date getArrivalTime() {
-		// TODO - implement Trip.getArrivalTime
-		throw new UnsupportedOperationException();
+	public Date getDepartureTime() {
+		return this.departureTime;
 	}
 
 	public String getId() {
@@ -50,12 +49,21 @@ public abstract class Trip implements IVisitable {
 		return this.basePrice;
 	}
 
+	public ConcreteVehicle getVehicle(){
+		return vehicle;
+	}
+	
 	public TravelType getType() {
 		return this.type;
 	}
 
 	public TravelCompany getCompany() {
 		return this.company;
+	}
+
+	public Itinerary getItinerary() {
+		// TODO Auto-generated method stub
+		return this.itinerary;
 	}
 
 }
