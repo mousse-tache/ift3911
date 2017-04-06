@@ -2,6 +2,7 @@ package Payment;
 
 public class Payment {
 
+	IPayable payable;
 	private String status;
 	private String confirmationNumber;
 	private Real amountLeft;

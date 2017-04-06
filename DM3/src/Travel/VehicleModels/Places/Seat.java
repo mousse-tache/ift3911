@@ -2,7 +2,7 @@ package Travel.VehicleModels.Places;
 
 public class Seat extends PassengerSpace {
 
-	private Char row;
+	private char row;
 	private Integer collumn;
 
 }

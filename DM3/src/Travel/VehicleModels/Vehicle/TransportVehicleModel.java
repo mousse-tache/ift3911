@@ -2,10 +2,11 @@ package Travel.VehicleModels.Vehicle;
 
 import Travel.VehicleModels.Sections.*;
 
-public abstract class TransportVehicle {
+public abstract class TransportVehicleModel {
 
-	private string modelName;
-	private List<BaseSection> sections;
+	protected string ID;
+	protected string modelName;
+	protected List<BaseSection> sections;
 
 	/**
 	 * 

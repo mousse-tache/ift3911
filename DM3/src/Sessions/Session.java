@@ -4,7 +4,7 @@ import Commands.*;
 
 public class Session implements IGUISubject {
 
-	private Executor executor;
+	protected Executor executor;
 
 	public boolean undo() {
 		// TODO - implement Session.undo
@@ -17,6 +17,29 @@ public class Session implements IGUISubject {
 	 */
 	public void executeCommand(Command c) {
 		// TODO - implement Session.executeCommand
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * 
+	 * @param IGUIObserver
+	 */
+	public void attach(int IGUIObserver) {
+		// TODO - implement Session.attach
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * 
+	 * @param IGUIObserver
+	 */
+	public void detach(int IGUIObserver) {
+		// TODO - implement Session.detach
+		throw new UnsupportedOperationException();
+	}
+
+	public void notifyAll() {
+		// TODO - implement Session.notifyAll
 		throw new UnsupportedOperationException();
 	}
 

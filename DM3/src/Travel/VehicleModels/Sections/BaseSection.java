@@ -2,7 +2,7 @@ package Travel.VehicleModels.Sections;
 
 public abstract class BaseSection {
 
-	private Real priceRatio;
+	protected Real priceRatio;
 
 	public void getAvailablePassengerSeats() {
 		// TODO - implement BaseSection.getAvailablePassengerSeats

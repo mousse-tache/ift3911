@@ -6,7 +6,7 @@ import Travel.VehicleModels.Places.*;
 
 public class ReservableForTrip extends Reservable {
 
-	private Trip trip;
+	Trip trip;
 	private PassengerSpace passengerSpace;
 
 }

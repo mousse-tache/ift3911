@@ -1,7 +1,10 @@
 package Travel.VehicleModels.Places;
 
+import Travel.VehicleModels.Sections.*;
+
 public class Cabin extends PassengerSpace {
 
+	SectionWithCabins section;
 	private Integer cabinNumber;
 
 }
