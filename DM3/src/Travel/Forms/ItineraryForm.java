@@ -1,11 +1,14 @@
 package Travel.Forms;
 
-import Travel.Itineraries.*;
+import java.util.Date;
+import java.util.List;
+
+import Travel.Itineraries.Itinerary;
 
 public class ItineraryForm extends BaseForm {
 
 	private List<String> locationIDs;
-	private List<DateTime> times;
+	private List<Date> times;
 
 	/**
 	 * 
@@ -34,11 +37,11 @@ public class ItineraryForm extends BaseForm {
 		this.locationIDs = locationIDs;
 	}
 
-	public List<DateTime> getTimes() {
+	public List<Date> getTimes() {
 		return this.times;
 	}
 
-	public void setTimes(List<DateTime> times) {
+	public void setTimes(List<Date> times) {
 		this.times = times;
 	}
 

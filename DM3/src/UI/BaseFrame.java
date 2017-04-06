@@ -1,7 +1,5 @@
 package UI;
 
-import Sessions.*;
-
 public class BaseFrame implements IGUIObserver {
 
 	public void showInterface() {
@@ -9,7 +7,7 @@ public class BaseFrame implements IGUIObserver {
 		throw new UnsupportedOperationException();
 	}
 
-	public void notify() {
+	public void update() {
 		// TODO - implement BaseFrame.notify
 		throw new UnsupportedOperationException();
 	}

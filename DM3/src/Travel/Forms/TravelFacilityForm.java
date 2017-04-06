@@ -1,6 +1,6 @@
 package Travel.Forms;
 
-import Travel.Facilities.*;
+import Travel.Facilities.TravelFacility;
 
 public class TravelFacilityForm extends BaseForm {
 

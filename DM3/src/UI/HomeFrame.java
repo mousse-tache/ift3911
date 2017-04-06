@@ -1,6 +1,6 @@
 package UI;
 
-import Sessions.*;
+import Sessions.Session;
 
 public class HomeFrame extends BaseFrame {
 

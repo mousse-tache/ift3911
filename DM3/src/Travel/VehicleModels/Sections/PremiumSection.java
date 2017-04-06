@@ -2,6 +2,6 @@ package Travel.VehicleModels.Sections;
 
 public class PremiumSection extends SectionWithSeats {
 
-	private Real priceRatio = 0.9;
+	private Double priceRatio = 0.9;
 
 }

@@ -1,6 +1,6 @@
 package Travel.Forms;
 
-import Travel.*;
+import Travel.TravelType;
 
 public abstract class BaseForm {
 

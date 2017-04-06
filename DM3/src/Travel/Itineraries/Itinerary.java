@@ -1,31 +1,19 @@
 package Travel.Itineraries;
 
+import java.sql.Time;
+import java.util.List;
+
 public abstract class Itinerary {
 
-	protected string id;
+	protected String id;
 
-	public abstract Stop getDeparture() {
-		// TODO - implement Itinerary.getDeparture
-		throw new UnsupportedOperationException();
-	}
+	public String getId() { return this.id; }
 
-	public abstract Stop getArrival() {
-		// TODO - implement Itinerary.getArrival
-		throw new UnsupportedOperationException();
-	}
+	public abstract Stop getDeparture();
 
-	public abstract Time getTripTime() {
-		// TODO - implement Itinerary.getTripTime
-		throw new UnsupportedOperationException();
-	}
+	public abstract Stop getArrival();
 
-	public abstract List<Stop<T>> getStops() {
-		// TODO - implement Itinerary.getStops
-		throw new UnsupportedOperationException();
-	}
+	public abstract Time getTripTime();
 
-	public string getId() {
-		return this.id;
-	}
-
+	public abstract List<Stop> getStops();
 }

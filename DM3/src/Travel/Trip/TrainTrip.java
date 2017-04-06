@@ -1,7 +1,7 @@
 package Travel.Trip;
 
-import Travel.Itineraries.*;
-import Utils.TripVisitor.*;
+import Travel.Itineraries.TrainLine;
+import Utils.TripVisitor.TripVisitor;
 
 public class TrainTrip extends Trip {
 

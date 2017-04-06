@@ -1,24 +1,28 @@
 package Travel.VehicleModels.Vehicle;
 
-import Travel.VehicleModels.Sections.*;
+import java.util.List;
+import java.util.Set;
+
+import Travel.VehicleModels.Places.PassengerSpace;
+import Travel.VehicleModels.Sections.BaseSection;
 
 public abstract class TransportVehicleModel {
 
-	protected string ID;
-	protected string modelName;
+	protected String ID;
+	protected String modelName;
 	protected List<BaseSection> sections;
 
 	/**
 	 * 
 	 * @param section
 	 */
-	public abstract Set<PassengerSpaces> getPassengerSpaces(char section);
+	public abstract Set<PassengerSpace> getPassengerSpaces(char section);
 
-	public string getID() {
+	public String getID() {
 		return this.ID;
 	}
 
-	public string getModelName() {
+	public String getModelName() {
 		return this.modelName;
 	}
 

@@ -1,15 +1,19 @@
 package Travel.Itineraries;
 
-public class Stop<T> {
+import java.sql.Time;
 
-	private T location;
+import Travel.Facilities.TravelFacility;
+
+public class Stop {
+
+	private TravelFacility location;
 	private Time timeFromDeparture;
 
-	public T getLocation() {
+	public TravelFacility getLocation() {
 		return this.location;
 	}
 
-	public void setLocation(T location) {
+	public void setLocation(TravelFacility location) {
 		this.location = location;
 	}
 

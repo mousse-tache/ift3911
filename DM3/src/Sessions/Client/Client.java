@@ -1,7 +1,10 @@
 package Sessions.Client;
 
-import Sessions.*;
-import Reservation.*;
+import java.util.Date;
+import java.util.List;
+
+import Reservation.Reservation;
+import Sessions.User;
 
 public class Client extends User {
 

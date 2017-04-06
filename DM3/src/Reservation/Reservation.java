@@ -1,7 +1,10 @@
 package Reservation;
 
-import Payment.*;
-import Sessions.Client.*;
+import Payment.IPayable;
+import Payment.Payment;
+import Sessions.Client.Client;
+import Sessions.Client.ClientPaymentInfo;
+import Travel.ReservableForTrip;
 
 public class Reservation implements IPayable {
 
@@ -33,7 +36,7 @@ public class Reservation implements IPayable {
 	 * 
 	 * @param ClientPaymentInfo
 	 */
-	public String pay(clientPaymentInfo ClientPaymentInfo) {
+	public String pay(ClientPaymentInfo clientPaymentInfo) {
 		// TODO - implement Reservation.pay
 		throw new UnsupportedOperationException();
 	}
@@ -43,12 +46,12 @@ public class Reservation implements IPayable {
 		throw new UnsupportedOperationException();
 	}
 
-	public PaymentInfo getPaymentInfo() {
+	public ClientPaymentInfo getPaymentInfo() {
 		// TODO - implement Reservation.getPaymentInfo
 		throw new UnsupportedOperationException();
 	}
 
-	public Real getAmount() {
+	public Double getAmount() {
 		// TODO - implement Reservation.getAmount
 		throw new UnsupportedOperationException();
 	}
@@ -64,6 +67,12 @@ public class Reservation implements IPayable {
 
 	public Client getClient() {
 		return this.client;
+	}
+
+	@Override
+	public Payment getPayment() {
+		// TODO Auto-generated method stub
+		throw new UnsupportedOperationException();
 	}
 
 }

@@ -1,9 +1,13 @@
 package Sessions.Client;
 
-import Sessions.*;
-import Travel.Trip.*;
-import Travel.Facilities.*;
-import Reservation.*;
+import java.util.Date;
+import java.util.List;
+
+import Reservation.Reservable;
+import Sessions.Session;
+import Travel.ReservableForTrip;
+import Travel.Facilities.TravelFacility;
+import Travel.Trip.Trip;
 
 public class ClientSession extends Session {
 
@@ -29,7 +33,7 @@ public class ClientSession extends Session {
 	 * @param id
 	 * @param section
 	 */
-	public List<Reservable> getTripAvailability(String id, Char section) {
+	public List<Reservable> getTripAvailability(String id, char section) {
 		// TODO - implement ClientSession.getTripAvailability
 		throw new UnsupportedOperationException();
 	}

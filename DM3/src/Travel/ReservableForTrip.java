@@ -1,8 +1,8 @@
 package Travel;
 
-import Reservation.*;
-import Travel.Trip.*;
-import Travel.VehicleModels.Places.*;
+import Reservation.Reservable;
+import Travel.Trip.Trip;
+import Travel.VehicleModels.Places.PassengerSpace;
 
 public class ReservableForTrip extends Reservable {
 

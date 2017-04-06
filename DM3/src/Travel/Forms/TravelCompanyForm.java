@@ -1,6 +1,6 @@
 package Travel.Forms;
 
-import Travel.*;
+import Travel.TravelCompany;
 
 public class TravelCompanyForm extends BaseForm {
 

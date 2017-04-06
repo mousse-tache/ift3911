@@ -1,29 +1,31 @@
 package Travel.Forms;
 
-import Travel.*;
-import Travel.Trip.*;
+import java.util.Date;
+
+import Travel.TravelCompany;
+import Travel.Trip.Trip;
 
 public class TripForm extends BaseForm {
 
-	private Real basePrice;
-	private DateTime departureTime;
+	private Double basePrice;
+	private Date departureTime;
 	private String itineraryID;
 	private String vehicleID;
 	private TravelCompany company;
 
-	public Real getBasePrice() {
+	public Double getBasePrice() {
 		return this.basePrice;
 	}
 
-	public void setBasePrice(Real basePrice) {
+	public void setBasePrice(Double basePrice) {
 		this.basePrice = basePrice;
 	}
 
-	public DateTime getDepartureTime() {
+	public Date getDepartureTime() {
 		return this.departureTime;
 	}
 
-	public void setDepartureTime(DateTime departureTime) {
+	public void setDepartureTime(Date departureTime) {
 		this.departureTime = departureTime;
 	}
 

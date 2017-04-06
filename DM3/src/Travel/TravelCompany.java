@@ -1,11 +1,15 @@
 package Travel;
 
-import java.util.*;
+import java.util.List;
 
 public class TravelCompany {
 
 	List<ConcreteVehicle> vehicles;
-	private string id;
-	private string name;
+	private String id;
+	private String name;
+
+	public String getID() {
+		return id;
+	}
 
 }

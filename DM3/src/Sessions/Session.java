@@ -1,6 +1,7 @@
 package Sessions;
 
-import Commands.*;
+import Commands.Command;
+import Commands.Executor;
 
 public class Session implements IGUISubject {
 
@@ -38,7 +39,7 @@ public class Session implements IGUISubject {
 		throw new UnsupportedOperationException();
 	}
 
-	public void notifyAll() {
+	public void notifyObservers() {
 		// TODO - implement Session.notifyAll
 		throw new UnsupportedOperationException();
 	}

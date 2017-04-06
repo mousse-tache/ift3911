@@ -1,11 +1,12 @@
 package Travel.Itineraries;
 
-import Travel.Facilities.*;
+import java.sql.Time;
+import java.util.List;
 
 public class FlightRoute extends Itinerary {
 
-	private Stop<Airport> departure;
-	private Stop<Airport> arrival;
+	private Stop departure;
+	private Stop arrival;
 
 	public Stop getDeparture() {
 		// TODO - implement FlightRoute.getDeparture
@@ -22,7 +23,7 @@ public class FlightRoute extends Itinerary {
 		throw new UnsupportedOperationException();
 	}
 
-	public List<Stop<T>> getStops() {
+	public List<Stop> getStops() {
 		// TODO - implement FlightRoute.getStops
 		throw new UnsupportedOperationException();
 	}

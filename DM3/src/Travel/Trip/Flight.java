@@ -1,7 +1,7 @@
 package Travel.Trip;
 
-import Travel.Itineraries.*;
-import Utils.TripVisitor.*;
+import Travel.Itineraries.FlightRoute;
+import Utils.TripVisitor.TripVisitor;
 
 public class Flight extends Trip {
 

@@ -1,10 +1,11 @@
 package Travel.Itineraries;
 
-import Travel.Facilities.*;
+import java.sql.Time;
+import java.util.List;
 
 public class CruiseRoute extends Itinerary {
 
-	private List<Stop<Port>> stops;
+	private List<Stop> stops;
 
 	public Stop getDeparture() {
 		// TODO - implement CruiseRoute.getDeparture
@@ -21,7 +22,7 @@ public class CruiseRoute extends Itinerary {
 		throw new UnsupportedOperationException();
 	}
 
-	public List<Stop<T>> getStops() {
+	public List<Stop> getStops() {
 		// TODO - implement CruiseRoute.getStops
 		throw new UnsupportedOperationException();
 	}

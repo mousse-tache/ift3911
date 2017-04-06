@@ -1,18 +1,23 @@
 package Travel.Trip;
 
-import Utils.TripVisitor.*;
-import java.util.*;
-import Travel.*;
-import Travel.Facilities.*;
-import Travel.Itineraries.*;
+import java.util.Date;
+import java.util.List;
+
+import Travel.ConcreteVehicle;
+import Travel.ReservableForTrip;
+import Travel.TravelCompany;
+import Travel.TravelType;
+import Travel.Facilities.TravelFacility;
+import Travel.Itineraries.Itinerary;
+import Utils.TripVisitor.IVisitable;
 
 public abstract class Trip implements IVisitable {
 
 	List<ReservableForTrip> reservables;
 	ConcreteVehicle vehicle;
-	protected string id;
-	protected Real basePrice;
-	protected DateTime departureTime;
+	protected String id;
+	protected Double basePrice;
+	protected Date departureTime;
 	protected TravelType type;
 	protected TravelCompany company;
 	Itinerary itinerary;
@@ -32,16 +37,16 @@ public abstract class Trip implements IVisitable {
 		throw new UnsupportedOperationException();
 	}
 
-	public DateTime getArrivalTime() {
+	public Date getArrivalTime() {
 		// TODO - implement Trip.getArrivalTime
 		throw new UnsupportedOperationException();
 	}
 
-	public string getId() {
+	public String getId() {
 		return this.id;
 	}
 
-	public Real getBasePrice() {
+	public Double getBasePrice() {
 		return this.basePrice;
 	}
 

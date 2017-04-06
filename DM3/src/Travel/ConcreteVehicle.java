@@ -1,8 +1,11 @@
 package Travel;
 
-import Travel.VehicleModels.Vehicle.*;
-import Travel.VehicleModels.Sections.*;
-import Travel.VehicleModels.Places.*;
+import java.util.List;
+import java.util.Set;
+
+import Travel.VehicleModels.Places.PassengerSpace;
+import Travel.VehicleModels.Sections.BaseSection;
+import Travel.VehicleModels.Vehicle.TransportVehicleModel;
 
 public class ConcreteVehicle {
 

@@ -1,6 +1,6 @@
 package Sessions.Logger;
 
-import Sessions.*;
+import Sessions.Session;
 
 public abstract class UserLogger {
 
