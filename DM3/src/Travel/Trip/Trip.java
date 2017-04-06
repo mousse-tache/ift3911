@@ -1,19 +1,23 @@
 package Travel.Trip;
 
+import java.time.Instant;
 import java.util.Date;
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 import Travel.ConcreteVehicle;
 import Travel.ReservableForTrip;
 import Travel.TravelCompany;
 import Travel.TravelType;
 import Travel.Facilities.TravelFacility;
+import Travel.Forms.TripForm;
 import Travel.Itineraries.Itinerary;
 import Utils.TripVisitor.IVisitable;
 
 public abstract class Trip implements IVisitable {
 
 	List<ReservableForTrip> reservables;
+
 	ConcreteVehicle vehicle;
 	protected String id;
 	protected Double basePrice;
@@ -21,24 +25,37 @@ public abstract class Trip implements IVisitable {
 	protected TravelType type;
 	protected TravelCompany company;
 	Itinerary itinerary;
+	
+//	public Trip(TripForm form){
+//		this.id = form.getID();
+//		this.basePrice = form.getBasePrice();
+//		this.departureTime = form.getDepartureTime();
+//		this.type = form.getType();
+//		this.company = form.getCompany();
+//	}
 
 	public boolean canBeCanceledOrModified() {
-		// TODO - implement Trip.canBeCanceledOrModified
-		throw new UnsupportedOperationException();
+		Date now = Date.from(Instant.now());
+		long timeBeforeTrip = this.departureTime.getTime() - now.getTime();
+		return timeBeforeTrip > TimeUnit.MILLISECONDS.toDays(1);
 	}
 
 	public TravelFacility getDepartureLocation() {
-		// TODO - implement Trip.getDepartureLocation
-		throw new UnsupportedOperationException();
+		return this.itinerary.getDeparture().getLocation();
+	}
+
+	public Date getDepartureDateTime() {
+		return this.departureTime;
 	}
 
 	public TravelFacility getArrivalLocation() {
-		// TODO - implement Trip.getArrivalLocation
-		throw new UnsupportedOperationException();
+		return this.itinerary.getArrival().getLocation();
 	}
+	
+	public Date getArrivalTime() {
+		long date = departureTime.getTime() + this.itinerary.getTripTime().getTime();
+		return new Date(date);
 
-	public Date getDepartureTime() {
-		return this.departureTime;
 	}
 
 	public String getId() {
@@ -61,9 +78,14 @@ public abstract class Trip implements IVisitable {
 		return this.company;
 	}
 
+<<<<<<< HEAD
 	public Itinerary getItinerary() {
 		// TODO Auto-generated method stub
 		return this.itinerary;
+=======
+	public List<ReservableForTrip> getReservables() {
+		return reservables;
+>>>>>>> f95e06967f80df85b3cfd4d473467c606144635f
 	}
 
 }
