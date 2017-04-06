@@ -7,6 +7,7 @@ import Sessions.Session;
 
 public class UserFrame extends JFrame{
 
+	JButton login = new JButton("Login");
 	JButton logout_button = new JButton("Logout");
 	
 	/**

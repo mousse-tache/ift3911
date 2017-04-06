@@ -2,12 +2,13 @@ package Reservation;
 
 public class Free extends ReservableState {
 
-	/**
-	 * 
-	 * @param ctx
-	 */
-	public void event(Reservable ctx) {
-		// TODO - implement Free.event
-		throw new UnsupportedOperationException();
+	@Override
+	public void reserve(Reservable ctx) {
+		ctx.setState(new Reserved(ctx));
+	}
+
+	@Override
+	public void cancel(Reservable ctx) {
+		System.out.println("Place already free");
 	}
 }
