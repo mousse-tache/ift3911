@@ -5,7 +5,7 @@ import java.util.List;
 
 import Travel.VehicleModels.Places.Seat;
 
-public abstract class Row {
+public class Row {
 
 	public enum RowType {
 		SMALL,

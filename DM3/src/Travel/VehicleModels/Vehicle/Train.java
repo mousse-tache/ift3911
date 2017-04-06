@@ -1,17 +1,22 @@
 package Travel.VehicleModels.Vehicle;
 
-import java.util.Set;
+import java.util.List;
 
-import Travel.VehicleModels.Places.PassengerSpace;
+import Travel.VehicleModels.Sections.BaseSection;
+import Travel.VehicleModels.Sections.EconomicSection;
+import Travel.VehicleModels.Sections.PremiumSection;
 
 public class Train extends TransportVehicleModel {
 
-	/**
-	 * 
-	 * @param section
-	 */
-	public Set<PassengerSpace> getPassengerSpaces(char section) {
-		// TODO - implement Train.getPassengerSpaces
-		throw new UnsupportedOperationException();
+	Train(String ID, String modelName, List<BaseSection> listSections) {
+		super(ID, modelName, validSections(listSections));
+	}
+
+	private static List<BaseSection> validSections(List<BaseSection> sections) {
+		for (BaseSection s : sections)
+			if (!(s instanceof PremiumSection || s instanceof EconomicSection))
+				throw new IllegalArgumentException("A train can't have section of type " + s.typeToString());
+			
+		return sections;
 	}
 }

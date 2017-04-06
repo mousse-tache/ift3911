@@ -1,7 +1,7 @@
 package Travel.Forms;
 
 import Travel.VehicleModels.Sections.BaseSection;
-import Travel.VehicleModels.Sections.RowType;
+import Travel.VehicleModels.Sections.Row.RowType;
 
 public class VehicleSectionForm {
 
