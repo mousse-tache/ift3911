@@ -8,6 +8,7 @@ public class Reservation implements IPayable {
 	private Integer reservationNumber;
 	private Client client;
 	Reservable reservable;
+	Payment payment;
 
 	/**
 	 * 
@@ -54,11 +55,6 @@ public class Reservation implements IPayable {
 
 	public String getConfirmationNumber() {
 		// TODO - implement Reservation.getConfirmationNumber
-		throw new UnsupportedOperationException();
-	}
-
-	public Payment getPayment() {
-		// TODO - implement Reservation.getPayment
 		throw new UnsupportedOperationException();
 	}
 
