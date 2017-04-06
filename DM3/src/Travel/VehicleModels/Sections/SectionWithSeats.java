@@ -1,15 +1,30 @@
 package Travel.VehicleModels.Sections;
 
+import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
 import Travel.VehicleModels.Places.PassengerSpace;
 import Travel.VehicleModels.Places.Seat;
+import Travel.VehicleModels.Sections.Row.RowType;
 
 public abstract class SectionWithSeats extends BaseSection {
 
 	List<Row> rows;
+
+	private void createRows(RowType rowType, int nbRow) {
+		if (nbRow > 26) throw new IllegalArgumentException("We currently don't allow row numbers to be past 'z'");
+		this.rows = new ArrayList<Row>();
+		for (char row='a';row<=nbRow;row++){
+			rows.add(new Row(this, rowType, row));
+		}
+	}
+
+	SectionWithSeats(Double priceRatio, String sectionType, int nbRow, RowType rowType) {
+		super(priceRatio, sectionType);
+		createRows(rowType,nbRow);
+	}
 
 	public Set<PassengerSpace> getAllPassengerPlaces(){
 		Set<PassengerSpace> spaces = new HashSet<PassengerSpace>();
@@ -28,4 +43,5 @@ public abstract class SectionWithSeats extends BaseSection {
 		}
 		return total;
 	}
+	
 }

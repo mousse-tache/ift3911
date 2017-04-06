@@ -17,4 +17,9 @@ public class Seat extends PassengerSpace {
 	public int getCollumn() {
 		return collumn;
 	}
+
+	@Override
+	public String placeCode() {
+		return this.row + Integer.toString(collumn);
+	}
 }
