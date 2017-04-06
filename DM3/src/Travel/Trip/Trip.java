@@ -72,10 +72,11 @@ public abstract class Trip implements IVisitable {
 	public TravelFacility getArrivalLocation() {
 		return this.itinerary.getArrival().getLocation();
 	}
-
+	
 	public Date getArrivalTime() {
 		long date = departureTime.getTime() + this.itinerary.getTripTime().getTime();
 		return new Date(date);
+
 	}
 
 	public String getId() {
@@ -86,6 +87,10 @@ public abstract class Trip implements IVisitable {
 		return this.basePrice;
 	}
 
+	public ConcreteVehicle getVehicle(){
+		return vehicle;
+	}
+	
 	public TravelType getType() {
 		return this.type;
 	}
@@ -94,8 +99,14 @@ public abstract class Trip implements IVisitable {
 		return this.company;
 	}
 
+<<<<<<< HEAD
+	public Itinerary getItinerary() {
+		// TODO Auto-generated method stub
+		return this.itinerary;
+=======
 	public List<ReservableForTrip> getReservables() {
 		return reservables;
+>>>>>>> f95e06967f80df85b3cfd4d473467c606144635f
 	}
 	
 	@Override

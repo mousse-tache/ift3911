@@ -11,8 +11,7 @@ public class TravelCompanyForm extends BaseForm {
 	 * @param tc
 	 */
 	public TravelCompanyForm(TravelCompany tc) {
-		// TODO - implement TravelCompanyForm.TravelCompanyForm
-		throw new UnsupportedOperationException();
+		this.name = tc.getName();
 	}
 
 	public BaseForm createFromPrompt() {
