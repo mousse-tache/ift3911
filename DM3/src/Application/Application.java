@@ -30,8 +30,7 @@ public class Application {
 	}
 
 	public static LiveStorage getStorage() {
-		// TODO - implement Application.getStorage
-		return liveStorage;
+		return LiveStorage.getInstance();
 	}
 
 }
