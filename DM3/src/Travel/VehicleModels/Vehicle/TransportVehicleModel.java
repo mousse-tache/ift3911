@@ -29,7 +29,6 @@ public abstract class TransportVehicleModel {
 	public Set<PassengerSpace> getPassengerSpaces(String sectionString){
 		return this.sections.get(sectionString).getAllPassengerPlaces();
 	}
-		
 
 	public String getID() {
 		return this.ID;
