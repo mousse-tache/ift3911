@@ -1,3 +1,4 @@
 *.vux
 *.working*
 *.vpp~*
+build/
