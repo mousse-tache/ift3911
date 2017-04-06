@@ -14,14 +14,25 @@ public class Reservable {
 	 * @param r
 	 */
 	public boolean reserve(Date time, Reservation r) {
-		state.reserve(this);
-		this.reservation = r;
-		throw new UnsupportedOperationException();
+            try {
+                state.reserve(this);
+                this.reservation = r;
+                return true;
+            }
+            catch (Exception ex) {
+                return false;
+            }
 	}
 
 	public boolean cancel() {
-		// TODO - implement Reservable.cancel
-		throw new UnsupportedOperationException();
+                try{
+                    state.cancel(this);
+                    return true;
+                }
+                catch (Exception ex) {
+                return false;
+            }
+                
 	}
 
 	public double getPrice() {
