@@ -25,7 +25,7 @@ public class ConcreteVehicle {
 	 * 
 	 * @param section
 	 */
-	public Set<PassengerSpace> getPassengerSpaces(char section) {
+	public Set<PassengerSpace> getPassengerSpaces(String section) {
 		return this.vehicleModel.getPassengerSpaces(section);
 	}
 
