@@ -25,14 +25,13 @@ public abstract class Trip implements IVisitable {
 	protected TravelCompany company;
 	Itinerary itinerary;
 	
-	public Trip(TripForm form){
-		this.id = form.getID();
-		this.basePrice = form.getBasePrice();
-		this.departureTime = form.getDepartureTime();
-		this.type = form.getType();
-		this.company = form.getCompany();
-		this.itinerary = form.getItineraryID();
-	}
+//	public Trip(TripForm form){
+//		this.id = form.getID();
+//		this.basePrice = form.getBasePrice();
+//		this.departureTime = form.getDepartureTime();
+//		this.type = form.getType();
+//		this.company = form.getCompany();
+//	}
 
 	public boolean canBeCanceledOrModified() {
 		Date now = Date.from(Instant.now());
