@@ -6,6 +6,7 @@ public class Reservable {
 
 	private ReservableState state;
 	Reservation reservation;
+	private Double price;
 
 	/**
 	 * 
@@ -13,7 +14,8 @@ public class Reservable {
 	 * @param r
 	 */
 	public boolean reserve(Date time, Reservation r) {
-		// TODO - implement Reservable.reserve
+		state.reserve(this);
+		this.reservation = r;
 		throw new UnsupportedOperationException();
 	}
 
@@ -23,13 +25,11 @@ public class Reservable {
 	}
 
 	public double getPrice() {
-		// TODO - implement Reservable.getPrice
-		throw new UnsupportedOperationException();
+		return this.price;
 	}
 
 	public boolean isAvailable() {
-		// TODO - implement Reservable.isAvailable
-		throw new UnsupportedOperationException();
+		return state instanceof Free;
 	}
 
 	public ReservableState getState() {

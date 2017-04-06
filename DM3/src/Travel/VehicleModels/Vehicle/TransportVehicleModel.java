@@ -1,6 +1,8 @@
 package Travel.VehicleModels.Vehicle;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Set;
 
 import Travel.VehicleModels.Places.PassengerSpace;
@@ -10,13 +12,24 @@ public abstract class TransportVehicleModel {
 
 	protected String ID;
 	protected String modelName;
-	protected List<BaseSection> sections;
+	protected Map<String, BaseSection> sections;
 
-	/**
-	 * 
-	 * @param section
-	 */
-	public abstract Set<PassengerSpace> getPassengerSpaces(char section);
+	TransportVehicleModel(String ID, String modelName, List<BaseSection> listSections){
+		this.ID = ID;
+		this.modelName = modelName;
+		Map<String, BaseSection> sectionMap = new HashMap<String, BaseSection>();
+		for (BaseSection s : listSections){
+			if (sectionMap.containsKey(s.typeToString()))
+				throw new IllegalArgumentException("Section " + s.typeToString() + " appears more than once");
+			sectionMap.put(s.typeToString(), s);
+		}
+		this.sections = sectionMap;
+	}
+
+	public Set<PassengerSpace> getPassengerSpaces(String sectionString){
+		return this.sections.get(sectionString).getAllPassengerPlaces();
+	}
+		
 
 	public String getID() {
 		return this.ID;
@@ -26,7 +39,7 @@ public abstract class TransportVehicleModel {
 		return this.modelName;
 	}
 
-	public List<BaseSection> getSections() {
+	public Map<String, BaseSection> getSections() {
 		return this.sections;
 	}
 

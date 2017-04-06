@@ -1,26 +1,23 @@
 package Travel.VehicleModels.Sections;
 
+import java.util.Set;
+
+import Travel.VehicleModels.Places.PassengerSpace;
+
 public abstract class BaseSection {
 
 	protected Double priceRatio;
+	String type;
 
-	public void getAvailablePassengerSeats() {
-		// TODO - implement BaseSection.getAvailablePassengerSeats
-		throw new UnsupportedOperationException();
-	}
+	public abstract Set<PassengerSpace> getAllPassengerPlaces();
 
-	public Double getPrice() {
-		// TODO - implement BaseSection.getPrice
-		throw new UnsupportedOperationException();
-	}
+	public abstract int getTotalPassengerPlaces();
 
-	public int getTotalPassengerSeats() {
-		// TODO - implement BaseSection.getTotalPassengerSeats
-		throw new UnsupportedOperationException();
+	public String typeToString(){
+		return this.type;
 	}
 
 	public Double getPriceRatio() {
 		return this.priceRatio;
 	}
-
 }
