@@ -18,7 +18,8 @@ public class LiveStorage {
 		throw new UnsupportedOperationException();
 	}
 
-	public LiveStorage getInstance() {
+	public static LiveStorage getInstance() {
+		if (this.instance==null) {this.instance=new LiveStorage()}
 		return this.instance;
 	}
 

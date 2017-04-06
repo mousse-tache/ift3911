@@ -1,4 +1,4 @@
-package Utils.TripSearcher;
+package Utils.Searcher;
 
 import java.util.Date;
 import java.util.List;
@@ -7,7 +7,7 @@ import Reservation.Reservable;
 import Travel.Facilities.TravelFacility;
 import Travel.Trip.Trip;
 
-public class TripSearcher {
+public class Searcher {
 
 	/**
 	 * 

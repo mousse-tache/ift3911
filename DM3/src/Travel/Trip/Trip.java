@@ -1,13 +1,16 @@
 package Travel.Trip;
 
+import java.time.Instant;
 import java.util.Date;
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 import Travel.ConcreteVehicle;
 import Travel.ReservableForTrip;
 import Travel.TravelCompany;
 import Travel.TravelType;
 import Travel.Facilities.TravelFacility;
+import Travel.Forms.TripForm;
 import Travel.Itineraries.Itinerary;
 import Utils.TripVisitor.IVisitable;
 
@@ -21,25 +24,32 @@ public abstract class Trip implements IVisitable {
 	protected TravelType type;
 	protected TravelCompany company;
 	Itinerary itinerary;
+	
+//	public Trip(TripForm form){
+//		this.id = form.getID();
+//		this.basePrice = form.getBasePrice();
+//		this.departureTime = form.getDepartureTime();
+//		this.type = form.getType();
+//		this.company = form.getCompany();
+//	}
 
 	public boolean canBeCanceledOrModified() {
-		// TODO - implement Trip.canBeCanceledOrModified
-		throw new UnsupportedOperationException();
+		Date now = Date.from(Instant.now());
+		long timeBeforeTrip = this.departureTime.getTime() - now.getTime();
+		return timeBeforeTrip > TimeUnit.MILLISECONDS.toDays(1);
 	}
 
 	public TravelFacility getDepartureLocation() {
-		// TODO - implement Trip.getDepartureLocation
-		throw new UnsupportedOperationException();
+		return this.itinerary.getDeparture().getLocation();
 	}
 
 	public TravelFacility getArrivalLocation() {
-		// TODO - implement Trip.getArrivalLocation
-		throw new UnsupportedOperationException();
+		return this.itinerary.getArrival().getLocation();
 	}
 
 	public Date getArrivalTime() {
-		// TODO - implement Trip.getArrivalTime
-		throw new UnsupportedOperationException();
+		long date = departureTime.getTime() + this.itinerary.getTripTime().getTime();
+		return new Date(date);
 	}
 
 	public String getId() {

@@ -2,10 +2,11 @@ package Reservation;
 
 import java.util.Timer;
 import java.util.TimerTask;
+import java.util.concurrent.TimeUnit;
 
 public class Reserved extends ReservableState {
 
-	private static long delay = 1000*60*60*24;
+	private static long delay = TimeUnit.MILLISECONDS.toDays(1);
 	private Timer timer;
 
 	/**
