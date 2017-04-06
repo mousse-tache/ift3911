@@ -17,6 +17,7 @@ import Utils.TripVisitor.IVisitable;
 public abstract class Trip implements IVisitable {
 
 	List<ReservableForTrip> reservables;
+
 	ConcreteVehicle vehicle;
 	protected String id;
 	protected Double basePrice;
@@ -43,6 +44,10 @@ public abstract class Trip implements IVisitable {
 		return this.itinerary.getDeparture().getLocation();
 	}
 
+	public Date getDepartureDateTime() {
+		return this.departureTime;
+	}
+
 	public TravelFacility getArrivalLocation() {
 		return this.itinerary.getArrival().getLocation();
 	}
@@ -66,6 +71,10 @@ public abstract class Trip implements IVisitable {
 
 	public TravelCompany getCompany() {
 		return this.company;
+	}
+
+	public List<ReservableForTrip> getReservables() {
+		return reservables;
 	}
 
 }
