@@ -1,8 +1,10 @@
 package Application;
 
-import Travel.Trip.*;
-import Travel.Facilities.*;
-import Travel.*;
+import java.util.List;
+
+import Travel.TravelCompany;
+import Travel.Facilities.TravelFacility;
+import Travel.Trip.Trip;
 
 public class LiveStorage {
 

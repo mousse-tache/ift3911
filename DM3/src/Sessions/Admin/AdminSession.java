@@ -1,6 +1,6 @@
 package Sessions.Admin;
 
-import Sessions.*;
+import Sessions.Session;
 
 public class AdminSession extends Session {
 

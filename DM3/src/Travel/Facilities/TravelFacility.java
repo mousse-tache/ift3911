@@ -1,6 +1,6 @@
 package Travel.Facilities;
 
-import Travel.*;
+import Travel.TravelType;
 
 public abstract class TravelFacility {
 

@@ -1,6 +1,6 @@
 package Travel.VehicleModels.Places;
 
-import Travel.VehicleModels.Sections.*;
+import Travel.VehicleModels.Sections.BaseSection;
 
 public abstract class PassengerSpace {
 

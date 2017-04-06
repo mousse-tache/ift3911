@@ -1,7 +1,8 @@
 package Travel.VehicleModels.Sections;
 
-import java.util.*;
-import Travel.VehicleModels.Places.*;
+import java.util.List;
+
+import Travel.VehicleModels.Places.Cabin;
 
 public abstract class SectionWithCabins extends BaseSection {
 

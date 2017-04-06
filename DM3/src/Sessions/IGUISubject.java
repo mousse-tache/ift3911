@@ -14,6 +14,6 @@ public interface IGUISubject {
 	 */
 	void detach(int IGUIObserver);
 
-	void notifyAll();
+	void notifyObservers();
 
 }

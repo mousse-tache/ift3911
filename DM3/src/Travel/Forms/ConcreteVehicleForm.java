@@ -1,6 +1,6 @@
 package Travel.Forms;
 
-import Travel.*;
+import Travel.ConcreteVehicle;
 
 
 public class ConcreteVehicleForm extends BaseForm {
@@ -13,7 +13,7 @@ public class ConcreteVehicleForm extends BaseForm {
 	 * @param cv
 	 */
 	public ConcreteVehicleForm(ConcreteVehicle cv) {
-		this.modelID = cv.getID();
+		this.modelID = cv.getId();
 		this.ownerID = cv.getOwnerID();
 	}
 	public BaseForm createFromPrompt() {

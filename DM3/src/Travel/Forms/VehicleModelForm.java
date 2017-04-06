@@ -1,6 +1,8 @@
 package Travel.Forms;
 
-import Travel.VehicleModels.Vehicle.*;
+import java.util.List;
+
+import Travel.VehicleModels.Vehicle.TransportVehicleModel;
 
 public class VehicleModelForm extends BaseForm {
 

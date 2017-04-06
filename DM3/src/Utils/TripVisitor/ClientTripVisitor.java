@@ -1,6 +1,6 @@
 package Utils.TripVisitor;
 
-import Travel.Trip.*;
+import Travel.Trip.Trip;
 
 public class ClientTripVisitor implements TripVisitor {
 
@@ -8,7 +8,7 @@ public class ClientTripVisitor implements TripVisitor {
 	 * 
 	 * @param trip
 	 */
-	public string visitTrip(Trip trip) {
+	public String visitTrip(Trip trip) {
 		// TODO - implement ClientTripVisitor.visitTrip
 		throw new UnsupportedOperationException();
 	}

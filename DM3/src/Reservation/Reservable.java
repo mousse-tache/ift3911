@@ -1,5 +1,7 @@
 package Reservation;
 
+import java.util.Date;
+
 public class Reservable {
 
 	private ReservableState state;
@@ -10,7 +12,7 @@ public class Reservable {
 	 * @param time
 	 * @param r
 	 */
-	public boolean reserve(DateTime time, Reservation r) {
+	public boolean reserve(Date time, Reservation r) {
 		// TODO - implement Reservable.reserve
 		throw new UnsupportedOperationException();
 	}
@@ -20,7 +22,7 @@ public class Reservable {
 		throw new UnsupportedOperationException();
 	}
 
-	public Real getPrice() {
+	public double getPrice() {
 		// TODO - implement Reservable.getPrice
 		throw new UnsupportedOperationException();
 	}

@@ -1,10 +1,11 @@
 package Travel.Itineraries;
 
-import Travel.Facilities.*;
+import java.sql.Time;
+import java.util.List;
 
 public class TrainLine extends Itinerary {
 
-	private List<Stop<TrainStation>> stops;
+	private List<Stop> stops;
 
 	public Stop getDeparture() {
 		// TODO - implement TrainLine.getDeparture
@@ -21,7 +22,7 @@ public class TrainLine extends Itinerary {
 		throw new UnsupportedOperationException();
 	}
 
-	public List<Stop<T>> getStops() {
+	public List<Stop> getStops() {
 		// TODO - implement TrainLine.getStops
 		throw new UnsupportedOperationException();
 	}

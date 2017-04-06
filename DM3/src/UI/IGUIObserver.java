@@ -2,6 +2,6 @@ package UI;
 
 public interface IGUIObserver {
 
-	void notify();
+	void update();
 
 }

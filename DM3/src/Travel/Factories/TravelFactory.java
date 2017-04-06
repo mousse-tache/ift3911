@@ -1,11 +1,19 @@
 package Travel.Factories;
 
-import Travel.*;
-import Travel.Forms.*;
-import Travel.Trip.*;
-import Travel.Facilities.*;
-import Travel.VehicleModels.Vehicle.*;
-import Travel.Itineraries.*;
+import java.util.List;
+
+import Travel.ConcreteVehicle;
+import Travel.TravelCompany;
+import Travel.TravelType;
+import Travel.Facilities.TravelFacility;
+import Travel.Forms.ConcreteVehicleForm;
+import Travel.Forms.TravelCompanyForm;
+import Travel.Forms.TravelFacilityForm;
+import Travel.Forms.TripForm;
+import Travel.Itineraries.Itinerary;
+import Travel.Itineraries.Stop;
+import Travel.Trip.Trip;
+import Travel.VehicleModels.Vehicle.TransportVehicleModel;
 
 public abstract class TravelFactory {
 
@@ -51,9 +59,6 @@ public abstract class TravelFactory {
 	 * 
 	 * @param stops
 	 */
-	public Itinerary createItinerary(List<Stop<T>> stops) {
-		// TODO - implement TravelFactory.createItinerary
-		throw new UnsupportedOperationException();
-	}
+	public abstract Itinerary createItinerary(List<Stop> stops);
 
 }

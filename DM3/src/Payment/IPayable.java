@@ -1,12 +1,14 @@
 package Payment;
 
+import Sessions.Client.ClientPaymentInfo;
+
 public interface IPayable {
 
 	Payment getPayment();
 
-	PaymentInfo getPaymentInfo();
+	ClientPaymentInfo getPaymentInfo();
 
-	Real getAmount();
+	Double getAmount();
 
 	String getConfirmationNumber();
 

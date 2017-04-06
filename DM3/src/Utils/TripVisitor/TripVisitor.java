@@ -1,6 +1,6 @@
 package Utils.TripVisitor;
 
-import Travel.Trip.*;
+import Travel.Trip.Trip;
 
 public interface TripVisitor {
 
@@ -8,6 +8,6 @@ public interface TripVisitor {
 	 * 
 	 * @param trip
 	 */
-	string visitTrip(Trip trip);
+	String visitTrip(Trip trip);
 
 }

@@ -1,10 +1,16 @@
 package Travel.Factories;
 
-import Travel.Trip.*;
-import Travel.Forms.*;
-import Travel.Facilities.*;
-import Travel.*;
-import Travel.VehicleModels.Vehicle.*;
+import java.util.List;
+
+import Travel.ConcreteVehicle;
+import Travel.Facilities.TravelFacility;
+import Travel.Forms.ConcreteVehicleForm;
+import Travel.Forms.TravelFacilityForm;
+import Travel.Forms.TripForm;
+import Travel.Itineraries.Itinerary;
+import Travel.Itineraries.Stop;
+import Travel.Trip.Trip;
+import Travel.VehicleModels.Vehicle.TransportVehicleModel;
 
 public class PlaneFactory extends TravelFactory {
 
@@ -45,6 +51,11 @@ public class PlaneFactory extends TravelFactory {
 	public TransportVehicleModel createVehicleModel() {
 		// TODO - implement PlaneFactory.createVehicleModel
 		throw new UnsupportedOperationException();
+	}
+
+	public Itinerary createItinerary(List<Stop> stops) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }

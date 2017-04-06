@@ -1,12 +1,14 @@
 package Payment;
 
+import java.util.Date;
+
 public class Payment {
 
 	IPayable payable;
 	private String status;
 	private String confirmationNumber;
-	private Real amountLeft;
-	private DateTime transactionTime;
+	private double  amountLeft;
+	private Date transactionTime;
 
 	/**
 	 * 
@@ -25,11 +27,11 @@ public class Payment {
 		return this.confirmationNumber;
 	}
 
-	public Real getAmountLeft() {
+	public double getAmountLeft() {
 		return this.amountLeft;
 	}
 
-	public DateTime getTransactionTime() {
+	public Date getTransactionTime() {
 		return this.transactionTime;
 	}
 

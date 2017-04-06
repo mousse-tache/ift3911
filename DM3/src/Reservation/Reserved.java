@@ -1,8 +1,11 @@
 package Reservation;
 
+import java.util.Date;
+import java.util.Timer;
+
 public class Reserved extends ReservableState {
 
-	private DateTime reservationDateTime;
+	private Date reservationDateTime;
 	private Timer timer;
 
 	/**
