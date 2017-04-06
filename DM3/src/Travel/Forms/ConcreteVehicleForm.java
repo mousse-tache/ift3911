@@ -2,6 +2,7 @@ package Travel.Forms;
 
 import Travel.*;
 
+
 public class ConcreteVehicleForm extends BaseForm {
 
 	private String modelID;
@@ -12,10 +13,9 @@ public class ConcreteVehicleForm extends BaseForm {
 	 * @param cv
 	 */
 	public ConcreteVehicleForm(ConcreteVehicle cv) {
-		// TODO - implement ConcreteVehicleForm.ConcreteVehicleForm
-		throw new UnsupportedOperationException();
+		this.modelID = cv.getID();
+		this.ownerID = cv.getOwnerID();
 	}
-
 	public BaseForm createFromPrompt() {
 		// TODO - implement ConcreteVehicleForm.createFromPrompt
 		throw new UnsupportedOperationException();

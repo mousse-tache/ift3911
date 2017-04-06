@@ -8,7 +8,7 @@ public class ConcreteVehicle {
 
 	TravelCompany owner;
 	TransportVehicleModel vehicleModel;
-	private string id;
+	private String id;
 	private List trips;
 	private TravelType type;
 
@@ -27,7 +27,7 @@ public class ConcreteVehicle {
 		throw new UnsupportedOperationException();
 	}
 
-	public string getId() {
+	public String getId() {
 		return this.id;
 	}
 
@@ -37,6 +37,10 @@ public class ConcreteVehicle {
 
 	public TravelType getType() {
 		return this.type;
+	}
+
+	public String getOwnerID() {
+		return this.owner.getID();
 	}
 
 }
