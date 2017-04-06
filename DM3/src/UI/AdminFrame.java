@@ -1,4 +1,6 @@
 package UI;
 
-public class AdminFrame extends BaseFrame {
+import javax.swing.JFrame;
+
+public class AdminFrame extends UserFrame {
 }

@@ -3,11 +3,13 @@ package Application;
 import java.util.Set;
 
 import Sessions.Session;
+import UI.HomeFrame;
 
 public class Application {
 
 	private static LiveStorage liveStorage;
 	private static Set<Session> sessions;
+	private static HomeFrame mainFrame;
 
 	public void init() {
 		// TODO - implement Application.init
@@ -23,9 +25,8 @@ public class Application {
 	 * 
 	 * @param args
 	 */
-	public static void main(String[] args) {
-		// TODO - implement Application.main
-		throw new UnsupportedOperationException();
+	public Application(String args[]) {
+		mainFrame = new HomeFrame();
 	}
 
 	public static LiveStorage getStorage() {

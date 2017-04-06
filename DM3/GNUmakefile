@@ -1,9 +1,9 @@
-SRC_DIR = src/
+SRC_DIR = src
 BUILD_DIR = build/
 
 SRC_FILES = $(shell find $(SRC_DIR) -name "*.java")
 
-all: build
+all: clean run
 
 clean:
 	rm -rdf $(BUILD_DIR)
@@ -12,4 +12,7 @@ init:
 	mkdir -p $(BUILD_DIR)
 
 build: init
-	javac -d $(BUILD_DIR) $(SRC_FILES)
+	javac -verbose -d $(BUILD_DIR) $(SRC_FILES)
+
+run: build
+	java -cp $(BUILD_DIR) Main

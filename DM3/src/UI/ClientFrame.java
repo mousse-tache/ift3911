@@ -1,4 +1,6 @@
 package UI;
 
-public class ClientFrame extends BaseFrame {
+import javax.swing.JFrame;
+
+public class ClientFrame extends UserFrame {
 }
