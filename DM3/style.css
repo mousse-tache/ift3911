@@ -43,6 +43,14 @@ th {
 	border-color:grey;
 }
 
+td {
+	width:22%;
+}
+
+td.first_col , th.first_col  {
+	width:5%;
+}
+
 .student > * {
 	width: 90%;
 	margin:auto;

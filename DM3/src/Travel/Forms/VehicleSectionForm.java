@@ -15,9 +15,9 @@ public class VehicleSectionForm {
 	 */
 	public VehicleSectionForm(BaseSection vs) {
 
-		//this.nbSpaces = vs.getTotalPassengerPlaces();
-		//this.disposition = vs.get
+		this.nbSpaces = vs.getTotalPassengerPlaces();
 		
+		//this.disposition = vs.get???
 	}
 
 	public char getId() {

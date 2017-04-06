@@ -2,7 +2,7 @@ package Reservation;
 
 import java.util.Date;
 
-public class Reservable {
+public abstract class Reservable {
 
 	private ReservableState state;
 	Reservation reservation;
@@ -12,17 +12,24 @@ public class Reservable {
 	 * 
 	 * @param time
 	 * @param r
+         * @return 
 	 */
 	public boolean reserve(Date time, Reservation r) {
-		state.reserve(this);
-		this.reservation = r;
-		throw new UnsupportedOperationException();
+            if(this.isAvailable()) {
+                this.reservation = r;
+                state.reserve(this);
+                return true;
+            }
+            else {return false;}
 	}
 
 	public boolean cancel() {
-		// TODO - implement Reservable.cancel
-		throw new UnsupportedOperationException();
-	}
+            if(state instanceof Assigned || state instanceof Reserved) {
+                state.cancel(this);
+                return true;
+            }
+            else {return false;}
+        }
 
 	public double getPrice() {
 		return this.price;

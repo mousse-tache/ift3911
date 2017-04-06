@@ -51,7 +51,7 @@ public class TripForm extends BaseForm {
 	 */
 	public TripForm(Trip t) {
 		this.basePrice = t.getBasePrice();
-		this.departureTime = t.getDepartureTime();
+		this.departureTime = t.getArrivalTime();
 		this.itineraryID = t.getItinerary().getId();
 		this.vehicleID = t.getVehicle().getId();
 		this.company = t.getCompany();
