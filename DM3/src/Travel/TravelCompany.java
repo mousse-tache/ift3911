@@ -11,5 +11,22 @@ public class TravelCompany {
 	public String getID() {
 		return id;
 	}
-
+	
+	public String getName() {
+		return name;
+	}
+	
+	public List<ConcreteVehicle> getVehicles() {
+		return vehicles;
+	}
+	
+	public boolean addVehicle(ConcreteVehicle v) {
+		if (vehicles.contains(v))
+			return false;
+		return vehicles.add(v);
+	}
+	
+	public boolean removeVehicle(ConcreteVehicle v){
+		return vehicles.remove(v);
+	}
 }
