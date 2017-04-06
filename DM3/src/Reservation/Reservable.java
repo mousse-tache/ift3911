@@ -44,4 +44,8 @@ public abstract class Reservable {
 		this.state = state;
 	}
 
+	public boolean isAvailable() {
+		return state.isAvailable();
+	}
+
 }
