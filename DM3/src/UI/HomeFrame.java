@@ -9,7 +9,6 @@ import Sessions.Session;
 
 public class HomeFrame extends JFrame {
 
-
 	JButton b_newAdmin = new JButton("New Admin");
 	JButton b_newClient = new JButton("New Client");
 	

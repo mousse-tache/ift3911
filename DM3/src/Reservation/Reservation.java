@@ -19,15 +19,16 @@ public class Reservation implements IPayable {
 	 * @param c
 	 */
 	public Reservation(Reservable r, Client c) {
-		// TODO - implement Reservation.Reservation
-		throw new UnsupportedOperationException();
+		this.reservable = r;
+		this.client = c;
+		payment = new Payment(this, r.getPrice());
 	}
 
 	/**
 	 * 
 	 * @param r
 	 */
-	public void modify(ReservableForTrip r) {
+	public void changeFor(ReservableForTrip r) {
 		// TODO - implement Reservation.modify
 		throw new UnsupportedOperationException();
 	}
@@ -38,6 +39,7 @@ public class Reservation implements IPayable {
 	 */
 	public String pay(ClientPaymentInfo clientPaymentInfo) {
 		// TODO - implement Reservation.pay
+		payment.pay(reservable.getPrice());
 		throw new UnsupportedOperationException();
 	}
 

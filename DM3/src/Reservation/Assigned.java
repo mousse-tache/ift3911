@@ -2,12 +2,13 @@ package Reservation;
 
 public class Assigned extends ReservableState {
 
-	/**
-	 * 
-	 * @param ctx
-	 */
-	public void event(Reservable ctx) {
-		// TODO - implement Assigned.event
-		throw new UnsupportedOperationException();
+	@Override
+	public void reserve(Reservable ctx) {
+		System.out.println("Place already reserved");
+	}
+
+	@Override
+	public void cancel(Reservable ctx) {
+		ctx.setState(new Free());
 	}
 }
