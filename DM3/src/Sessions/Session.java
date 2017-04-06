@@ -17,8 +17,7 @@ public class Session implements IGUISubject {
 	 * @param c
 	 */
 	public void executeCommand(Command c) {
-		// TODO - implement Session.executeCommand
-		throw new UnsupportedOperationException();
+		this.executor.execute(c);
 	}
 
 	/**
