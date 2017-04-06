@@ -8,6 +8,10 @@ public class Reservable {
 	Reservation reservation;
 	private Double price;
 
+	public Reservable(double price){
+		this.state = new Free();
+		this.price = price;
+	}
 	/**
 	 * 
 	 * @param time
