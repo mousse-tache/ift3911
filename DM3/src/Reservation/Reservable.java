@@ -5,42 +5,35 @@ import java.util.Date;
 public abstract class Reservable {
 
 	private ReservableState state;
-	Reservation reservation;
 	private Double price;
 
 	public Reservable(double price){
 		this.state = new Free();
 		this.price = price;
 	}
-	/**
-	 * 
-	 * @param time
-	 * @param r
-         * @return 
-	 */
+
 	public boolean reserve(Date time, Reservation r) {
-            if(this.isAvailable()) {
-                this.reservation = r;
-                state.reserve(this);
-                return true;
-            }
-            else {return false;}
+		if(this.state.isAvailable()) {
+			state.reserve(this, r);
+			return true;
+		}
+		return false;
 	}
 
 	public boolean cancel() {
-            if(state instanceof Assigned || state instanceof Reserved) {
-                state.cancel(this);
-                return true;
-            }
-            else {return false;}
-        }
+		if(state instanceof Assigned || state instanceof Reserved) {
+			state.cancel(this);
+			return true;
+		}
+		return false;
+	}
+	
+	public Reservation getReservation(){
+		return state.getReservation();
+	}
 
 	public double getPrice() {
 		return this.price;
-	}
-
-	public boolean isAvailable() {
-		return state instanceof Free;
 	}
 
 	public ReservableState getState() {
