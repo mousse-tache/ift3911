@@ -9,6 +9,12 @@ public class ReservableForTrip extends Reservable {
 	Trip trip;
 	private PassengerSpace passengerSpace;
 
+	public ReservableForTrip(Trip trip, PassengerSpace space, double price) {
+		super(price);
+		this.trip = trip;
+		this.passengerSpace = space;
+	}
+
 	public Trip getTrip() {
 		return trip;
 	}
