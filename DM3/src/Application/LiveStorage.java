@@ -8,7 +8,7 @@ import Travel.Trip.Trip;
 
 public class LiveStorage {
 
-	private static LiveStorage instance;
+	private static LiveStorage instance = new LiveStorage();
 	private List<Trip> trips;
 	private List<TravelFacility> travelFacilities;
 	private List<TravelCompany> companies;
@@ -18,11 +18,8 @@ public class LiveStorage {
 		throw new UnsupportedOperationException();
 	}
 
-	public LiveStorage getInstance() {
-		if (this.instance==null) {
-                    this.instance=new LiveStorage();
-                }
-		return this.instance;
+	public static LiveStorage getInstance() {
+		return instance;
 	}
 
 	public void populate() {

@@ -7,7 +7,7 @@ import UI.HomeFrame;
 
 public class Application {
 
-	private static LiveStorage liveStorage;
+	//private static LiveStorage liveStorage; //Ne devrait pas être nulle part ailleurs que dans la classe LiveStorage
 	private static Set<Session> sessions;
 	private static HomeFrame mainFrame;
 
@@ -30,7 +30,7 @@ public class Application {
 	}
 
 	public static LiveStorage getStorage() {
-		return liveStorage.getInstance();
+		return LiveStorage.getInstance();
 	}
 
 }
