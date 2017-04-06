@@ -8,6 +8,11 @@ public abstract class BaseSection {
 
 	protected Double priceRatio;
 	String type;
+	
+	BaseSection(Double priceRatio, String type){
+		this.priceRatio = priceRatio;
+		this.type = type;
+	}
 
 	public abstract Set<PassengerSpace> getAllPassengerPlaces();
 

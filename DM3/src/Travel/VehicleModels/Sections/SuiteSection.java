@@ -1,7 +1,7 @@
 package Travel.VehicleModels.Sections;
 
 public class SuiteSection extends SectionWithCabins {
-
-	private Double priceRatio = 0.9;
-
+	SuiteSection(int nbCabins) {
+		super(0.9, "S", nbCabins, 5);
+	}
 }

@@ -5,8 +5,6 @@ import java.awt.GridLayout;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 
-import Sessions.Session;
-
 public class HomeFrame extends JFrame {
 
 	JButton b_newAdmin = new JButton("New Admin");

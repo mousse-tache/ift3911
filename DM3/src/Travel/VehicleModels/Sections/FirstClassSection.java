@@ -1,7 +1,9 @@
 package Travel.VehicleModels.Sections;
 
+import Travel.VehicleModels.Sections.Row.RowType;
+
 public class FirstClassSection extends SectionWithSeats {
-
-	private Double priceRatio = 1.0;
-
+	public FirstClassSection(int nbRow, RowType rowType) {
+		super(1.0, "F", nbRow, rowType);
+	}
 }

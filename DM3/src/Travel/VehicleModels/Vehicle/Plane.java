@@ -1,9 +1,7 @@
 package Travel.VehicleModels.Vehicle;
 
 import java.util.List;
-import java.util.Set;
 
-import Travel.VehicleModels.Places.PassengerSpace;
 import Travel.VehicleModels.Sections.BaseSection;
 import Travel.VehicleModels.Sections.SectionWithSeats;
 
@@ -21,12 +19,4 @@ public class Plane extends TransportVehicleModel {
 		return sections;
 	}
 
-	/**
-	 * 
-	 * @param section
-	 */
-	public Set<PassengerSpace> getPassengerSpaces(char section) {
-		// TODO - implement Plane.getPassengerSpaces
-		throw new UnsupportedOperationException();
-	}
 }
