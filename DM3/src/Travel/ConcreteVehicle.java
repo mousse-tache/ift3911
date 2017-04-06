@@ -1,8 +1,10 @@
 package Travel;
 
 import java.util.List;
+import java.util.Map;
 import java.util.Set;
 
+import Travel.Trip.Trip;
 import Travel.VehicleModels.Places.PassengerSpace;
 import Travel.VehicleModels.Sections.BaseSection;
 import Travel.VehicleModels.Vehicle.TransportVehicleModel;
@@ -12,13 +14,11 @@ public class ConcreteVehicle {
 	TravelCompany owner;
 	TransportVehicleModel vehicleModel;
 	private String id;
-	private List trips;
+	private List<Trip> trips;
 	private TravelType type;
 
-	public Set<BaseSection> getSections() {
-		// TODO - implement ConcreteVehicle.getSections
-
-		throw new UnsupportedOperationException();
+	public Map<String, BaseSection> getSections() {
+		return this.vehicleModel.getSections();
 	}
 
 	/**
@@ -26,15 +26,14 @@ public class ConcreteVehicle {
 	 * @param section
 	 */
 	public Set<PassengerSpace> getPassengerSpaces(char section) {
-		// TODO - implement ConcreteVehicle.getPassengerSpaces
-		throw new UnsupportedOperationException();
+		return this.vehicleModel.getPassengerSpaces(section);
 	}
 
 	public String getId() {
 		return this.id;
 	}
 
-	public List getTrips() {
+	public List<Trip> getTrips() {
 		return this.trips;
 	}
 
@@ -42,8 +41,7 @@ public class ConcreteVehicle {
 		return this.type;
 	}
 
-	public String getOwnerID() {
-		return this.owner.getID();
-	}
+	public String getOwnerID() { return this.owner.getID(); }
+	public TravelCompany getOwner() { return this.owner; }
 
 }
