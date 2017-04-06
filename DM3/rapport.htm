@@ -147,6 +147,19 @@
 		<h2 id="qual">Discussion sur la qualité</h2>
 		<h2>Génération et implémentation</h2>
 		<h2>Réseau de Pétri</h2>
+		<p>
+			<img src="./images/pn.png"\>
+			marquage initial [k,0,k,0]. Tous les arcs sont pondérés à 1 sauf deux arcs pondérés à une constante k. 
+			<ol>
+				<li>Prouvez si le réseau est borné. </li>
+				Le réseau est borné. À partir du marquage initial, on peut répéter la transition <em>t1</em> jusqu'à atteindre un marquage [0,k,0,0]. Avec la transition <em>t2</em>, on peut obtenir un marquage [0,0,k,0] à partir de l'état initial. On ne peut jamais dépasser k dans P2 et P4 et on ne peut dépasser k dans P1 et P3, ce qui fait en sorte que le réseau est borné, c'est à dire qu'il existe un nombre fini de marquages pour ce réseau de pétri, le minimum de ressources étant k et le maximum 2k.
+				<li>Déterminez la vivacité des quatre transitions. </li>
+				Le réseau est borné, mais il n'a aucune configuration d'interblocage, ce qui lui permet de faire une infinité de transitions. À ce titre, l'ensemble des transitions sont L2-vivantes.
+				<li>Déterminez si le réseau est conservateur.</li>
+			</ol>
+		
+			
+		</p>
 	</main>
 
 </body>
