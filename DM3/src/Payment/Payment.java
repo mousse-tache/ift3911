@@ -17,4 +17,20 @@ public class Payment {
 		throw new UnsupportedOperationException();
 	}
 
+	public String getStatus() {
+		return this.status;
+	}
+
+	public String getConfirmationNumber() {
+		return this.confirmationNumber;
+	}
+
+	public Real getAmountLeft() {
+		return this.amountLeft;
+	}
+
+	public DateTime getTransactionTime() {
+		return this.transactionTime;
+	}
+
 }

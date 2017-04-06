@@ -3,6 +3,7 @@ package Reservation;
 public class Reservable {
 
 	private ReservableState state;
+	Reservation reservation;
 
 	/**
 	 * 
@@ -27,6 +28,14 @@ public class Reservable {
 	public boolean isAvailable() {
 		// TODO - implement Reservable.isAvailable
 		throw new UnsupportedOperationException();
+	}
+
+	public ReservableState getState() {
+		return this.state;
+	}
+
+	public void setState(ReservableState state) {
+		this.state = state;
 	}
 
 }

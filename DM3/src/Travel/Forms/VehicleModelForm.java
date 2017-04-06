@@ -26,4 +26,20 @@ public class VehicleModelForm extends BaseForm {
 		throw new UnsupportedOperationException();
 	}
 
+	public String getModelName() {
+		return this.modelName;
+	}
+
+	public void setModelName(String modelName) {
+		this.modelName = modelName;
+	}
+
+	public List<VehicleSectionForm> getSections() {
+		return this.sections;
+	}
+
+	public void setSections(List<VehicleSectionForm> sections) {
+		this.sections = sections;
+	}
+
 }

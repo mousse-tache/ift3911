@@ -14,4 +14,16 @@ public abstract class TransportVehicleModel {
 	 */
 	public abstract Set<PassengerSpaces> getPassengerSpaces(char section);
 
+	public string getID() {
+		return this.ID;
+	}
+
+	public string getModelName() {
+		return this.modelName;
+	}
+
+	public List<BaseSection> getSections() {
+		return this.sections;
+	}
+
 }

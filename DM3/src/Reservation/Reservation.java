@@ -7,6 +7,7 @@ public class Reservation implements IPayable {
 
 	private Integer reservationNumber;
 	private Client client;
+	Reservable reservable;
 
 	/**
 	 * 
@@ -59,6 +60,14 @@ public class Reservation implements IPayable {
 	public Payment getPayment() {
 		// TODO - implement Reservation.getPayment
 		throw new UnsupportedOperationException();
+	}
+
+	public Integer getReservationNumber() {
+		return this.reservationNumber;
+	}
+
+	public Client getClient() {
+		return this.client;
 	}
 
 }

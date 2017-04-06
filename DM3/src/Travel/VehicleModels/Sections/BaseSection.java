@@ -19,4 +19,8 @@ public abstract class BaseSection {
 		throw new UnsupportedOperationException();
 	}
 
+	public Real getPriceRatio() {
+		return this.priceRatio;
+	}
+
 }

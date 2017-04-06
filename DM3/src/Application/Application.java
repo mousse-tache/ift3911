@@ -1,12 +1,11 @@
 package Application;
 
-import LiveSystem.*;
 import Sessions.*;
 
 public class Application {
 
-	private LiveStorage liveStorage;
-	private Set<Session> sessions;
+	private static LiveStorage liveStorage;
+	private static Set<Session> sessions;
 
 	public void init() {
 		// TODO - implement Application.init
@@ -24,6 +23,11 @@ public class Application {
 	 */
 	public static void main(String[] args) {
 		// TODO - implement Application.main
+		throw new UnsupportedOperationException();
+	}
+
+	public static LiveStorage getStorage() {
+		// TODO - implement Application.getStorage
 		throw new UnsupportedOperationException();
 	}
 
