@@ -4,22 +4,22 @@ public abstract class Itinerary {
 
 	protected string id;
 
-	public Stop getDeparture() {
+	public abstract Stop getDeparture() {
 		// TODO - implement Itinerary.getDeparture
 		throw new UnsupportedOperationException();
 	}
 
-	public Stop getArrival() {
+	public abstract Stop getArrival() {
 		// TODO - implement Itinerary.getArrival
 		throw new UnsupportedOperationException();
 	}
 
-	public Time getTripTime() {
+	public abstract Time getTripTime() {
 		// TODO - implement Itinerary.getTripTime
 		throw new UnsupportedOperationException();
 	}
 
-	public List<Stop<T>> getStops() {
+	public abstract List<Stop<T>> getStops() {
 		// TODO - implement Itinerary.getStops
 		throw new UnsupportedOperationException();
 	}
