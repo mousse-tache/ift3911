@@ -2,6 +2,8 @@ package Travel.Itineraries;
 
 public abstract class Itinerary {
 
+	protected string id;
+
 	public Stop getDeparture() {
 		// TODO - implement Itinerary.getDeparture
 		throw new UnsupportedOperationException();
@@ -19,11 +21,6 @@ public abstract class Itinerary {
 
 	public List<Stop<T>> getStops() {
 		// TODO - implement Itinerary.getStops
-		throw new UnsupportedOperationException();
-	}
-
-	public void operation() {
-		// TODO - implement Itinerary.operation
 		throw new UnsupportedOperationException();
 	}
 

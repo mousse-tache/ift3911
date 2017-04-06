@@ -1,7 +1,9 @@
 package Travel.Factories;
 
 import Travel.*;
+import Travel.Forms.*;
 import Travel.Trip.*;
+import Travel.Facilities.*;
 import Travel.VehicleModels.Vehicle.*;
 import Travel.Itineraries.*;
 
@@ -18,42 +20,32 @@ public abstract class TravelFactory {
 
 	/**
 	 * 
-	 * @param id
-	 * @param name
+	 * @param f
 	 */
-	public TravelCompany createCompany(string id, string name) {
+	public TravelCompany createCompany(TravelCompanyForm f) {
 		// TODO - implement TravelFactory.createCompany
 		throw new UnsupportedOperationException();
 	}
 
 	/**
 	 * 
-	 * @param departure
-	 * @param it
-	 * @param v
+	 * @param f
 	 */
-	public abstract Trip createTrip(DateTime departure, Itinerary it, ConcreteVehicle v);
+	public abstract Trip createTrip(TripForm f);
 
 	/**
 	 * 
-	 * @param id
-	 * @param name
-	 * @param location
+	 * @param f
 	 */
-	public abstract TransportFacility createFacility(string id, string name, string location);
+	public abstract TravelFacility createFacility(TravelFacilityForm f);
 
 	/**
 	 * 
-	 * @param owner
-	 * @param v
+	 * @param f
 	 */
-	public abstract ConcreteVehicle createConcreteVehicule(TravelCompany owner, TransportVehicle v);
+	public abstract ConcreteVehicle createConcreteVehicule(ConcreteVehicleForm f);
 
-	/**
-	 * 
-	 * @param modelName
-	 */
-	public abstract TransportVehicle createVehicleModel(string modelName);
+	public abstract TransportVehicleModel createVehicleModel();
 
 	/**
 	 * 
@@ -63,37 +55,5 @@ public abstract class TravelFactory {
 		// TODO - implement TravelFactory.createItinerary
 		throw new UnsupportedOperationException();
 	}
-
-	/**
-	 * 
-	 * @param departure
-	 * @param it
-	 * @param v
-	 */
-	public abstract Trip createTrip(DateTime departure, Itinerary it, ConcreteVehicle v);
-
-	/**
-	 * 
-	 * @param departure
-	 * @param it
-	 * @param v
-	 */
-	public abstract Trip createTrip(DateTime departure, Itinerary it, ConcreteVehicle v);
-
-	/**
-	 * 
-	 * @param departure
-	 * @param it
-	 * @param v
-	 */
-	public abstract Trip createTrip(DateTime departure, Itinerary it, ConcreteVehicle v);
-
-	/**
-	 * 
-	 * @param departure
-	 * @param it
-	 * @param v
-	 */
-	public abstract Trip createTrip(DateTime departure, Itinerary it, ConcreteVehicle v);
 
 }

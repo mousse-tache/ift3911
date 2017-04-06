@@ -5,6 +5,7 @@ import Reservation.*;
 
 public class Client extends User {
 
+	ClientPaymentInfo clientPaymentInfo;
 	private String name;
 	private String surname;
 	private String email;

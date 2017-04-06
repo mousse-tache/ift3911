@@ -41,4 +41,24 @@ public class Reservation implements IPayable {
 		throw new UnsupportedOperationException();
 	}
 
+	public PaymentInfo getPaymentInfo() {
+		// TODO - implement Reservation.getPaymentInfo
+		throw new UnsupportedOperationException();
+	}
+
+	public Real getAmount() {
+		// TODO - implement Reservation.getAmount
+		throw new UnsupportedOperationException();
+	}
+
+	public String getConfirmationNumber() {
+		// TODO - implement Reservation.getConfirmationNumber
+		throw new UnsupportedOperationException();
+	}
+
+	public Payment getPayment() {
+		// TODO - implement Reservation.getPayment
+		throw new UnsupportedOperationException();
+	}
+
 }

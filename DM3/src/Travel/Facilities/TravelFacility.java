@@ -4,9 +4,9 @@ import Travel.*;
 
 public abstract class TravelFacility {
 
-	private String id;
-	private String location;
-	private String name;
-	private TravelType type;
+	protected String id;
+	protected String location;
+	protected String name;
+	protected TravelType type;
 
 }

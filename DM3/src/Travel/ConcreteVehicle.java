@@ -1,17 +1,20 @@
 package Travel;
 
+import Travel.VehicleModels.Vehicle.*;
 import Travel.VehicleModels.Sections.*;
 import Travel.VehicleModels.Places.*;
 
 public class ConcreteVehicle {
 
+	TravelCompany owner;
+	TransportVehicleModel vehicleModel;
 	private string id;
-	private TravelCompany owner;
 	private List trips;
 	private TravelType type;
 
 	public Set<BaseSection> getSections() {
 		// TODO - implement ConcreteVehicle.getSections
+
 		throw new UnsupportedOperationException();
 	}
 

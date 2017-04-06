@@ -1,15 +1,19 @@
 package Travel.Trip;
 
 import Utils.TripVisitor.*;
+import java.util.*;
 import Travel.*;
 import Travel.Facilities.*;
 
 public abstract class Trip implements IVisitable {
 
-	private string id;
-	private Real basePrice;
-	private DateTime departureTime;
-	private TravelType type;
+	List<ReservableForTrip> reservables;
+	ConcreteVehicle vehicle;
+	protected string id;
+	protected Real basePrice;
+	protected DateTime departureTime;
+	protected TravelType type;
+	protected TravelCompany company;
 
 	public boolean canBeCanceledOrModified() {
 		// TODO - implement Trip.canBeCanceledOrModified

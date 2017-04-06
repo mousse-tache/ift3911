@@ -1,4 +1,4 @@
-package GUI;
+package UI;
 
 public class ClientFrame extends BaseFrame {
 }

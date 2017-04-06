@@ -9,13 +9,13 @@ public class Application {
 	private Set<Session> sessions;
 
 	public void init() {
-			// TODO - implement Application.init
-			throw new UnsupportedOperationException();
+		// TODO - implement Application.init
+		throw new UnsupportedOperationException();
 	}
 
 	public void showBaseGUI() {
-			// TODO - implement Application.showBaseGUI
-			throw new UnsupportedOperationException();
+		// TODO - implement Application.showBaseGUI
+		throw new UnsupportedOperationException();
 	}
 
 	/**
