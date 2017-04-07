@@ -5,20 +5,21 @@ import java.util.List;
 import Travel.ConcreteVehicle;
 import Travel.Facilities.TravelFacility;
 import Travel.Forms.ConcreteVehicleForm;
+import Travel.Forms.TravelCompanyForm;
 import Travel.Forms.TravelFacilityForm;
 import Travel.Forms.TripForm;
 import Travel.Itineraries.Itinerary;
 import Travel.Itineraries.Stop;
+import Travel.TravelCompany;
 import Travel.Trip.Trip;
 import Travel.VehicleModels.Vehicle.TransportVehicleModel;
 
 public class TrainFactory extends TravelFactory {
 
-	private static TrainFactory instance;
+	private static TravelFactory instance = new TrainFactory();
 
 	private TrainFactory() {
-		// TODO - implement TrainFactory.TrainFactory
-		throw new UnsupportedOperationException();
+		
 	}
 
 	/**
@@ -57,5 +58,10 @@ public class TrainFactory extends TravelFactory {
 		// TODO Auto-generated method stub
 		return null;
 	}
+
+    @Override
+    public TravelCompany createCompany(TravelCompanyForm f) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 
 }

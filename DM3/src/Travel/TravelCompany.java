@@ -14,9 +14,6 @@ public class TravelCompany {
 	public String getName(){
 		return name;
 	}
-	public String getName() {
-		return name;
-	}
 	
 	public List<ConcreteVehicle> getVehicles() {
 		return vehicles;
