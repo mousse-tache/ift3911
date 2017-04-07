@@ -6,10 +6,6 @@ public class TravelCompanyForm extends BaseForm {
 
 	private String name;
 
-	/**
-	 * 
-	 * @param tc
-	 */
 	public TravelCompanyForm(TravelCompany tc) {
 		this.name = tc.getName();
 	}

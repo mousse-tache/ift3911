@@ -6,6 +6,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
+import Travel.Forms.VehicleModelForm;
 import Travel.VehicleModels.Places.PassengerSpace;
 import Travel.VehicleModels.Sections.BaseSection;
 
@@ -25,6 +26,10 @@ public abstract class TransportVehicleModel {
 			sectionMap.put(s.typeToString(), s);
 		}
 		this.sections = sectionMap;
+	}
+
+	public TransportVehicle(VehicleModelForm form){
+		TransportVehicleModel(form.getID(), form.getModelName(), form.getBaseSections());
 	}
 
 	public Set<PassengerSpace> getPassengerSpaces(String sectionString){

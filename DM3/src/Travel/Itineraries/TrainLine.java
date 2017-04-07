@@ -1,8 +1,10 @@
 package Travel.Itineraries;
 
+import java.util.Collection;
+import java.util.List;
+
 import Travel.TravelType;
 import Travel.Forms.ItineraryForm;
-import java.util.*;
 
 public class TrainLine extends Itinerary {
 

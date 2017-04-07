@@ -8,7 +8,7 @@ public class FlightRoute extends Itinerary {
 	FlightRoute(ItineraryForm form) {
 		super(form);
 		if (form.getType() != TravelType.Plane)
-			throw new IllegalArgumentException("Wrong form type for TrainItinerary");
+			throw new IllegalArgumentException("Wrong form type for FlightRoute");
 	}
 
 }
