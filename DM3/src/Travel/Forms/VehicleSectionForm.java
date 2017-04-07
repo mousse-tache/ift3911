@@ -11,10 +11,6 @@ public class VehicleSectionForm {
 	private RowType disposition;
 	private int nbRows;
 
-	/**
-	 * 
-	 * @param vs
-	 */
 	public VehicleSectionForm(BaseSection vs) {
 		this.nbSpaces = vs.getTotalPassengerPlaces();
 		this.setSectionType(vs.typeToString());
@@ -24,36 +20,20 @@ public class VehicleSectionForm {
 		}
 	}
 
-	public int getNbSpaces() {
-		return this.nbSpaces;
-	}
+	public int getNbSpaces() { return this.nbSpaces; }
 
-	public void setNbSpaces(int nbSpaces) {
-		this.nbSpaces = nbSpaces;
-	}
+	public void setNbSpaces(int nbSpaces) { this.nbSpaces = nbSpaces; }
 
-	public RowType getDisposition() {
-		return this.disposition;
-	}
+	public RowType getDisposition() { return this.disposition; }
 
-	public void setDisposition(RowType disposition) {
-		this.disposition = disposition;
-	}
+	public void setDisposition(RowType disposition) { this.disposition = disposition; }
 
-	public String getSectionType() {
-		return sectionType;
-	}
+	public String getSectionType() { return sectionType; }
 
-	public void setSectionType(String sectionType) {
-		this.sectionType = sectionType;
-	}
+	public void setSectionType(String sectionType) { this.sectionType = sectionType; }
 
-	public int getNbRows() {
-		return nbRows;
-	}
+	public int getNbRows() { return nbRows; }
 
-	public void setNbRows(int nbRows) {
-		this.nbRows = nbRows;
-	}
+	public void setNbRows(int nbRows) { this.nbRows = nbRows; }
 
 }

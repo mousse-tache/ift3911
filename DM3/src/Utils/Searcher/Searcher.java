@@ -12,6 +12,7 @@ import Travel.TravelCompany;
 import Travel.Facilities.TravelFacility;
 import Travel.Itineraries.Itinerary;
 import Travel.Trip.Trip;
+import Travel.VehicleModels.Vehicle.TransportVehicleModel;
 import Utils.DateUtils;
 
 public class Searcher {
@@ -74,6 +75,24 @@ public class Searcher {
 		for(TravelFacility tf : Application.getStorage().getTravelFacilities()){
 			if(tf.getId().equals(ID)){
 				return tf;
+			}
+		}
+		return null;
+	}
+
+	public static TransportVehicleModel getVehicleModelFromID(String ID) {
+		for(TransportVehicleModel tvm : Application.getStorage().getVehicleModels()){
+			if(tvm.getID().equals(ID)){
+				return tvm;
+			}
+		}
+		return null;
+	}
+
+	public static TravelCompany getCompanyFromID(String id) {
+		for(TravelCompany tc : Application.getStorage().getCompanies()){
+			if(tc.getID().equals(id)){
+				return tc;
 			}
 		}
 		return null;

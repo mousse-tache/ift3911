@@ -1,5 +1,8 @@
 package Travel.Forms;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import Travel.VehicleModels.Sections.BaseSection;
@@ -8,15 +11,12 @@ import Travel.VehicleModels.Vehicle.TransportVehicleModel;
 public class VehicleModelForm extends BaseForm {
 
 	private String modelName;
-	private Map<String, BaseSection> sections;
+	private Map<String, VehicleSectionForm> sections;
 
-	/**
-	 * 
-	 * @param tv
-	 */
 	public VehicleModelForm(TransportVehicleModel tv) {
 		this.modelName = tv.getModelName();
-		this.sections = tv.getSections();
+		this.sections = new HashMap<String, VehicleSectionForm>();
+		tv.getSections().forEach((k,v) -> sections.put(k, new VehicleSectionForm(v)));
 	}
 
 	public BaseForm createFromPrompt() {
@@ -29,20 +29,20 @@ public class VehicleModelForm extends BaseForm {
 		throw new UnsupportedOperationException();
 	}
 
-	public String getModelName() {
-		return this.modelName;
-	}
+	public String getModelName() { return this.modelName; }
 
-	public void setModelName(String modelName) {
-		this.modelName = modelName;
-	}
+	public void setModelName(String modelName) { this.modelName = modelName; }
 
-	public Map<String, BaseSection> getSections() {
-		return this.sections;
-	}
+	public Map<String, VehicleSectionForm> getSections() { return this.sections; }
 
-	public void setSections(Map<String, BaseSection> sections) {
-		this.sections = sections;
+	public void setSections(Map<String, VehicleSectionForm> sections) { this.sections = sections; }
+
+	public List<BaseSection> getBaseSections() {
+		List<BaseSection> sections = new ArrayList<BaseSection>();
+		this.sections.forEach((k,v) -> sections.add(BaseSection.createFromForm(v)));
+
+		return sections;
+		
 	}
 
 }

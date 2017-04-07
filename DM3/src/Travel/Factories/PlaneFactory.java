@@ -3,6 +3,7 @@ package Travel.Factories;
 import java.util.List;
 
 import Travel.ConcreteVehicle;
+import Travel.TravelCompany;
 import Travel.Facilities.TravelFacility;
 import Travel.Forms.ConcreteVehicleForm;
 import Travel.Forms.TravelCompanyForm;
@@ -10,7 +11,6 @@ import Travel.Forms.TravelFacilityForm;
 import Travel.Forms.TripForm;
 import Travel.Itineraries.Itinerary;
 import Travel.Itineraries.Stop;
-import Travel.TravelCompany;
 import Travel.Trip.Trip;
 import Travel.VehicleModels.Vehicle.TransportVehicleModel;
 

@@ -2,6 +2,7 @@ package Travel.VehicleModels.Sections;
 
 import java.util.Set;
 
+import Travel.Forms.VehicleSectionForm;
 import Travel.VehicleModels.Places.PassengerSpace;
 
 public abstract class BaseSection {

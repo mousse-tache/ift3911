@@ -7,10 +7,6 @@ public class TravelFacilityForm extends BaseForm {
 	private String location;
 	private String name;
 
-	/**
-	 * 
-	 * @param tf
-	 */
 	public TravelFacilityForm(TravelFacility tf) {
 		this.location = tf.getLocation();
 		this.name = tf.getName();
