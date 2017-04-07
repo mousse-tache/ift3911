@@ -6,8 +6,11 @@ import java.util.List;
 
 import Application.Application;
 import Reservation.Reservable;
+import Travel.ConcreteVehicle;
 import Travel.ReservableForTrip;
+import Travel.TravelCompany;
 import Travel.Facilities.TravelFacility;
+import Travel.Itineraries.Itinerary;
 import Travel.Trip.Trip;
 import Utils.DateUtils;
 
@@ -27,8 +30,7 @@ public class Searcher {
 	}
 
 	public static Trip findTripFromID(String tripID) {
-		List<Trip> allTrips = Application.getStorage().getTrips();
-		for(Trip t : allTrips){
+		for(Trip t : Application.getStorage().getTrips()){
 			if (t.getId().equals(tripID)){
 				return t;
 			}
@@ -48,4 +50,23 @@ public class Searcher {
 		return filtered;
 	}
 
+	public static ConcreteVehicle getVehicleFromID(String vehicleID) {
+		for(TravelCompany c : Application.getStorage().getCompanies()){
+			for(ConcreteVehicle v : c.getVehicles()){
+				if (v.getId().equals(vehicleID)){
+					return v;
+				}
+			}
+		}
+		return null;
+	}
+
+	public static Itinerary getItineraryFromID(String itineraryID) {
+		for(Itinerary i : Application.getStorage().getItineraries()){
+			if(i.getId().equals(itineraryID)){
+				return i;
+			}
+		}
+		return null;
+	}
 }
