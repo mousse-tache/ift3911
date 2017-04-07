@@ -1,15 +1,13 @@
 package Travel.Itineraries;
 
-import java.sql.Time;
-
 import Travel.Facilities.TravelFacility;
 
 public class Stop {
 
 	private TravelFacility location;
-	private Time timeFromDeparture;
+	private long timeFromDeparture;
 
-	public Stop(TravelFacility tf, Time time) {
+	public Stop(TravelFacility tf, long time) {
 		this.location = tf;
 		this.timeFromDeparture = time;
 	}
@@ -22,11 +20,11 @@ public class Stop {
 		this.location = location;
 	}
 
-	public Time getTimeFromDeparture() {
+	public long getTimeFromDeparture() {
 		return this.timeFromDeparture;
 	}
 
-	public void setTimeFromDeparture(Time timeFromDeparture) {
+	public void setTimeFromDeparture(long timeFromDeparture) {
 		this.timeFromDeparture = timeFromDeparture;
 	}
 
