@@ -20,6 +20,14 @@ public class ItineraryForm extends BaseForm {
 		});
 	}
 
+	public List<String> getLocationIDs() { return this.locationIDs; }
+
+	public void setLocationIDs(List<String> locationIDs) { this.locationIDs = locationIDs; }
+
+	public List<Time> getTimes() { return this.times; }
+
+	public void setTimes(List<Time> times) { this.times = times; }
+
 	public BaseForm createFromPrompt() {
 		// TODO - implement ItineraryForm.createFromPrompt
 		throw new UnsupportedOperationException();
@@ -29,21 +37,4 @@ public class ItineraryForm extends BaseForm {
 		// TODO - implement ItineraryForm.modifyFromPrompt
 		throw new UnsupportedOperationException();
 	}
-
-	public List<String> getLocationIDs() {
-		return this.locationIDs;
-	}
-
-	public void setLocationIDs(List<String> locationIDs) {
-		this.locationIDs = locationIDs;
-	}
-
-	public List<Time> getTimes() {
-		return this.times;
-	}
-
-	public void setTimes(List<Time> times) {
-		this.times = times;
-	}
-
 }
