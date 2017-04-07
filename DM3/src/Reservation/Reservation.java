@@ -14,7 +14,8 @@ public class Reservation implements IPayable {
 	Reservable reservable;
 	Payment payment;
 	private Double amount;
-	private ClientPaymentInfo paymentInfo;
+	private ClientPaymentInfo attribute;
+	public ClientPaymentInfo paymentInfo;
 
 	/**
 	 * 
@@ -71,6 +72,10 @@ public class Reservation implements IPayable {
 
 	public Double getAmount() {
 		return this.amount;
+	}
+
+	public ClientPaymentInfo getAttribute() {
+		return this.attribute;
 	}
 
 	public ClientPaymentInfo getPaymentInfo() {

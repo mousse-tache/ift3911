@@ -12,6 +12,19 @@ public class Command {
 		throw new UnsupportedOperationException();
 	}
 
+	public CommandStatus getAttribute() {
+		return this.attribute;
+	}
+
+	public void setAttribute(CommandStatus status) {
+		this.attribute = status;
+	}
+
+	public boolean canUndo() {
+		// TODO - implement Command.canUndo
+		throw new UnsupportedOperationException();
+	}
+
 	public CommandStatus getStatus() {
 		return this.status;
 	}
@@ -20,11 +33,7 @@ public class Command {
 		this.status = status;
 	}
 
-	public boolean canUndo() {
-		// TODO - implement Command.canUndo
-		throw new UnsupportedOperationException();
-	}
-
+	private CommandStatus attribute;
 	private CommandStatus status;
 
 }
