@@ -1,5 +1,6 @@
 package Reservation;
 
+import Payment.CreditPayment;
 import Payment.IPayable;
 import Payment.Payment;
 import Sessions.Client.Client;
@@ -23,7 +24,6 @@ public class Reservation implements IPayable {
 	public Reservation(Reservable r, Client c) {
 		this.reservable = r;
 		this.client = c;
-		payment = new Payment(this, r.getPrice());
 	}
 
 	/**
@@ -40,9 +40,9 @@ public class Reservation implements IPayable {
 	 * @param ClientPaymentInfo
 	 */
 	public String pay(ClientPaymentInfo clientPaymentInfo) {
-		// TODO - implement Reservation.pay
+		payment = new CreditPayment(this, amount);
 		payment.pay(reservable.getPrice());
-		throw new UnsupportedOperationException();
+		return payment.getConfirmationNumber();
 	}
 
 	public boolean cancelReservation() {

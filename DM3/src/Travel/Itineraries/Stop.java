@@ -9,6 +9,11 @@ public class Stop {
 	private TravelFacility location;
 	private Time timeFromDeparture;
 
+	public Stop(TravelFacility tf, Time time) {
+		this.location = tf;
+		this.timeFromDeparture = time;
+	}
+
 	public TravelFacility getLocation() {
 		return this.location;
 	}
