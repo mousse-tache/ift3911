@@ -12,7 +12,9 @@ public class Executor {
 	 */
 	public boolean execute(Command c) {
 		// TODO - implement Executor.execute
-		throw new UnsupportedOperationException();
+                history.add(c);
+                c.execute();
+                return true;
 	}
 
 	public boolean undo() {
