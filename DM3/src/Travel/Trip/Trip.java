@@ -2,7 +2,8 @@ package Travel.Trip;
 
 import java.time.Instant;
 import java.util.Date;
-import java.util.List;
+import java.util.HashSet;
+import java.util.Set;
 import java.util.concurrent.TimeUnit;
 
 import Reservation.Reservable;
@@ -20,7 +21,7 @@ import Utils.TripVisitor.TripVisitor;
 
 public abstract class Trip implements IVisitable {
 
-	List<ReservableForTrip> reservables;
+	Set<ReservableForTrip> reservables;
 
 	ConcreteVehicle vehicle;
 	protected String id;
@@ -28,7 +29,7 @@ public abstract class Trip implements IVisitable {
 	protected Date departureTime;
 	protected TravelType type;
 	protected TravelCompany company;
-	Itinerary itinerary;
+	protected Itinerary itinerary;
 	
 	public Trip(TripForm form){
 		this.id = form.getID();
@@ -42,8 +43,10 @@ public abstract class Trip implements IVisitable {
 	}
 	
 	private void assignReservables(){
+		reservables = new HashSet<ReservableForTrip>();
 		for (PassengerSpace p : vehicle.getAllPassengerSpaces()){
-			ReservableForTrip res = new ReservableForTrip();
+			ReservableForTrip res = new ReservableForTrip(this, p, basePrice);
+			reservables.add(res);
 		}
 	}
 	
@@ -61,8 +64,12 @@ public abstract class Trip implements IVisitable {
 		return timeBeforeTrip > TimeUnit.MILLISECONDS.toDays(1);
 	}
 
+	public Itinerary getItinerary(){
+		return this.itinerary;
+	}
+
 	public TravelFacility getDepartureLocation() {
-		return this.itinerary.getDeparture().getLocation();
+		return this.getItinerary().getDeparture().getLocation();
 	}
 
 	public Date getDepartureDateTime() {
@@ -70,13 +77,12 @@ public abstract class Trip implements IVisitable {
 	}
 
 	public TravelFacility getArrivalLocation() {
-		return this.itinerary.getArrival().getLocation();
+		return this.getItinerary().getArrival().getLocation();
 	}
 	
 	public Date getArrivalTime() {
-		long date = departureTime.getTime() + this.itinerary.getTripTime().getTime();
+		long date = departureTime.getTime() + this.getItinerary().getTripTime().getTime();
 		return new Date(date);
-
 	}
 
 	public String getId() {
@@ -99,14 +105,8 @@ public abstract class Trip implements IVisitable {
 		return this.company;
 	}
 
-<<<<<<< HEAD
-	public Itinerary getItinerary() {
-		// TODO Auto-generated method stub
-		return this.itinerary;
-=======
-	public List<ReservableForTrip> getReservables() {
+	public Set<ReservableForTrip> getReservables() {
 		return reservables;
->>>>>>> f95e06967f80df85b3cfd4d473467c606144635f
 	}
 	
 	@Override

@@ -1,16 +1,15 @@
 package Travel.Trip;
 
-import Travel.Itineraries.CruiseRoute;
+import Travel.Forms.TripForm;
 import Utils.TripVisitor.TripVisitor;
 
 public class Cruise extends Trip {
 
-	private CruiseRoute itinerary;
+	public Cruise(TripForm form) {
+		super(form);
+		// TODO Verifications
+	}
 
-	/**
-	 * 
-	 * @param v
-	 */
 	public void accept(TripVisitor v) {
 		// TODO - implement Cruise.accept
 		throw new UnsupportedOperationException();
