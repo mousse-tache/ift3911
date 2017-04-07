@@ -50,7 +50,7 @@ public class CruiseFactory extends TravelFactory {
 	@Override
 	public Itinerary createItinerary(ItineraryForm f) {
 		Itinerary i = new CruiseRoute(f);
-		// Cruise first and last stop must be the same
+		// Cruise's first and last stop must be the same
 		if(i.getDepartureLocation() != i.getArrivalLocation()){
 			throw new IllegalArgumentException("Cruise first and last stop must be the same!");
 		}

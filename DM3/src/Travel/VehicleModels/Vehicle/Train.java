@@ -1,8 +1,8 @@
 package Travel.VehicleModels.Vehicle;
 
-import Travel.Forms.VehicleModelForm;
 import java.util.List;
 
+import Travel.Forms.VehicleModelForm;
 import Travel.VehicleModels.Sections.BaseSection;
 import Travel.VehicleModels.Sections.EconomicSection;
 import Travel.VehicleModels.Sections.PremiumSection;

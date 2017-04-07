@@ -5,6 +5,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import Travel.Factories.VehicleSectionFactory;
 import Travel.VehicleModels.Sections.BaseSection;
 import Travel.VehicleModels.Vehicle.TransportVehicleModel;
 
@@ -39,8 +40,7 @@ public class VehicleModelForm extends BaseForm {
 
 	public List<BaseSection> getBaseSections() {
 		List<BaseSection> sections = new ArrayList<BaseSection>();
-		this.sections.forEach((k,v) -> sections.add(BaseSection.createFromForm(v)));
-
+		this.sections.forEach((k,form) -> sections.add(VehicleSectionFactory.createSection(form)));
 		return sections;
 		
 	}
