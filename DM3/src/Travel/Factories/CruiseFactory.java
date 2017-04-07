@@ -3,22 +3,25 @@ package Travel.Factories;
 import java.util.List;
 
 import Travel.ConcreteVehicle;
+import Travel.Facilities.Port;
 import Travel.Facilities.TravelFacility;
 import Travel.Forms.ConcreteVehicleForm;
+import Travel.Forms.TravelCompanyForm;
 import Travel.Forms.TravelFacilityForm;
 import Travel.Forms.TripForm;
 import Travel.Itineraries.Itinerary;
 import Travel.Itineraries.Stop;
+import Travel.TravelCompany;
+import Travel.Trip.Cruise;
 import Travel.Trip.Trip;
 import Travel.VehicleModels.Vehicle.TransportVehicleModel;
 
 public class CruiseFactory extends TravelFactory {
 
-	private static CruiseFactory instance;
+	private static TravelFactory instance = new CruiseFactory();
 
 	private CruiseFactory() {
-		// TODO - implement CruiseFactory.CruiseFactory
-		throw new UnsupportedOperationException();
+	
 	}
 
 	/**
@@ -26,8 +29,7 @@ public class CruiseFactory extends TravelFactory {
 	 * @param f
 	 */
 	public Trip createTrip(TripForm f) {
-		// TODO - implement CruiseFactory.createTrip
-		throw new UnsupportedOperationException();
+		return new Cruise(f);
 	}
 
 	/**
@@ -35,8 +37,7 @@ public class CruiseFactory extends TravelFactory {
 	 * @param f
 	 */
 	public TravelFacility createFacility(TravelFacilityForm f) {
-		// TODO - implement CruiseFactory.createFacility
-		throw new UnsupportedOperationException();
+		return new Port();
 	}
 
 	/**
@@ -44,8 +45,7 @@ public class CruiseFactory extends TravelFactory {
 	 * @param f
 	 */
 	public ConcreteVehicle createConcreteVehicule(ConcreteVehicleForm f) {
-		// TODO - implement CruiseFactory.createConcreteVehicule
-		throw new UnsupportedOperationException();
+		return new ConcreteVehicle();
 	}
 
 	public TransportVehicleModel createVehicleModel() {
@@ -58,5 +58,10 @@ public class CruiseFactory extends TravelFactory {
 		// TODO - implement CruiseFactory.createItinerary
 		throw new UnsupportedOperationException();
 	}
+
+    @Override
+    public TravelCompany createCompany(TravelCompanyForm f) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 
 }

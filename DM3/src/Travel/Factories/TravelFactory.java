@@ -16,24 +16,22 @@ import Travel.Trip.Trip;
 import Travel.VehicleModels.Vehicle.TransportVehicleModel;
 
 public abstract class TravelFactory {
-
+        
+    
+        private static TravelFactory instance;
 	/**
 	 * 
 	 * @param type
 	 */
 	public TravelFactory getInstance(TravelType type) {
-		// TODO - implement TravelFactory.getInstance
-		throw new UnsupportedOperationException();
+		return instance;
 	}
 
 	/**
 	 * 
 	 * @param f
 	 */
-	public TravelCompany createCompany(TravelCompanyForm f) {
-		// TODO - implement TravelFactory.createCompany
-		throw new UnsupportedOperationException();
-	}
+	public abstract TravelCompany createCompany(TravelCompanyForm f);
 
 	/**
 	 * 
