@@ -29,7 +29,7 @@ public class CruiseFactory extends TravelFactory {
 	 * @param f
 	 */
 	public Trip createTrip(TripForm f) {
-		return new Cruise();
+		return new Cruise(f);
 	}
 
 	/**

@@ -16,11 +16,11 @@ public class Session implements IGUISubject {
 	 * 
 	 * @param c
 	 */
-        /* //C'est moi ou ça fait pas tant de sens?
+        //C'est moi ou ce bout-là est pas très pertinent?
 	public void executeCommand(Command c) {
 		this.executor.execute(c);
 	}
-        */
+        
 	/**
 	 * 
 	 * @param IGUIObserver
