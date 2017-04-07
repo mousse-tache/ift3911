@@ -1,6 +1,7 @@
 package Travel.Forms;
 
 import java.sql.Time;
+import java.util.ArrayList;
 import java.util.List;
 
 import Travel.Itineraries.Itinerary;
@@ -10,13 +11,13 @@ public class ItineraryForm extends BaseForm {
 	private List<String> locationIDs;
 	private List<Time> times;
 
-	/**
-	 * 
-	 * @param i
-	 */
 	public ItineraryForm(Itinerary i) {
-		this.locationIDs.add(i.getId());
-		this.times.add(i.getTripTime());
+		this.locationIDs = new ArrayList<String>();
+		this.times = new ArrayList<Time>();
+		i.getStops().forEach(s -> {
+			locationIDs.add(s.getLocation().getId());
+			times.add(s.getTimeFromDeparture());
+		});
 	}
 
 	public BaseForm createFromPrompt() {
