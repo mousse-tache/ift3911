@@ -1,6 +1,5 @@
 package Travel.Itineraries;
 
-import java.sql.Time;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -20,7 +19,7 @@ public abstract class Itinerary {
 		this.type = form.getType();
 
 		List<String> locIDs = form.getLocationIDs();
-		List<Time> times = form.getTimes();
+		List<Long> times = form.getTimes();
 		if (locIDs.size() != times.size())
 			throw new IllegalArgumentException("Invalid form: Locations do not map perfectly to Times");
 		this.stops = new ArrayList<Stop>();
@@ -29,7 +28,7 @@ public abstract class Itinerary {
 			if (tf == null){
 				throw new IllegalArgumentException("Facility with ID=" + locIDs.get(i) + "can't be found");
 			}
-			if (i>0 && i<times.size()-1 && times.get(i).before(times.get(i+1))) {
+			if (i>0 && i<times.size()-1 && times.get(i) < times.get(i+1)) {
 				throw new IllegalArgumentException("Times for itineraries' stops must be ascendant");
 			}
 			stops.add(new Stop(tf,times.get(i)));
@@ -44,7 +43,7 @@ public abstract class Itinerary {
 	public TravelFacility getDepartureLocation(){ return stops.get(0).getLocation(); }
 	public TravelFacility getArrivalLocation(){ return stops.get(stops.size()-1).getLocation(); }
 
-	public Time getTripTime(){ return stops.get(stops.size()-1).getTimeFromDeparture();}
+	public Long getTripTime(){ return stops.get(stops.size()-1).getTimeFromDeparture();}
 
 	public List<Stop> getStops(){return stops;}
 }

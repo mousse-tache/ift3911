@@ -1,6 +1,14 @@
 package Utils.TripVisitor;
 
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
+
+import Travel.Itineraries.Stop;
 import Travel.Trip.Trip;
+import Utils.DateUtils;
+import Utils.MoneyUtils;
 
 public class AdminTripVisitor implements TripVisitor {
 	
@@ -9,7 +17,35 @@ public class AdminTripVisitor implements TripVisitor {
 	// Première étroite avec 0 sièges réservés sur 12 chacun coûtant 474$, une classe Affaire moyenne avec 5 sièges réservés sur 16 chacun coûtant
 	// 355.50$ et une classe Économie large avec 150 sièges réservés sur 200 chacun coûtant 237$.
 	public String visitTrip(Trip trip) {
-		String result = new String();
-		throw new UnsupportedOperationException();
+		List<String> results = new ArrayList<String>();
+		List<String> temp;
+		List<Stop> stops = trip.getItinerary().getStops();
+		//YUL-YYZ:
+		temp = new ArrayList<String>();
+		stops.forEach(s -> temp.add(s.getLocation().getId()));
+		results.add(String.join("-", temp));
+		
+		//[AIRCAN]AC481
+		results.add("[" + trip.getCompany().getID() + "]" + trip.getId());
+
+		//(2014.11.28:06.00-2014.11.28:07:24)              
+		temp.clear();
+		Date startDate = trip.getDepartureDateTime();
+		stops.forEach(s -> {
+			DateUtils.getFormatter().format(
+					DateUtils.addTimestampToDate(startDate, s.getTimeFromDeparture()));
+		});
+		results.add("(" + String.join("-", temp) + ")");
+
+		//|PS(0/12)474.00|AM(5/16)355.50|EL(150/200)237.00
+		trip.getVehicle().getSections().forEach((k, section) -> {
+			String sectionType = section.typeToString();
+			String price = MoneyUtils.doubleToString(trip.getBasePrice()*section.getPriceRatio());
+			results.add("|" + sectionType
+					+ "(" + trip.getNumberOfReservedSpacesInSection(sectionType) + "/"
+					+ section.getTotalPassengerPlaces() + ")"
+					+ price);
+		});
+		return String.join("", results);
 	}
 }
