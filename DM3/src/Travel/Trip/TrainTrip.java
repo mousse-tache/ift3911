@@ -1,16 +1,15 @@
 package Travel.Trip;
 
-import Travel.Itineraries.TrainLine;
+import Travel.Forms.TripForm;
 import Utils.TripVisitor.TripVisitor;
 
 public class TrainTrip extends Trip {
 
-	private TrainLine itinerary;
-
-	/**
-	 * 
-	 * @param v
-	 */
+	public TrainTrip(TripForm form) {
+		super(form);
+		// TODO Verifications
+	}
+	
 	public void accept(TripVisitor v) {
 		// TODO - implement TrainTrip.accept
 		throw new UnsupportedOperationException();
