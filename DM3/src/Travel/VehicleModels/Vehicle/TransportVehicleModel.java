@@ -27,12 +27,12 @@ public abstract class TransportVehicleModel {
 		}
 		this.sections = sectionMap;
 	}
-        
+
 	public TransportVehicleModel(VehicleModelForm form){
-            this.ID=form.getID();
-            this.modelName=form.getModelName();
-            Map<String, BaseSection> sectionMap = new HashMap<String, BaseSection>();
-            List<BaseSection> listSections = form.getBaseSections();
+		this.ID=form.getID();
+		this.modelName=form.getModelName();
+		Map<String, BaseSection> sectionMap = new HashMap<String, BaseSection>();
+		List<BaseSection> listSections = form.getBaseSections();
 		for (BaseSection s : listSections){
 			if (sectionMap.containsKey(s.typeToString()))
 				throw new IllegalArgumentException("Section " + s.typeToString() + " appears more than once");
@@ -41,7 +41,7 @@ public abstract class TransportVehicleModel {
 		this.sections = sectionMap;
 		//TransportVehicleModel(form.getID(), form.getModelName(), form.getBaseSections());
 	}
-        
+
 	public Set<PassengerSpace> getPassengerSpaces(String sectionString){
 		return this.sections.get(sectionString).getAllPassengerPlaces();
 	}

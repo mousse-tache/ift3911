@@ -1,7 +1,10 @@
 package Travel.VehicleModels.Sections;
 
 public class FamilyDeluxeSection extends SectionWithCabins {
-	FamilyDeluxeSection(int nbCabins) {
-		super(1.0, "D", nbCabins, 6);
+
+	public static final String type = "D";
+
+	public FamilyDeluxeSection(int nbCabins) {
+		super(1.0, type, nbCabins, 6);
 	}
 }

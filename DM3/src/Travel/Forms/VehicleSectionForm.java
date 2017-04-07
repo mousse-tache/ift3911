@@ -36,4 +36,5 @@ public class VehicleSectionForm {
 
 	public void setNbRows(int nbRows) { this.nbRows = nbRows; }
 
+
 }

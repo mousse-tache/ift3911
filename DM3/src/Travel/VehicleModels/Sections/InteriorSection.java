@@ -1,7 +1,10 @@
 package Travel.VehicleModels.Sections;
 
 public class InteriorSection extends SectionWithCabins {
-	InteriorSection(int nbCabins) {
-		super(0.5, "I", nbCabins, 4);
+
+	public static final String type = "I";
+
+	public InteriorSection(int nbCabins) {
+		super(0.5, type, nbCabins, 4);
 	}
 }

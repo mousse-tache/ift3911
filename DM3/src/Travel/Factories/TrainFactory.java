@@ -20,32 +20,18 @@ public class TrainFactory extends TravelFactory {
 
 	private static TravelFactory instance = new TrainFactory();
 
-	private TrainFactory() {
-		
-	}
+	private TrainFactory() { }
 
-	/**
-	 * 
-	 * @param f
-	 */
 	public Trip createTrip(TripForm f) {
 		// TODO - implement TrainFactory.createTrip
 		throw new UnsupportedOperationException();
 	}
 
-	/**
-	 * 
-	 * @param f
-	 */
 	public TravelFacility createFacility(TravelFacilityForm f) {
 		// TODO - implement TrainFactory.createFacility
 		throw new UnsupportedOperationException();
 	}
 
-	/**
-	 * 
-	 * @param f
-	 */
 	public ConcreteVehicle createConcreteVehicule(ConcreteVehicleForm f) {
 		// TODO - implement TrainFactory.createConcreteVehicule
 		throw new UnsupportedOperationException();

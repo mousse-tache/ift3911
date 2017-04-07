@@ -1,7 +1,10 @@
 package Travel.VehicleModels.Sections;
 
 public class OceanViewSection extends SectionWithCabins {
-	OceanViewSection(int nbCabins) {
-		super(0.75, "O", nbCabins, 2);
+
+	public static final String type = "O";
+
+	public OceanViewSection(int nbCabins) {
+		super(0.75, type, nbCabins, 2);
 	}
 }
