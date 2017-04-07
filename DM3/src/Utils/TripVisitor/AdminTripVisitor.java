@@ -3,13 +3,14 @@ package Utils.TripVisitor;
 import Travel.Trip.Trip;
 
 public class AdminTripVisitor implements TripVisitor {
-
-	/**
-	 * 
-	 * @param trip
-	 */
+	
+	// YUL-YYZ:[AIRCAN]AC481(2014.11.28:06.00-2014.11.28:07:24)|PS(0/12)474.00|AM(5/16)355.50|EL(150/200)237.00
 	public String visitTrip(Trip trip) {
-		// TODO - implement AdminTripVisitor.visitTrip
-		throw new UnsupportedOperationException();
+		String result = new String();
+		
+		
+		
+		
+		return String;
 	}
 }
