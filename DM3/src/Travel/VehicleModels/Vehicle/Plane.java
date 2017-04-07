@@ -1,5 +1,6 @@
 package Travel.VehicleModels.Vehicle;
 
+import Travel.Forms.VehicleModelForm;
 import java.util.List;
 
 import Travel.VehicleModels.Sections.BaseSection;
@@ -10,7 +11,11 @@ public class Plane extends TransportVehicleModel {
 	Plane(String ID, String modelName, List<BaseSection> sections) {
 		super(ID, modelName, validSections(sections));
 	}
-
+        
+        public Plane(VehicleModelForm form) {
+		super(form);
+	}
+        
 	private static List<BaseSection> validSections(List<BaseSection> sections) {
 		for (BaseSection s : sections)
 			if (!(s instanceof SectionWithSeats))

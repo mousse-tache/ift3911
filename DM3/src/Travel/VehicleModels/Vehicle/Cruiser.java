@@ -8,14 +8,13 @@ import Travel.VehicleModels.Sections.SectionWithCabins;
 
 public class Cruiser extends TransportVehicleModel {
 
-	Cruiser(String ID, String modelName, List<BaseSection> sections) {
+        public Cruiser(String ID, String modelName, List<BaseSection> sections) {
 		super(ID, modelName, validSections(sections));
 	}
-
-	public Cruiser(VehicleModelForm f) {
-		// TODO Auto-generated constructor stub
+    
+        public Cruiser(VehicleModelForm form) {
+		super(form);
 	}
-
 	private static List<BaseSection> validSections(List<BaseSection> sections) {
 		for (BaseSection s : sections)
 			if (!(s instanceof SectionWithCabins))
