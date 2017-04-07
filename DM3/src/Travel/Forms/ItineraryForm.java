@@ -1,6 +1,6 @@
 package Travel.Forms;
 
-import java.util.Date;
+import java.sql.Time;
 import java.util.List;
 
 import Travel.Itineraries.Itinerary;
@@ -8,7 +8,7 @@ import Travel.Itineraries.Itinerary;
 public class ItineraryForm extends BaseForm {
 
 	private List<String> locationIDs;
-	private List<Date> times;
+	private List<Time> times;
 
 	/**
 	 * 
@@ -37,11 +37,11 @@ public class ItineraryForm extends BaseForm {
 		this.locationIDs = locationIDs;
 	}
 
-	public List<Date> getTimes() {
+	public List<Time> getTimes() {
 		return this.times;
 	}
 
-	public void setTimes(List<Date> times) {
+	public void setTimes(List<Time> times) {
 		this.times = times;
 	}
 

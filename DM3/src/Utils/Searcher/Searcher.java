@@ -69,4 +69,13 @@ public class Searcher {
 		}
 		return null;
 	}
+
+	public static TravelFacility getTravelFacilityFromID(String ID) {
+		for(TravelFacility tf : Application.getStorage().getTravelFacilities()){
+			if(tf.getId().equals(ID)){
+				return tf;
+			}
+		}
+		return null;
+	}
 }
