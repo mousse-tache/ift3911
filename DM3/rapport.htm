@@ -143,30 +143,36 @@
 		<h3>Patron du visiteur</h3>
 		<h3>Diagramme de paquets</h3>
 		<h2 id="qual">Discussion sur la qualité</h2>
-		<p>
+                <h3>Graphe IA</h3>
+                <p>
 			
 		</p>
 		<h2>Génération et implémentation</h2>
 		<h2>Réseau de Pétri</h2>
-		<p>
-			<img src="./images/pn.png"\>
-			marquage initial [k,0,k,0]. Tous les arcs sont pondérés à 1 sauf deux arcs pondérés à une constante k. 
-			<ol>
-				<li><img src="./images/gak1.png" />	Pour k=1</li>
+                <img src="./images/pn.png">
+                <p>marquage initial [k,0,k,0]. Tous les arcs sont pondérés à 1 sauf deux arcs pondérés à une constante k. </p>
+                <ol>
+				<li><img src="./images/gak1.png" />	Pour k=1, pour les k > 1, on aura l'option d'approfondir la branche jusqu'à ce que p1 et p3 soient égaux à 0, avec possibilité de franchir t3 à chacune des étapes de la branche pour revenir au marquage précédent.</li>
 				
 				<li>Prouvez si le réseau est borné. </li>
-				Pour n'importe quel k > 0, :</br>
-				Si on regarde le AC pour k=1, on voit qu'on peut toujours retourner au marquage précédent à partir du marquage actuel. C'est également le cas pour toutes les valeurs de k subséquentes. À ce titre, le nombre de marquage possible est fonction de K+1 + |M(K-1)|, c'est à dire que M(K-1) est un sous-ensemble de M(K). On peut donc conclure est le réseau est borné, car son AC ne contient pas d'Omega peu un K de valeur quelconque.
-			
+				
 				<li>Déterminez la vivacité des quatre transitions. </li>
-				Le réseau est borné, mais il n'a aucune configuration d'interblocage, ce qui lui permet de faire une infinité de transitions. À ce titre, l'ensemble des transitions sont L2-vivantes, car aucune des transitions ne peut être faite infiniment, il y a une limite à ce qu'une transition peut être faite avant de devoir passer par une autre.
 				<li>Déterminez si le réseau est conservateur.</li>
-				Le réseau est conservateur. Le vecteur vertical [1/2,1,1/2,1] permet d'obtenir une constante sur l'ensemble des marquages du réseau. Par exemple: <br/>
-				[1/2,1,1/2,1] * [k,0,k,0] = k/2+0+k/2+0 <br/>
-				[1/2,1,1/2,1] * [k-1,1,k-1,0] = (k-1)/2 + 1 + (k-1)/2 + 0 = 2(k-1)/2 + 1 = k -1 + 1 = k
+				
 			</ol>
-		
+		<p>
+                    
+                    
 			
+                        Pour n'importe quel k > 0, :</br>
+                        Si on regarde le AC pour k=1, on voit qu'on peut toujours retourner au marquage précédent à partir du marquage actuel. C'est également le cas pour toutes les valeurs de k subséquentes. À ce titre, le nombre de marquage possible est fonction de K+1 + |M(K-1)|, c'est à dire que M(K-1) est un sous-ensemble de M(K). On peut donc conclure est le réseau est borné, car son AC ne contient pas d'Omega peu un K de valeur quelconque.
+			
+			Le réseau est borné, mais il n'a aucune configuration d'interblocage, ce qui lui permet de faire une infinité de transitions. À ce titre, l'ensemble des transitions sont L2-vivantes, car aucune des transitions ne peut être faite infiniment, il y a une limite à ce qu'une transition peut être faite avant de devoir passer par une autre.
+			[k,0,k,0] t2 [k-1,0,0,1] 
+                        Le réseau est conservateur. Le vecteur vertical [1,2,1,k+1] permet d'obtenir une constante sur l'ensemble des marquages du réseau. Par exemple: <br/>
+				[1,2,1,k+1] * [k,0,k,0] = k+0+k+0 = 2k <br/>
+				[1,2,1,k+1] * [k-1,0,0,1] = (k-1)/2 + k-1 + 0 + 0 + k+1 = 2k
+                                
 		</p>
 	</main>
 
