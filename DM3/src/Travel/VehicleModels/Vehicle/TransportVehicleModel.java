@@ -1,12 +1,10 @@
 package Travel.VehicleModels.Vehicle;
 
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
-import java.util.function.BiConsumer;
 
 import Travel.VehicleModels.Places.PassengerSpace;
 import Travel.VehicleModels.Sections.BaseSection;
