@@ -35,6 +35,13 @@ public abstract class SectionWithSeats extends BaseSection {
 		}
 		return spaces;
 	}
+	
+	public RowType getRowType(){
+		return rows.get(0).getType();
+	}
+	public int getRowAmmount(){
+		return rows.size();
+	}
 
 	public int getTotalPassengerPlaces(){
 		int total = 0;

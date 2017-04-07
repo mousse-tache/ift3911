@@ -13,6 +13,15 @@ public class TripForm extends BaseForm {
 	private String vehicleID;
 	private TravelCompany company;
 
+	public TripForm(Trip t) {
+		this.basePrice = t.getBasePrice();
+		this.departureTime = t.getArrivalTime();
+		this.itineraryID = t.getItinerary().getId();
+		this.vehicleID = t.getVehicle().getId();
+		this.company = t.getCompany();
+
+	}
+
 	public Double getBasePrice() {
 		return this.basePrice;
 	}
@@ -45,19 +54,6 @@ public class TripForm extends BaseForm {
 		this.vehicleID = vehicleID;
 	}
 
-	/**
-	 * 
-	 * @param t
-	 */
-	public TripForm(Trip t) {
-		this.basePrice = t.getBasePrice();
-		this.departureTime = t.getArrivalTime();
-		this.itineraryID = t.getItinerary().getId();
-		this.vehicleID = t.getVehicle().getId();
-		this.company = t.getCompany();
-
-	}
-
 	public BaseForm createFromPrompt() {
 		// TODO - implement TripForm.createFromPrompt
 		throw new UnsupportedOperationException();
@@ -75,5 +71,4 @@ public class TripForm extends BaseForm {
 	public void setCompany(TravelCompany company) {
 		this.company = company;
 	}
-
 }

@@ -2,30 +2,26 @@ package Travel.Forms;
 
 import Travel.VehicleModels.Sections.BaseSection;
 import Travel.VehicleModels.Sections.Row.RowType;
+import Travel.VehicleModels.Sections.SectionWithSeats;
 
 public class VehicleSectionForm {
 
-	private char id;
 	private int nbSpaces;
+	private String sectionType;
 	private RowType disposition;
+	private int nbRows;
 
 	/**
 	 * 
 	 * @param vs
 	 */
 	public VehicleSectionForm(BaseSection vs) {
-
 		this.nbSpaces = vs.getTotalPassengerPlaces();
-		
-		//this.disposition = vs.get???
-	}
-
-	public char getId() {
-		return this.id;
-	}
-
-	public void setId(char id) {
-		this.id = id;
+		this.setSectionType(vs.typeToString());
+		if (vs instanceof SectionWithSeats){
+			this.disposition = ((SectionWithSeats) vs).getRowType();
+			this.setNbRows(((SectionWithSeats) vs).getRowAmmount());
+		}
 	}
 
 	public int getNbSpaces() {
@@ -42,6 +38,22 @@ public class VehicleSectionForm {
 
 	public void setDisposition(RowType disposition) {
 		this.disposition = disposition;
+	}
+
+	public String getSectionType() {
+		return sectionType;
+	}
+
+	public void setSectionType(String sectionType) {
+		this.sectionType = sectionType;
+	}
+
+	public int getNbRows() {
+		return nbRows;
+	}
+
+	public void setNbRows(int nbRows) {
+		this.nbRows = nbRows;
 	}
 
 }
