@@ -51,11 +51,31 @@ public abstract class Trip implements IVisitable {
 	}
 	
 	public boolean hasReservations(){
-		for (Reservable r : reservables){
-			if (!r.isAvailable())
-				return true;
-		}
+		for (Reservable r : reservables)
+			if (!r.isAvailable()) return true;
 		return false;
+	}
+	
+	public int getNumberOfReservedSpaces(){
+		int amt = 0;
+		for (Reservable r : reservables)
+			if (!r.isAvailable()) amt++;
+		return amt;
+	}
+
+	public boolean hasReservationsInSection(String sectionType){
+		for (ReservableForTrip r : reservables)
+			if (r.getPassengerSpace().getSectionType().equals(sectionType) && !r.isAvailable()) 
+				return true;
+		return false;
+	}
+	
+	public int getNumberOfReservedSpacesInSection(String sectionType){
+		int amt = 0;
+		for (ReservableForTrip r : reservables)
+			if (r.getPassengerSpace().getSectionType().equals(sectionType) && !r.isAvailable()) 
+				amt++;
+		return amt;
 	}
 
 	public boolean reservablesCanBeCanceledOrModified() {
@@ -63,54 +83,33 @@ public abstract class Trip implements IVisitable {
 		long timeBeforeTrip = this.departureTime.getTime() - now.getTime();
 		return timeBeforeTrip > TimeUnit.MILLISECONDS.toDays(1);
 	}
+	
 
-	public Itinerary getItinerary(){
-		return this.itinerary;
-	}
+	public Itinerary getItinerary(){ return this.itinerary; }
 
-	public TravelFacility getDepartureLocation() {
-		return this.getItinerary().getDeparture().getLocation();
-	}
+	public TravelFacility getDepartureLocation() { return this.getItinerary().getDeparture().getLocation(); }
 
-	public Date getDepartureDateTime() {
-		return this.departureTime;
-	}
+	public Date getDepartureDateTime() { return this.departureTime; }
 
-	public TravelFacility getArrivalLocation() {
-		return this.getItinerary().getArrival().getLocation();
-	}
+	public TravelFacility getArrivalLocation() { return this.getItinerary().getArrival().getLocation(); }
 	
 	public Date getArrivalTime() {
-		long date = departureTime.getTime() + this.getItinerary().getTripTime().getTime();
+		long date = departureTime.getTime() + this.getItinerary().getTripTime();
 		return new Date(date);
 	}
 
-	public String getId() {
-		return this.id;
-	}
+	public String getId() { return this.id; }
 
-	public Double getBasePrice() {
-		return this.basePrice;
-	}
+	public Double getBasePrice() { return this.basePrice; }
 
-	public ConcreteVehicle getVehicle(){
-		return vehicle;
-	}
+	public ConcreteVehicle getVehicle(){ return vehicle; }
 	
-	public TravelType getType() {
-		return this.type;
-	}
+	public TravelType getType() { return this.type; }
 
-	public TravelCompany getCompany() {
-		return this.company;
-	}
+	public TravelCompany getCompany() { return this.company; }
 
-	public Set<ReservableForTrip> getReservables() {
-		return reservables;
-	}
+	public Set<ReservableForTrip> getReservables() { return reservables; }
 	
 	@Override
-	public void accept(TripVisitor v) {
-		v.visitTrip(this);
-	}
+	public void accept(TripVisitor v) { v.visitTrip(this); }
 }

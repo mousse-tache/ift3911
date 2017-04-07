@@ -20,16 +20,6 @@ public class VehicleModelForm extends BaseForm {
 		tv.getSections().forEach((k,v) -> sections.put(k, new VehicleSectionForm(v)));
 	}
 
-	public BaseForm createFromPrompt() {
-		// TODO - implement VehicleModelForm.createFromPrompt
-		throw new UnsupportedOperationException();
-	}
-
-	public void modifyFromPrompt() {
-		// TODO - implement VehicleModelForm.modifyFromPrompt
-		throw new UnsupportedOperationException();
-	}
-
 	public String getModelName() { return this.modelName; }
 
 	public void setModelName(String modelName) { this.modelName = modelName; }
@@ -42,7 +32,16 @@ public class VehicleModelForm extends BaseForm {
 		List<BaseSection> sections = new ArrayList<BaseSection>();
 		this.sections.forEach((k,form) -> sections.add(VehicleSectionFactory.createSection(form)));
 		return sections;
-		
+	}
+
+	public BaseForm createFromPrompt() {
+		// TODO - implement VehicleModelForm.createFromPrompt
+		throw new UnsupportedOperationException();
+	}
+
+	public void modifyFromPrompt() {
+		// TODO - implement VehicleModelForm.modifyFromPrompt
+		throw new UnsupportedOperationException();
 	}
 
 }
