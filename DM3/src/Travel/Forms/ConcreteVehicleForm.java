@@ -19,14 +19,10 @@ public class ConcreteVehicleForm extends BaseForm {
 		this.ownerID = cv.getOwnerID();
 		setTripsID(cv.getTrips());
 	}
-	public BaseForm createFromPrompt() {
-		// TODO - implement ConcreteVehicleForm.createFromPrompt
-		throw new UnsupportedOperationException();
-	}
 
-	public void modifyFromPrompt() {
-		// TODO - implement ConcreteVehicleForm.modifyFromPrompt
-		throw new UnsupportedOperationException();
+	public void setTripsID(List<Trip> trips) {
+		this.tripsID = new ArrayList<String>();
+		trips.forEach(t -> tripsID.add(t.getId()));
 	}
 
 	public String getModelID() { return this.modelID; }
@@ -39,8 +35,13 @@ public class ConcreteVehicleForm extends BaseForm {
 
 	public List<String> getTripsID() { return tripsID; }
 
-	public void setTripsID(List<Trip> trips) {
-		this.tripsID = new ArrayList<String>();
-		trips.forEach(t -> tripsID.add(t.getId()));
+	public BaseForm createFromPrompt() {
+		// TODO - implement ConcreteVehicleForm.createFromPrompt
+		throw new UnsupportedOperationException();
+	}
+
+	public void modifyFromPrompt() {
+		// TODO - implement ConcreteVehicleForm.modifyFromPrompt
+		throw new UnsupportedOperationException();
 	}
 }
