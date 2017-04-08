@@ -1,8 +1,17 @@
 package Travel.Factories;
 
 import Travel.Forms.VehicleSectionForm;
-import Travel.VehicleModels.Sections.*;
+import Travel.VehicleModels.Sections.BaseSection;
+import Travel.VehicleModels.Sections.BusinessSection;
+import Travel.VehicleModels.Sections.EconomicSection;
+import Travel.VehicleModels.Sections.FamilyDeluxeSection;
+import Travel.VehicleModels.Sections.FamilySection;
+import Travel.VehicleModels.Sections.FirstClassSection;
+import Travel.VehicleModels.Sections.InteriorSection;
+import Travel.VehicleModels.Sections.OceanViewSection;
+import Travel.VehicleModels.Sections.PremiumSection;
 import Travel.VehicleModels.Sections.Row.RowType;
+import Travel.VehicleModels.Sections.SuiteSection;
 
 public class VehicleSectionFactory {
 	

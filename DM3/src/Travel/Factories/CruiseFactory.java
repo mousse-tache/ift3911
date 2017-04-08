@@ -1,12 +1,8 @@
 package Travel.Factories;
 
-import Travel.ConcreteVehicle;
-import Travel.TravelCompany;
 import Travel.Facilities.Port;
 import Travel.Facilities.TravelFacility;
-import Travel.Forms.ConcreteVehicleForm;
 import Travel.Forms.ItineraryForm;
-import Travel.Forms.TravelCompanyForm;
 import Travel.Forms.TravelFacilityForm;
 import Travel.Forms.TripForm;
 import Travel.Forms.VehicleModelForm;
@@ -23,24 +19,26 @@ public class CruiseFactory extends TravelFactory {
 
 	private CruiseFactory() { }
 
-	public Trip createTrip(TripForm f) {
-		Cruise c = new Cruise(f);
-		unusedTripID(c.getId());
-		return c;
+	protected static TravelFactory getInstance() {
+		return instance;
 	}
 
+	@Override
+	public Trip createTrip(TripForm f) {
+		Trip t = new Cruise(f);
+		unusedTripID(t.getId());
+		addTripToCompanyAndVehicle(t, f.getCompanyID(), f.getVehicleID());
+		return t;
+	}
+
+	@Override
 	public TravelFacility createFacility(TravelFacilityForm f) {
 		Port p = new Port(f);
 		unusedTravelFacilityID(p.getId());
 		return p;
 	}
 
-	public ConcreteVehicle createConcreteVehicule(ConcreteVehicleForm f) {
-		ConcreteVehicle cv = new ConcreteVehicle(f);
-		unusedVehicleID(cv.getId());
-		return cv;
-	}
-
+	@Override
 	public TransportVehicleModel createVehicleModel(VehicleModelForm f) {
 		TransportVehicleModel tvm = new Cruiser(f);
 		unusedVehicleID(tvm.getID());
@@ -55,15 +53,9 @@ public class CruiseFactory extends TravelFactory {
 			throw new IllegalArgumentException("Cruise first and last stop must be the same!");
 		}
 		// Cruise must have more than 2 stops to be valid
-		if(i.getDepartureLocation() != i.getArrivalLocation()){
-			throw new IllegalArgumentException("Cruise first and last stop must be the same!");
+		if(i.getStops().size() > 2){
+			throw new IllegalArgumentException("Cruise can't have less than 2 stops");
 		}
 		return i;
 	}
-
-    @Override
-    public TravelCompany createCompany(TravelCompanyForm f) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
 }
