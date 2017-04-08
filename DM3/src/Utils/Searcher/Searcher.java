@@ -17,15 +17,16 @@ import Utils.DateUtils;
 
 public class Searcher {
 
+	// TODO ? Add TravelType to research
 	public static List<Trip> getTripsFromLocationToLocationAtDate(TravelFacility from, TravelFacility to, Date date) {
 		List<Trip> allTrips = Application.getStorage().getTrips();
 		List<Trip> filtered = new ArrayList<Trip>();
 		
 		for(Trip t : allTrips){
-			if(	t.getDepartureLocation().getId() == from.getId() &&
-				t.getArrivalLocation().getId() == to.getId() &&
-				DateUtils.isSameDay(t.getDepartureDateTime(),date)
-				) filtered.add(t);
+			if(	t.getDepartureLocation().getId() == from.getId()
+				&& t.getArrivalLocation().getId() == to.getId()
+				&& DateUtils.isSameDay(t.getDepartureDateTime(),date))
+					filtered.add(t);
 		}
 		return filtered;
 	}
@@ -39,7 +40,7 @@ public class Searcher {
 		return null;
 	}
 
-	//TODO : getAvailableReservablesForTrip -> sectionType should be easier to use
+	//NOTE : use sectionType from one of the section classes (e.g : PremiumSection.type)
 	public static List<Reservable> getAvailableReservablesForTrip(Trip trip, String sectionType) {
 		List<Reservable> filtered = new ArrayList<Reservable>();
 		for (Reservable r : trip.getReservables()){
