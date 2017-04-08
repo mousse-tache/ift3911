@@ -6,17 +6,20 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
+import Travel.TravelType;
 import Travel.Forms.VehicleModelForm;
 import Travel.VehicleModels.Places.PassengerSpace;
 import Travel.VehicleModels.Sections.BaseSection;
 
 public abstract class TransportVehicleModel {
 
+	protected TravelType type;
 	protected String ID;
 	protected String modelName;
 	protected Map<String, BaseSection> sections;
 
-	TransportVehicleModel(String ID, String modelName, List<BaseSection> listSections){
+	TransportVehicleModel(TravelType type, String ID, String modelName, List<BaseSection> listSections){
+		this.type = type;
 		this.ID = ID;
 		this.modelName = modelName;
 		Map<String, BaseSection> sectionMap = new HashMap<String, BaseSection>();
@@ -30,6 +33,7 @@ public abstract class TransportVehicleModel {
 
 	public TransportVehicleModel(VehicleModelForm form){
 		this.ID=form.getID();
+		this.type = form.getType();
 		this.modelName=form.getModelName();
 		Map<String, BaseSection> sectionMap = new HashMap<String, BaseSection>();
 		List<BaseSection> listSections = form.getBaseSections();
@@ -62,6 +66,10 @@ public abstract class TransportVehicleModel {
 		Set<PassengerSpace> spaces = new HashSet<PassengerSpace>();
 		sections.forEach( (k,v) -> spaces.addAll(v.getAllPassengerPlaces()));
 		return spaces;
+	}
+
+	public TravelType getType() {
+		return this.type;
 	}
 
 }

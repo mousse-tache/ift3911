@@ -16,17 +16,17 @@ public class ConcreteVehicle {
 
 	TravelCompany owner;
 	TransportVehicleModel vehicleModel;
-	private String id;
+	private String ID;
 	private List<Trip> trips;
 	private TravelType type;
 
 	public ConcreteVehicle(ConcreteVehicleForm f) {
-		this.owner = Searcher.getCompanyFromID(f.getID());
-		this.vehicleModel = Searcher.getVehicleModelFromID(f.getID());
-		this.id = f.getID();
-		this.trips = new ArrayList<Trip>();
-		f.getTripsID().forEach(id -> trips.add(Searcher.findTripFromID(id)));
+		this.ID = f.getID();
 		this.type = f.getType();
+		this.owner = Searcher.getCompanyFromID(f.getOwnerID());
+		this.vehicleModel = Searcher.getVehicleModelFromID(f.getModelID());
+		this.trips = new ArrayList<Trip>();
+		f.getTripsID().forEach(id -> trips.add(Searcher.getTripFromID(id)));
 	}
 
 	public Map<String, BaseSection> getSections() {
@@ -37,11 +37,13 @@ public class ConcreteVehicle {
 		return this.vehicleModel.getPassengerSpaces(section);
 	}
 
-	public String getId() { return this.id; }
+	public String getId() { return this.ID; }
 
 	public List<Trip> getTrips() { return this.trips; }
 
 	public TravelType getType() { return this.type; }
+
+	public TransportVehicleModel getModel() { return vehicleModel; }
 
 	public String getOwnerID() { return this.owner.getID(); }
 	public TravelCompany getOwner() { return this.owner; }
@@ -49,5 +51,11 @@ public class ConcreteVehicle {
 	public Set<PassengerSpace> getAllPassengerSpaces() {
 		return this.vehicleModel.getAllPassengerSpaces();
 	}
+
+	public boolean addTrip(Trip trip) {
+		if (trips.contains(trip)) return false;
+		return trips.add(trip);
+	}
+
 
 }

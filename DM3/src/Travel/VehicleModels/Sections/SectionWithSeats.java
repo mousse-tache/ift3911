@@ -14,11 +14,18 @@ public abstract class SectionWithSeats extends BaseSection {
 	List<Row> rows;
 
 	private void createRows(RowType rowType, int nbRow) {
-		if (nbRow > 26) throw new IllegalArgumentException("We currently don't allow row numbers to be past 'z'");
+		if (nbRow > 52) 
+			throw new IllegalArgumentException("We currently only allow rows in range [a-zA-Z]: " + nbRow + " is too many");
 		this.rows = new ArrayList<Row>();
-		for (char row='a';row<=nbRow;row++){
-			rows.add(new Row(this, rowType, row));
+		for (int rowNumber=0;rowNumber<nbRow;rowNumber++){
+			this.rows.add(new Row(this, rowType, getRowChar(rowNumber)));
 		}
+	}
+
+	// TODO char aren't the way to go with this, we only accept 52 values...
+	// Returns character from integer where 0 -> a
+	private char getRowChar(int rowNumber) {
+		return (char)((int)'a' + rowNumber);
 	}
 
 	SectionWithSeats(Double priceRatio, String sectionType, int nbRow, RowType rowType) {
@@ -37,20 +44,20 @@ public abstract class SectionWithSeats extends BaseSection {
 	}
 	
 	public RowType getRowType(){
-		return rows.get(0).getType();
+		return this.rows.get(0).getType();
 	}
 
 	public String typeToString(){
-		return this.type + rows.get(0).typeToString();
+		return this.type + this.getRowType().toChar();
 	}
 
 	public int getRowAmmount(){
-		return rows.size();
+		return this.rows.size();
 	}
 
 	public int getTotalPassengerPlaces(){
 		int total = 0;
-		for (Row r : rows){
+		for (Row r : this.rows){
 			total += r.getSize();
 		}
 		return total;
