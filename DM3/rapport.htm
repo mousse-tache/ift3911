@@ -145,8 +145,18 @@
 		<h2 id="qual">Discussion sur la qualité</h2>
                 <h3>Graphe IA</h3>
                 <p>
-			
+			Par rapport au graphe IA, le design précédent ne semblait pas montrer de grandes problématiques au niveau du design. Pour ce design-ci, l'analyse d'un tel graphe nous a forcé à nous pencher sur
+                        plusieurs paquets qui se retrouvaient dans la zone de la douleur. Deux paquets, Travel.Itineries et Travel.Facilities, faisaient partie de ce lot et nous avons remarqué qu'ils étaient étroitement couplés avec Trip,
+                        mais rien d'autres. Notre solution a été de fusionné les paquets, puisque ces éléments n'avaient pas de sens les uns sans les autres.
 		</p>
+                <p>
+                   L'application des patrons de conception s'est montrée très efficace sur le plan du ratio IA, particulièrement le patron de Commande qui crée un paquet très dépendant avec un seul point
+                   d'entré par l'utilisation de l'invocateur. Nous avons également ajouté un paquet Application qui est invoqué par la main. Celle-ci sert d'initialisateur principal et sert de lien entre l'UI et
+                   le reste du logiciel. De cette façon, Toute forme d'UI peut facilement être remplacé, car il n'y a aucune dépendance directe.
+                </p>
+                <p>
+                    À mentionner: SRP++, ISP, DIP, OCP, LSP
+                </p>
 		<h2>Génération et implémentation</h2>
 		<h2>Réseau de Pétri</h2>
                 <img src="./images/pn.png">
