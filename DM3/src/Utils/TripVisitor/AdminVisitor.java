@@ -9,7 +9,7 @@ import Travel.Trip.Trip;
 import Utils.DateUtils;
 import Utils.MoneyUtils;
 
-public class AdminTripVisitor implements TripVisitor {
+public class AdminVisitor implements Visitor {
 	
 	// YUL-YYZ:[AIRCAN]AC481(2014.11.28:06.00-2014.11.28:07:24)|PS(0/12)474.00|AM(5/16)355.50|EL(150/200)237.00 (exemple pour les vols d'avion).
 	// Cette donnée représente le vol AC481 par AIRCAN partant de YUL le 28/11/2014 à 6h arrivant à YYZ le même jour à 7h24 ayant une classe 

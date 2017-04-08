@@ -30,8 +30,7 @@ public abstract class SectionWithCabins extends BaseSection {
 		return spaces;
 	}
 
-	public int getTotalPassengerPlaces(){
-		return cabins.size();
-	}
+	public int getTotalPassengerPlaces(){ return cabins.size(); }
 
+	public String typeAndDispositionString(){ return this.type; }
 }

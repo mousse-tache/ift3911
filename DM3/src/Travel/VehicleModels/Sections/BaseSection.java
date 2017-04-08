@@ -21,6 +21,8 @@ public abstract class BaseSection {
 	public String typeToString(){
 		return this.type;
 	}
+	
+	public abstract String typeAndDispositionString();
 
 	public Double getPriceRatio() {
 		return this.priceRatio;
