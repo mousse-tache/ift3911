@@ -2,10 +2,6 @@ package Utils.TripVisitor;
 
 public interface IVisitable {
 
-	/**
-	 * 
-	 * @param v
-	 */
-	void accept(TripVisitor v);
+	String accept(TripVisitor v);
 
 }
