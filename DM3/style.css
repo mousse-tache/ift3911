@@ -103,3 +103,7 @@ nav > ul a:hover {
 pre {white-space:pre-wrap;}
 
 	
+figure {
+    display:inline-block;
+    width: 40%;
+}

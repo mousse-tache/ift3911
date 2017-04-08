@@ -144,10 +144,24 @@
 		<h3>Diagramme de paquets</h3>
 		<h2 id="qual">Discussion sur la qualité</h2>
                 <h3>Graphe IA</h3>
+                 
+                    <figure>
+                        <img src="./qual/iaDM2.png" alt="" />
+                        <figcaption>Graphe IA du DM2</figcaption>
+                     </figure>
+                    <figure>
+                        <img src="./qual/iaDM3.png" alt="" />
+                        <figcaption>Graphe IA du DM3</figcaption>
+                     </figure>
+                  
                 <p>
 			Par rapport au graphe IA, le design précédent ne semblait pas montrer de grandes problématiques au niveau du design. Pour ce design-ci, l'analyse d'un tel graphe nous a forcé à nous pencher sur
                         plusieurs paquets qui se retrouvaient dans la zone de la douleur. Deux paquets, Travel.Itineries et Travel.Facilities, faisaient partie de ce lot et nous avons remarqué qu'ils étaient étroitement couplés avec Trip,
-                        mais rien d'autres. Notre solution a été de fusionné les paquets, puisque ces éléments n'avaient pas de sens les uns sans les autres.
+                        mais rien d'autres. Notre solution a été de fusionné les paquets, puisque ces éléments n'avaient pas de sens les uns sans les autres. Si on compare les deux graphes, on constate premièrement
+                        que le nombre de paquets est beaucoup plus grand. On voit aussi que plusieurs paquets ne sont pas du tout abstraits. En l'occurence, ce sont les paquets Application, Commands, Travel.Forms,
+                        Travel. et Travel.Factories qui ne possèdent aucune abstraction. On peut également constater que certains points n'ont bouger, ce sont les rares paquets qui n'ont pas subis de modification, tels que Travel.Place 
+                        et Travel.Vehicle. Globalement, on constate que le degré d'abstraction a diminué, de même que le degré d'indépendance, ce qui nous laisse avec un design assez bon, mais plus difficile à implémenter comparativement
+                        au précédent.
 		</p>
                 <p>
                    L'application des patrons de conception s'est montrée très efficace sur le plan du ratio IA, particulièrement le patron de Commande qui crée un paquet très dépendant avec un seul point
@@ -155,7 +169,14 @@
                    le reste du logiciel. De cette façon, Toute forme d'UI peut facilement être remplacé, car il n'y a aucune dépendance directe.
                 </p>
                 <p>
-                    À mentionner: SRP++, ISP, DIP, OCP, LSP
+                    Notre design est un bon exemple du SRP, en général, les méthodes n'ont qu'un point d'accès et font un nombre de choses limitées. La plus grande cause de l'enflement du nombre de classes, mise à part
+                    les patrons de conceptions, est la séparation de nos classes pour réduire la responsabilité de chacune. À ce titre, le patron de commande est encore une fois merveilleux pour créer des 
+                    controlleurs simples et conserver un faible couplage. Les interfaces que nous utilisions précédemment sont encore présentes et, par leurs responsabilités limitées dès le départ, nous n'avons
+                    pas usé du ISP pour les spécialisées. Le DIP est quand même respecté sur ce plan, car la plupart de nos liens de dépendances sont vers les classes abstraites de nos paquets et les versions concrètes
+                     sont gérées à partir des Fabriques, ce qui fait en sorte que les dépendances ne sont presque jamais concrètes dans l'entièreté du logiciel. Cela donne un design assez flexible et facilement extensible.
+                     Les Fabriques font d'ailleurs en sorte qu'il serait presque trivial d'ajouter un nouveau mode de transport. Avec tout ce qui est déjà présent, peu de choses auraient besoin d'être ajoutées. En respectant 
+                     ces principes, nous respectons également le OCP, surtout avec notre soin apporté au respect du DIP.
+  
                 </p>
 		<h2>Génération et implémentation</h2>
 		<h2>Réseau de Pétri</h2>
