@@ -7,24 +7,39 @@ public class Executor {
 	private List<Command> history;
 
 	/**
-	 * 
+	 * execute command and add it to history
 	 * @param c
 	 */
 	public boolean execute(Command c) {
-		// TODO - implement Executor.execute
-                history.add(c);
-                c.execute();
-                return true;
+        this.history.add(c);
+        // TODO - faire quelquechose avec le résultat du execute
+        c.execute();
+        return true;
 	}
 
+	/**
+	 * Undo last command
+	 */
 	public boolean undo() {
 		// TODO - implement Executor.undo
-		throw new UnsupportedOperationException();
+		Command last = this.history.last();
+        if (last.canUndo()){
+            if (last.unexecute()){
+                this.history.pop();
+                return true;
+            } else {
+                return false;
+            }
+        }
 	}
 
+	/**
+	 * verifies if last command is undoable
+	 */
 	public boolean canUndo() {
 		// TODO - implement Executor.canUndo
-		throw new UnsupportedOperationException();
+		Command last = this.history.pop();
+        return last.canUndo();
 	}
 
 }
