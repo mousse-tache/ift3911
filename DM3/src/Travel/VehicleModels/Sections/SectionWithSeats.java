@@ -47,7 +47,7 @@ public abstract class SectionWithSeats extends BaseSection {
 		return this.rows.get(0).getType();
 	}
 
-	public String typeToString(){
+	public String typeAndDispositionString(){
 		return this.type + this.getRowType().toChar();
 	}
 

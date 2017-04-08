@@ -2,7 +2,7 @@ package Utils.TripVisitor;
 
 import Travel.Trip.Trip;
 
-public interface TripVisitor {
+public interface Visitor {
 
 	String visit(Trip trip);
 

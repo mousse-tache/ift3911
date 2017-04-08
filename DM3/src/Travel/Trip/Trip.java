@@ -17,7 +17,7 @@ import Travel.Itineraries.Itinerary;
 import Travel.VehicleModels.Places.PassengerSpace;
 import Utils.Searcher.Searcher;
 import Utils.TripVisitor.IVisitable;
-import Utils.TripVisitor.TripVisitor;
+import Utils.TripVisitor.Visitor;
 
 public abstract class Trip implements IVisitable {
 
@@ -111,5 +111,5 @@ public abstract class Trip implements IVisitable {
 	public Set<ReservableForTrip> getReservables() { return reservables; }
 	
 	@Override
-	public String accept(TripVisitor v) { return v.visit(this); }
+	public String accept(Visitor v) { return v.visit(this); }
 }

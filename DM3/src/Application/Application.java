@@ -4,9 +4,12 @@ import java.util.Set;
 
 import Sessions.Session;
 import Travel.Trip.Trip;
+import Travel.VehicleModels.Sections.FirstClassSection;
 import UI.HomeFrame;
 import Utils.Searcher.Searcher;
-import Utils.TripVisitor.AdminTripVisitor;
+import Utils.TripVisitor.AdminVisitor;
+import Utils.TripVisitor.ClientVisitor;
+import Utils.TripVisitor.Visitor;
 
 public class Application {
 
@@ -19,9 +22,22 @@ public class Application {
 	
 	public void tests(){
 		LiveStorage.getInstance().populate();
+
 		Trip trip = Searcher.getTripFromID("AC720");
-		AdminTripVisitor visitor = new AdminTripVisitor();
+
+		Visitor visitor = new AdminVisitor();
 		String result = visitor.visit(trip);
+		System.out.println(result);
+
+		visitor = new ClientVisitor(FirstClassSection.type);
+		result = visitor.visit(trip);
+		System.out.println(result);
+
+		visitor = new ClientVisitor("blargh");
+		try {result = visitor.visit(trip); }
+		catch (IllegalArgumentException e) {
+			result = e.getMessage();
+		}
 		System.out.println(result);
 	}
 
