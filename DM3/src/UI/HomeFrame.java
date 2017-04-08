@@ -1,6 +1,8 @@
 package UI;
 
 import java.awt.GridLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -21,6 +23,20 @@ public class HomeFrame extends JFrame {
 	}
 
 	public HomeFrame(){
+                b_newAdmin.addActionListener(new ActionListener() {                
+                
+                    @Override
+                    public void actionPerformed(ActionEvent e) {
+                        //TODO set new Admin frame
+                    }
+                });
+                b_newClient.addActionListener(new ActionListener() {                
+                
+                    @Override
+                    public void actionPerformed(ActionEvent e) {
+                        
+                    }
+                });
 		this.setTitle("Accueil");
 		this.setSize(400,200);
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

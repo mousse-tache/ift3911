@@ -47,8 +47,8 @@ public class Application {
 	}
 
 	public Application(String args[]) {
-//		mainFrame = new HomeFrame();
 		tests();
+                mainFrame = new HomeFrame();
 	}
 
 	public static LiveStorage getStorage() {
