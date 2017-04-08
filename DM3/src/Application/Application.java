@@ -3,17 +3,26 @@ package Application;
 import java.util.Set;
 
 import Sessions.Session;
+import Travel.Trip.Trip;
 import UI.HomeFrame;
+import Utils.Searcher.Searcher;
+import Utils.TripVisitor.AdminTripVisitor;
 
 public class Application {
 
-	//private static LiveStorage liveStorage; //Ne devrait pas être nulle part ailleurs que dans la classe LiveStorage
 	private static Set<Session> sessions;
 	private static HomeFrame mainFrame;
 
 	public void init() {
-		// TODO - implement Application.init
-		throw new UnsupportedOperationException();
+
+	}
+	
+	public void tests(){
+		LiveStorage.getInstance().populate();
+		Trip trip = Searcher.getTripFromID("AC720");
+		AdminTripVisitor visitor = new AdminTripVisitor();
+		String result = visitor.visit(trip);
+		System.out.println(result);
 	}
 
 	public void showBaseGUI() {
@@ -21,12 +30,9 @@ public class Application {
 		throw new UnsupportedOperationException();
 	}
 
-	/**
-	 * 
-	 * @param args
-	 */
 	public Application(String args[]) {
-		mainFrame = new HomeFrame();
+//		mainFrame = new HomeFrame();
+		tests();
 	}
 
 	public static LiveStorage getStorage() {

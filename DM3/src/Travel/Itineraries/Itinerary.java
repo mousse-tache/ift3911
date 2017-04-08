@@ -46,4 +46,7 @@ public abstract class Itinerary {
 	public Long getTripTime(){ return stops.get(stops.size()-1).getTimeFromDeparture();}
 
 	public List<Stop> getStops(){return stops;}
+
+	public TravelType getType() { return type; }
+
 }
