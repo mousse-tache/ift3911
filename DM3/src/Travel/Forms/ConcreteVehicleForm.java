@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import Travel.ConcreteVehicle;
+import Travel.TravelType;
 import Travel.Trip.Trip;
 
 
@@ -14,10 +15,19 @@ public class ConcreteVehicleForm extends BaseForm {
 	private List<String> tripsID;
 
 	public ConcreteVehicleForm(ConcreteVehicle cv) {
+		this.ID = cv.getId();
 		this.type = cv.getType();
-		this.modelID = cv.getId();
+		this.modelID = cv.getModel().getID();
 		this.ownerID = cv.getOwnerID();
 		setTripsID(cv.getTrips());
+	}
+
+	public ConcreteVehicleForm(TravelType type, String vehicleID, String modelID, String ownerID) {
+		this.ID = vehicleID;
+		this.type = type;
+		this.modelID = modelID;
+		this.ownerID = ownerID; 
+		this.tripsID = new ArrayList<String>();
 	}
 
 	public void setTripsID(List<Trip> trips) {

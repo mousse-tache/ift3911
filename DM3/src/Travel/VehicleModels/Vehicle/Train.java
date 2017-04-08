@@ -2,6 +2,7 @@ package Travel.VehicleModels.Vehicle;
 
 import java.util.List;
 
+import Travel.TravelType;
 import Travel.Forms.VehicleModelForm;
 import Travel.VehicleModels.Sections.BaseSection;
 import Travel.VehicleModels.Sections.EconomicSection;
@@ -10,7 +11,7 @@ import Travel.VehicleModels.Sections.PremiumSection;
 public class Train extends TransportVehicleModel {
 
 	Train(String ID, String modelName, List<BaseSection> listSections) {
-		super(ID, modelName, validSections(listSections));
+		super(TravelType.Train, ID, modelName, validSections(listSections));
 	}
         
         public Train(VehicleModelForm form) {

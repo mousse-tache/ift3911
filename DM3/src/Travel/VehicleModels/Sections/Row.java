@@ -8,10 +8,27 @@ import Travel.VehicleModels.Places.Seat;
 public class Row {
 
 	public enum RowType {
-		SMALL,
-		COMFORT,
-		MEDIUM,
-		LARGE;
+		SMALL, COMFORT, MEDIUM, LARGE;
+
+		public char toChar() {
+			switch (this){
+			case SMALL: return 'S';
+			case COMFORT: return 'C';
+			case MEDIUM: return 'M';
+			case LARGE: return 'L';
+			default: throw new IllegalArgumentException("Invalid Row Type: " + this);
+			}
+		}
+
+		public int rowLength(){
+			switch (this){
+			case SMALL: return 3;
+			case COMFORT: return 4;
+			case MEDIUM: return 6;
+			case LARGE: return 10;
+			default: throw new IllegalArgumentException("Invalid Row Type: " + this);
+			}
+		}
 	};
 
 	SectionWithSeats section;
@@ -22,43 +39,18 @@ public class Row {
 	Row(SectionWithSeats s, RowType rowType, char row){
 		this.section = s;
 		this.row = row;
-
-		int colAmt;
-		switch (rowType){
-			case SMALL: colAmt = 3; break;
-			case COMFORT: colAmt = 4; break;
-			case MEDIUM: colAmt = 6; break;
-			case LARGE: colAmt = 10; break;
-			default: throw new IllegalArgumentException("Invalid Row Type given to row creation");
-		}
-		
+		this.rowType = rowType;
 		this.seats = new ArrayList<Seat>();
-		for (int i=1; i<= colAmt; i++){
-			this.seats.add(new Seat(this.row, i));
-		}
-	}
-	
-	public String typeToString(){
-		switch (rowType){
-			case SMALL: return "S";
-			case COMFORT: return "C";
-			case MEDIUM: return "M";
-			case LARGE: return "L";
-			default: return null;
+		for (int i=1; i<= rowType.rowLength(); i++){
+			this.seats.add(new Seat(this.section, this.row, i));
 		}
 	}
 	
 	public char getRowChar() { return row; }
 
-	public List<Seat> getSeats(){
-		return this.seats;
-	}
+	public List<Seat> getSeats(){ return this.seats; }
 
-	public RowType getType() {
-		return rowType;
-	}
+	public RowType getType() { return rowType; }
 
-	public int getSize() {
-		return seats.size();
-	}
+	public int getSize() { return seats.size(); }
 }

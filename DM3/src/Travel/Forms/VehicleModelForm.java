@@ -5,6 +5,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import Travel.TravelType;
 import Travel.Factories.VehicleSectionFactory;
 import Travel.VehicleModels.Sections.BaseSection;
 import Travel.VehicleModels.Vehicle.TransportVehicleModel;
@@ -15,9 +16,21 @@ public class VehicleModelForm extends BaseForm {
 	private Map<String, VehicleSectionForm> sections;
 
 	public VehicleModelForm(TransportVehicleModel tv) {
+		this.ID = tv.getID();
+		this.type = tv.getType();
 		this.modelName = tv.getModelName();
 		this.sections = new HashMap<String, VehicleSectionForm>();
 		tv.getSections().forEach((k,v) -> sections.put(k, new VehicleSectionForm(v)));
+	}
+
+	public VehicleModelForm(TravelType type, String modelID, String modelName, List<VehicleSectionForm> sectionsForms) {
+		this.ID = modelID;
+		this.type = type;
+		this.modelName = modelName;
+		this.sections = new HashMap<String, VehicleSectionForm>();
+		for(VehicleSectionForm vsf : sectionsForms){
+			this.sections.put(vsf.getSectionType(), vsf);
+		}
 	}
 
 	public String getModelName() { return this.modelName; }

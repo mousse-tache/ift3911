@@ -1,11 +1,14 @@
 package Travel.VehicleModels.Places;
 
+import Travel.VehicleModels.Sections.SectionWithSeats;
+
 public class Seat extends PassengerSpace {
 
 	private char row;
 	private int collumn;
 
-	public Seat(char row, int collumn) {
+	public Seat(SectionWithSeats section, char row, int collumn) {
+		super(section);
 		this.row = row;
 		this.collumn = collumn;
 	}

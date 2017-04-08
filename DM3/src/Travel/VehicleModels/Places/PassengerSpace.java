@@ -4,7 +4,11 @@ import Travel.VehicleModels.Sections.BaseSection;
 
 public abstract class PassengerSpace {
 
-	private BaseSection section;
+	protected BaseSection section;
+	
+	public PassengerSpace(BaseSection section){
+		this.section = section;
+	}
 	
 	public Double getPriceRatio() {
 		return this.section.getPriceRatio();
