@@ -1,11 +1,15 @@
 package Travel.Forms;
 
+import java.text.ParseException;
 import java.util.Date;
 
 import Travel.ConcreteVehicle;
 import Travel.TravelCompany;
+import Travel.TravelType;
 import Travel.Itineraries.Itinerary;
 import Travel.Trip.Trip;
+import Utils.DateUtils;
+import Utils.MoneyUtils;
 import Utils.Searcher.Searcher;
 
 public class TripForm extends BaseForm {
@@ -17,11 +21,23 @@ public class TripForm extends BaseForm {
 	private String companyID;
 
 	public TripForm(Trip t) {
+		this.ID = t.getId();
+		this.type = t.getType();
 		this.basePrice = t.getBasePrice();
 		this.departureTime = t.getDepartureDateTime();
 		this.itineraryID = t.getItinerary().getId();
 		this.vehicleID = t.getVehicle().getId();
 		this.companyID = t.getCompany().getID();
+	}
+
+	public TripForm(TravelType type, String tripID, String companyID, String vehicleID, String itineraryID, String departureTime, String basePrice) throws ParseException {
+		this.ID = tripID;
+		this.type = type;
+		this.companyID = companyID;
+		this.vehicleID = vehicleID;
+		this.itineraryID = itineraryID;
+		this.departureTime = DateUtils.dateFromString(departureTime);
+		this.basePrice = MoneyUtils.stringToDouble(basePrice);
 	}
 
 	public Double getBasePrice() { return this.basePrice; }

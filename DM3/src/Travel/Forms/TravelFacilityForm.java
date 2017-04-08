@@ -5,16 +5,21 @@ import Travel.Facilities.TravelFacility;
 
 public class TravelFacilityForm extends BaseForm {
 
-	private String id;
 	private String location;
 	private String name;
-	private TravelType type;
 
 	public TravelFacilityForm(TravelFacility tf) {
 		this.ID = tf.getId();
+		this.type = tf.getType();
 		this.location = tf.getLocation();
 		this.name = tf.getName();
-		this.type = tf.getType();
+	}
+
+	public TravelFacilityForm(TravelType type, String facilityID, String location, String name) {
+		this.ID = facilityID;
+		this.type = type;
+		this.location = location;
+		this.name = name;
 	}
 
 	public String getLocation() { return this.location; }
@@ -25,9 +30,9 @@ public class TravelFacilityForm extends BaseForm {
 
 	public void setName(String name) { this.name = name; }
 
-	public String getId() { return id; }
+	public String getId() { return ID; }
 
-	public void setId(String id) { this.id = id; }
+	public void setId(String id) { this.ID = id; }
 
 	public TravelType getType() { return type; }
 
