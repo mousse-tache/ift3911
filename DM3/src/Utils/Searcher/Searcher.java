@@ -30,7 +30,7 @@ public class Searcher {
 		return filtered;
 	}
 
-	public static Trip findTripFromID(String tripID) {
+	public static Trip getTripFromID(String tripID) {
 		for(Trip t : Application.getStorage().getTrips()){
 			if (t.getId().equals(tripID)){
 				return t;

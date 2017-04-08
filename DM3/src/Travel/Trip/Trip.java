@@ -111,5 +111,5 @@ public abstract class Trip implements IVisitable {
 	public Set<ReservableForTrip> getReservables() { return reservables; }
 	
 	@Override
-	public void accept(TripVisitor v) { v.visitTrip(this); }
+	public String accept(TripVisitor v) { return v.visit(this); }
 }

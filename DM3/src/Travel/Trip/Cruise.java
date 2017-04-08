@@ -2,7 +2,6 @@ package Travel.Trip;
 
 import Travel.Forms.TripForm;
 import Travel.Itineraries.CruiseRoute;
-import Utils.TripVisitor.TripVisitor;
 
 public class Cruise extends Trip {
 
@@ -13,9 +12,4 @@ public class Cruise extends Trip {
 			throw new IllegalArgumentException("Invalid itinerary for a Cruise");
 		}
 	}
-
-	public void accept(TripVisitor v) {
-		v.visitTrip(this);
-	}
-
 }

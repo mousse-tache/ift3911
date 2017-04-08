@@ -2,7 +2,6 @@ package Travel.Trip;
 
 import Travel.Forms.TripForm;
 import Travel.Itineraries.TrainLine;
-import Utils.TripVisitor.TripVisitor;
 
 public class TrainTrip extends Trip {
 
@@ -13,8 +12,5 @@ public class TrainTrip extends Trip {
 			throw new IllegalArgumentException("Invalid itinerary for a TrainTrip");
 		}
 	}
-	
-	public void accept(TripVisitor v) {
-		v.visitTrip(this);
-	}
+
 }
