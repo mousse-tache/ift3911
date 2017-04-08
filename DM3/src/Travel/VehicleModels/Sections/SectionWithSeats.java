@@ -39,6 +39,11 @@ public abstract class SectionWithSeats extends BaseSection {
 	public RowType getRowType(){
 		return rows.get(0).getType();
 	}
+
+	public String typeToString(){
+		return this.type + rows.get(0).typeToString();
+	}
+
 	public int getRowAmmount(){
 		return rows.size();
 	}
