@@ -1,7 +1,7 @@
 package Commands;
 
 public class ItineraryCreationCommand extends AdminCreationCommand {
-    boolean execute(){
+    public boolean execute(){
         this.result = CreationMediator.createTrip(this.args);
         if (this.result) {
             this.status = CommandStatus.success;
@@ -11,7 +11,7 @@ public class ItineraryCreationCommand extends AdminCreationCommand {
             return false;
         }
     }
-    boolean unexecute(){
+    public boolean unexecute(){
         if (this.status == CommandStatus.success){
             return DeletionMediator.deleteTrip(this.result);//this.result devrait être l'id du trip créé.
         } else {

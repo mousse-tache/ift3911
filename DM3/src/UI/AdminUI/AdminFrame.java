@@ -825,7 +825,7 @@ public class AdminFrame extends UserFrame {
 
     private void bShowFlightsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bShowFlightsActionPerformed
         // TODO add TripsPanel to dialog
-        JDialog d = new JDialog();
+        ShowTripsDialog d = new ShowTripsDialog();
         d.setLocationRelativeTo(null);
         d.setVisible(true);
     }//GEN-LAST:event_bShowFlightsActionPerformed
@@ -886,7 +886,7 @@ public class AdminFrame extends UserFrame {
 
     private void bShowItineriesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bShowItineriesActionPerformed
         // TODO add TripsPanel to dialog
-        JDialog d = new JDialog();
+        ShowTripsDialog d = new ShowTripsDialog();
         d.setLocationRelativeTo(null);
         d.setVisible(true);
     }//GEN-LAST:event_bShowItineriesActionPerformed
@@ -947,7 +947,7 @@ public class AdminFrame extends UserFrame {
 
     private void bShowCruisesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bShowCruisesActionPerformed
         // TODO add TripsPanel to dialog
-        JDialog d = new JDialog();
+        ShowTripsDialog d = new ShowTripsDialog();
         d.setLocationRelativeTo(null);
         d.setVisible(true);
     }//GEN-LAST:event_bShowCruisesActionPerformed

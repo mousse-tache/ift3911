@@ -23,13 +23,182 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <EmptySpace min="0" pref="400" max="32767" attributes="0"/>
+          <Group type="102" alignment="1" attributes="0">
+              <EmptySpace max="32767" attributes="0"/>
+              <Component id="bSubmit" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="146" max="-2" attributes="0"/>
+          </Group>
+          <Group type="102" alignment="0" attributes="0">
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                  <Component id="Compagnie4" alignment="1" max="32767" attributes="0"/>
+                  <Component id="Compagnie3" alignment="0" max="32767" attributes="0"/>
+                  <Component id="Compagnie2" alignment="1" max="32767" attributes="0"/>
+                  <Component id="Compagnie1" alignment="1" max="32767" attributes="0"/>
+                  <Component id="Compagnie" alignment="0" max="32767" attributes="0"/>
+                  <Component id="jLabel1" alignment="0" min="-2" pref="79" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" attributes="0">
+                      <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="88" max="-2" attributes="0"/>
+                      <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                  </Group>
+                  <Group type="102" attributes="0">
+                      <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                          <Component id="tfItinaryID" alignment="0" pref="100" max="32767" attributes="0"/>
+                          <Component id="tfVehicleID" alignment="0" max="32767" attributes="0"/>
+                          <Component id="tfCompanyID" alignment="0" max="32767" attributes="0"/>
+                          <Component id="tfID" alignment="0" max="32767" attributes="0"/>
+                          <Component id="tfBasePrice" max="32767" attributes="0"/>
+                      </Group>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="tfNewID" pref="100" max="32767" attributes="0"/>
+                          <Component id="tfNewCompanyID" max="32767" attributes="0"/>
+                          <Component id="tfNewVehicleID" alignment="0" max="32767" attributes="0"/>
+                          <Component id="tfNewItinaryID" alignment="0" max="32767" attributes="0"/>
+                          <Component id="tfNewBasePrice" alignment="0" max="32767" attributes="0"/>
+                      </Group>
+                  </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <Component id="tfDepartureDateTime" pref="100" max="32767" attributes="0"/>
+                      <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
+                      <Component id="tfNewDepartureDateTime" min="-2" pref="100" max="-2" attributes="0"/>
+                  </Group>
+              </Group>
+              <EmptySpace min="-2" pref="73" max="-2" attributes="0"/>
+          </Group>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
-          <EmptySpace min="0" pref="300" max="32767" attributes="0"/>
+          <Group type="102" alignment="0" attributes="0">
+              <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="jLabel2" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jLabel3" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="jLabel1" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="tfID" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="tfNewID" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="Compagnie" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="tfCompanyID" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="tfNewCompanyID" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="Compagnie1" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="tfVehicleID" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="tfNewVehicleID" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="Compagnie2" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="tfItinaryID" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="tfNewItinaryID" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="Compagnie3" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="tfNewDepartureDateTime" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="tfDepartureDateTime" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="Compagnie4" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="tfBasePrice" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="tfNewBasePrice" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+              <Component id="bSubmit" min="-2" max="-2" attributes="0"/>
+              <EmptySpace pref="72" max="32767" attributes="0"/>
+          </Group>
       </Group>
     </DimensionLayout>
   </Layout>
+  <SubComponents>
+    <Component class="javax.swing.JLabel" name="jLabel1">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="ID"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="Compagnie">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Compagnie ID"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="Compagnie1">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="V&#xe9;hicule ID"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="Compagnie2">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Itin&#xe9;raire ID"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="Compagnie3">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Heure de d&#xe9;part"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="Compagnie4">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Prix de base"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="tfBasePrice">
+    </Component>
+    <Component class="javax.swing.JTextField" name="tfNewDepartureDateTime">
+    </Component>
+    <Component class="javax.swing.JTextField" name="tfItinaryID">
+    </Component>
+    <Component class="javax.swing.JTextField" name="tfVehicleID">
+    </Component>
+    <Component class="javax.swing.JTextField" name="tfCompanyID">
+    </Component>
+    <Component class="javax.swing.JTextField" name="tfID">
+    </Component>
+    <Component class="javax.swing.JButton" name="bSubmit">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Edit"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="bSubmitActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabel2">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Ancien"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabel3">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Nouveau"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="tfNewID">
+    </Component>
+    <Component class="javax.swing.JTextField" name="tfNewCompanyID">
+    </Component>
+    <Component class="javax.swing.JTextField" name="tfNewVehicleID">
+    </Component>
+    <Component class="javax.swing.JTextField" name="tfNewItinaryID">
+    </Component>
+    <Component class="javax.swing.JTextField" name="tfDepartureDateTime">
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="tfDepartureDateTimeActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JTextField" name="tfNewBasePrice">
+    </Component>
+  </SubComponents>
 </Form>

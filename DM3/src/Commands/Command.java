@@ -37,7 +37,7 @@ public class Command {
 		this.status = status;
 	}
 
-	private CommandStatus attribute;
-	private CommandStatus status;
+	protected CommandStatus attribute;
+	protected CommandStatus status;
 
 }
