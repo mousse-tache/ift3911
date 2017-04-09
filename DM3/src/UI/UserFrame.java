@@ -1,21 +1,16 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package UI;
 
-import javax.swing.JButton;
 import javax.swing.JFrame;
 
-import Sessions.Session;
-
+/**
+ *
+ * @author localadmin
+ */
 public class UserFrame extends JFrame{
-
-	JButton login = new JButton("Login");
-	JButton logout_button = new JButton("Logout");
-	
-	/**
-	 * 
-	 * @param s
-	 */
-	public boolean logout(Session s) {
-		// TODO - implement HomeFrame.logout
-		throw new UnsupportedOperationException();
-	}
+    
 }
