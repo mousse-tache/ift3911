@@ -49,7 +49,7 @@ public class PlaneFactory extends TravelFactory {
 	public Itinerary createItinerary(ItineraryForm f) {
 		Itinerary i = new FlightRoute(f);
 		// Flight must have exactly 2 stops to be valid
-		if(i.getDepartureLocation() != i.getArrivalLocation() && i.getStops().size() == 2){
+		if(i.getDepartureLocation() != i.getArrivalLocation() && i.getStops().size() != 2){
 			throw new IllegalArgumentException("Flight must have exactly 2 different stops to be valid");
 		}
 		return i;
