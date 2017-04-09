@@ -1,5 +1,7 @@
 package UI;
 
+import UI.ClientUI.ClientFrame;
+import UI.AdminUI.AdminFrame;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -37,7 +39,7 @@ public class HomeFrame extends JFrame {
 		});
 		this.setTitle("Accueil");
 		this.setSize(400,200);
-		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		this.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		this.setLocationRelativeTo(null);
 		
 		// Both buttons to create new frames

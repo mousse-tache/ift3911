@@ -3,8 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package UI;
+package UI.AdminUI;
 
+import UI.UserFrame;
 import javax.swing.JFrame;
 
 /**
@@ -105,7 +106,7 @@ public class AdminFrame extends UserFrame {
             }
         });
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         lPlane.setText("Avion");
 
@@ -540,7 +541,7 @@ public class AdminFrame extends UserFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(TabbedTravel)
+            .addComponent(TabbedTravel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 302, Short.MAX_VALUE)
         );
 
         pack();
