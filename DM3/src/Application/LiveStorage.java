@@ -52,22 +52,24 @@ public class LiveStorage {
 	}
 	
 	// Basic populate of LiveStorage for testing purposes
-	public void populate() {
+	public void populatePlaneTravels() {
 		TravelFactory factory = TravelFactory.getInstance(TravelType.Plane);
 
 		// A COMPANY
 		TravelCompanyForm travelCompanyForm = new TravelCompanyForm("AIRCAN", "Air Canada");
 		TravelCompany airCanada = factory.createCompany(travelCompanyForm);
 		this.companies.add(airCanada);
-		if (airCanada == null) System.out.println("OOPS");
 		
 		// TWO AIRPORTS
 		TravelFacilityForm travelFacilityForm1 = new TravelFacilityForm(TravelType.Plane, "YUL", "Montreal", "Aeroport Pierre-Elliott Trudeau");
 		TravelFacility aeroportMontreal = factory.createFacility(travelFacilityForm1);
 		TravelFacilityForm travelFacilityForm2 = new TravelFacilityForm(TravelType.Plane, "JFK", "New York", "John F. Kennedy International Airport");
 		TravelFacility aeroportNewYork = factory.createFacility(travelFacilityForm2);
+		TravelFacilityForm travelFacilityForm3 = new TravelFacilityForm(TravelType.Plane, "ORY", "Paris", "Aeroport de Paris-Charles-de-Gaulle");
+		TravelFacility aeroportParis = factory.createFacility(travelFacilityForm3);
 		this.travelFacilities.add(aeroportMontreal);
 		this.travelFacilities.add(aeroportNewYork);
+		this.travelFacilities.add(aeroportParis);
 		
 		// THREE VEHICLE SECTIONS
 		List<VehicleSectionForm> sectionForms = new ArrayList<VehicleSectionForm>();
@@ -84,20 +86,41 @@ public class LiveStorage {
 		ConcreteVehicleForm concreteVehicleForm = new ConcreteVehicleForm(airbusModel.getType(), "6354",airbusModel.getID(), airCanada.getID()); 
 		ConcreteVehicle airbus = factory.createConcreteVehicule(concreteVehicleForm);
 
-		// AN ITINERARY FROM MONTREAL TO NEW YORK IN TWO HOURS
-		String[] locationIDs = {"YUL", "JFK"};
-		Long[] times = { (long) 0 , (long) (1000*60*60*2) };
-		ItineraryForm itineraryForm = new ItineraryForm(airbus.getType(), "AC123", Arrays.asList(locationIDs), Arrays.asList(times));
+		// AN ITINERARY FROM MONTREAL TO NEW YORK IN 2 HOURS
+		String[] locationIDs1 = {"YUL", "JFK"};
+		Long[] times1 = { (long) 0 , (long) (1000*60*60*2) };
+		ItineraryForm itineraryForm = new ItineraryForm(airbus.getType(), "AC123", Arrays.asList(locationIDs1), Arrays.asList(times1));
 		Itinerary flightMontrealNewYork = new FlightRoute(itineraryForm);
 		this.itineraries.add(flightMontrealNewYork);
+		
+		// AN ITINERARY FROM PARIS TO MONTREAL IN 7 HOURS
+		String[] locationIDs2 = {"ORY", "YUL"};
+		Long[] times2 = { (long) 0 , (long) (1000*60*60*7) };
+		ItineraryForm itineraryForm2 = new ItineraryForm(airbus.getType(), "AC425", Arrays.asList(locationIDs2), Arrays.asList(times2));
+		Itinerary flightParisMontreal = new FlightRoute(itineraryForm2);
+		this.itineraries.add(flightParisMontreal);
 
-		// A TRIP
-		String tripDate = DateUtils.toString(Date.from(Instant.now()));
-		TripForm tripForm;
+		// AN ITINERARY FROM NEW YORK TO MONTREAL IN 2 HOURS
+		String[] locationIDs3 = {"JFK", "YUL"};
+		Long[] times3 = { (long) 0 , (long) (1000*60*60*2) };
+		ItineraryForm itineraryForm3 = new ItineraryForm(airbus.getType(), "AC125", Arrays.asList(locationIDs3), Arrays.asList(times3));
+		Itinerary flightNewYorkMontreal = new FlightRoute(itineraryForm3);
+		this.itineraries.add(flightNewYorkMontreal);
+
+		// 3 TRIPS
 		try { 
-			tripForm = new TripForm(flightMontrealNewYork.getType(), "AC720",airCanada.getID(), airbus.getId(), flightMontrealNewYork.getId(), tripDate, "600.00");
-			Trip trip = factory.createTrip(tripForm);
-			this.trips.add(trip);
+			String tripDate1 = DateUtils.toString(DateUtils.addTimestampToDate(Date.from(Instant.now()), 436534));
+			String tripDate2 = DateUtils.toString(DateUtils.addTimestampToDate(Date.from(Instant.now()), 4534));
+			String tripDate3 = DateUtils.toString(DateUtils.addTimestampToDate(Date.from(Instant.now()), 43645325));
+			TripForm tripForm1 = new TripForm(flightMontrealNewYork.getType(), "AC720",airCanada.getID(), airbus.getId(), flightMontrealNewYork.getId(), tripDate1, "600.00");
+			TripForm tripForm2 = new TripForm(flightParisMontreal.getType(), "AC720",airCanada.getID(), airbus.getId(), flightParisMontreal.getId(), tripDate2, "900.00");
+			TripForm tripForm3 = new TripForm(flightNewYorkMontreal.getType(), "AC720",airCanada.getID(), airbus.getId(), flightNewYorkMontreal.getId(), tripDate3, "600.00");
+			Trip trip1 = factory.createTrip(tripForm1);
+			Trip trip2 = factory.createTrip(tripForm2);
+			Trip trip3 = factory.createTrip(tripForm3);
+			this.trips.add(trip1);
+			this.trips.add(trip2);
+			this.trips.add(trip3);
 		} catch (ParseException e) { e.printStackTrace(); }
 		
 	}
