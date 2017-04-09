@@ -27,7 +27,6 @@ public class Executor {
 	 * Undo last command
 	 */
 	public boolean undo() {
-		// TODO - implement Executor.undo
 		if (!this.canUndo())
 			return false;
 		// Unexecute returns a boolean ?
