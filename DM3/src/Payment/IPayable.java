@@ -4,12 +4,9 @@ import Sessions.Client.ClientPaymentInfo;
 
 public interface IPayable {
 
-	Payment getPayment();
+	String pay(double ammountToPay);
 
 	ClientPaymentInfo getPaymentInfo();
 
-	Double getAmount();
-
-	String getConfirmationNumber();
-
+	Double getAmountLeft();
 }

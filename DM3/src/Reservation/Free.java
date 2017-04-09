@@ -9,7 +9,7 @@ public class Free extends ReservableState {
 
 	@Override
 	public void cancel(Reservable ctx) {
-		System.out.println("Place already free");
+		throw new IllegalStateException("Place already free");
 	}
 
 	@Override
