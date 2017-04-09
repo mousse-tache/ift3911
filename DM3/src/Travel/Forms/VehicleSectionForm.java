@@ -22,7 +22,7 @@ public class VehicleSectionForm {
 
 	private VehicleSectionForm() { }
 	
-	public static VehicleSectionForm createPlaneSection(String sectionType, RowType rowType, int nbRows){
+	public static VehicleSectionForm createSectionWithSeats(String sectionType, RowType rowType, int nbRows){
 		VehicleSectionForm vsf = new VehicleSectionForm();
 //		vsf.nbSpaces = 0;
 		vsf.sectionType = sectionType;
@@ -31,7 +31,7 @@ public class VehicleSectionForm {
 		return vsf;
 	}
 
-	public static VehicleSectionForm createCruiseSection(String sectionType, int nbSpaces){
+	public static VehicleSectionForm createSectionWithCabins(String sectionType, int nbSpaces){
 		VehicleSectionForm vsf = new VehicleSectionForm();
 		vsf.nbSpaces = nbSpaces;
 		vsf.sectionType = sectionType;

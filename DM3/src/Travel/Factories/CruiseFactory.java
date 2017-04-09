@@ -53,8 +53,8 @@ public class CruiseFactory extends TravelFactory {
 			throw new IllegalArgumentException("Cruise first and last stop must be the same!");
 		}
 		// Cruise must have more than 2 stops to be valid
-		if(i.getStops().size() > 2){
-			throw new IllegalArgumentException("Cruise can't have less than 2 stops");
+		if(i.getStops().size() < 3){
+			throw new IllegalArgumentException("Cruise can't have less than 3 stops");
 		}
 		return i;
 	}
