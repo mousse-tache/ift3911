@@ -6,6 +6,7 @@
 package UI;
 
 import Application.LiveStorage;
+import Travel.TravelType;
 import Travel.Trip.Trip;
 import java.util.List;
 import javax.swing.BoxLayout;
@@ -20,16 +21,34 @@ public class TripsPanel extends javax.swing.JPanel {
     /**
      * Creates new form TripsPanel
      */
-    public TripsPanel() {
+    public TripsPanel(TravelType e) {
         this.setLayout(new BoxLayout(this, BoxLayout.PAGE_AXIS));
         LiveStorage ls = LiveStorage.getInstance();
         List<Trip> trips = ls.getTrips();
         for (Trip trip : trips) {
+            if(trip.getType()==e) {
             String s = ""+trip.getBasePrice()+"$"+", de "+trip.getDepartureLocation()+" vers "+trip.getArrivalLocation()+
                     ", départ à "+trip.getDepartureDateTime()+" et arrivée à "+trip.getArrivalTime()+", id:"+trip.getId()+
                     ", compagnie:"+trip.getCompany();
             JLabel l = new JLabel(s);
             this.add(l);
+            }
+        }
+        this.setVisible(true);
+    }
+    
+    public TripsPanel() {
+        this.setLayout(new BoxLayout(this, BoxLayout.PAGE_AXIS));
+        LiveStorage ls = LiveStorage.getInstance();
+        List<Trip> trips = ls.getTrips();
+        for (Trip trip : trips) {
+            if(true) {
+            String s = ""+trip.getBasePrice()+"$"+", de "+trip.getDepartureLocation()+" vers "+trip.getArrivalLocation()+
+                    ", départ à "+trip.getDepartureDateTime()+" et arrivée à "+trip.getArrivalTime()+", id:"+trip.getId()+
+                    ", compagnie:"+trip.getCompany();
+            JLabel l = new JLabel(s);
+            this.add(l);
+            }
         }
         this.setVisible(true);
     }
