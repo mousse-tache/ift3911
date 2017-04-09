@@ -13,6 +13,7 @@ public class TrainLine extends Itinerary {
 
 	public java.util.List<Stop> getStops() {
 		// TODO - implement TrainLine.getStops
-		throw new UnsupportedOperationException();
+		//throw new UnsupportedOperationException();
+                return null;
 	}
 }
