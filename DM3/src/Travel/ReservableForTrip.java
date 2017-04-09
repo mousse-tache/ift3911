@@ -28,4 +28,9 @@ public class ReservableForTrip extends Reservable {
 		this.passengerSpace = passengerSpace;
 	}
 
+	@Override
+	public boolean isCancelable() {
+		return trip.reservablesCanBeCanceledOrModified();
+	}
+
 }

@@ -42,6 +42,10 @@ public abstract class Trip implements IVisitable {
 		assignReservables();
 	}
 	
+	public String toString(){
+		
+	}
+	
 	private void assignReservables(){
 		reservables = new HashSet<ReservableForTrip>();
 		for (PassengerSpace p : vehicle.getAllPassengerSpaces()){

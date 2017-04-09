@@ -2,6 +2,7 @@ package Utils;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.time.Instant;
 import java.util.Date;
 
 public class DateUtils {
@@ -26,5 +27,9 @@ public class DateUtils {
 	
 	public static String toString(Date date){
 		return formatter.format(date);
+	}
+
+	public static Date now() {
+		return Date.from(Instant.now());
 	}
 }
