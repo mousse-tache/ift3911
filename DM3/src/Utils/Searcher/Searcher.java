@@ -3,14 +3,17 @@ package Utils.Searcher;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.util.Set;
 
 import Application.Application;
 import Reservation.Reservable;
 import Travel.ConcreteVehicle;
 import Travel.ReservableForTrip;
 import Travel.TravelCompany;
+import Travel.TravelType;
 import Travel.Facilities.TravelFacility;
 import Travel.Itineraries.Itinerary;
+import Travel.Itineraries.Stop;
 import Travel.Trip.Trip;
 import Travel.VehicleModels.Vehicle.TransportVehicleModel;
 import Utils.DateUtils;
@@ -97,5 +100,78 @@ public class Searcher {
 			}
 		}
 		return null;
+	}
+
+	public static List<Trip> filterTrips(TravelType type, String filter){
+		// TODO add more cases ? IGNORE CASE !
+		List<Trip> filtered = new ArrayList<Trip>();
+		for(Trip e : Application.getStorage().getTrips()){
+			if( e.getId().contains(filter) ) 
+				filtered.add(e);
+		}
+		return filtered;
+	}
+
+	public static List<ConcreteVehicle> filterConcreteVehicles(TravelType type, String filter){
+		// TODO add more cases ? IGNORE CASE !
+		List<ConcreteVehicle> filtered = new ArrayList<ConcreteVehicle>();
+		for(ConcreteVehicle e : Application.getStorage().getConcreteVehicles()){
+			if( e.getId().contains(filter) 
+					|| e.getModel().getID().contains(filter) 
+					|| e.getModel().getModelName().contains(filter) ) 
+				filtered.add(e);
+		}
+		return filtered;
+	}
+
+	public static List<Itinerary> filterItineraries(TravelType type, String filter){
+		// TODO add more cases ? IGNORE CASE !
+		List<Itinerary> filtered = new ArrayList<Itinerary>();
+		for(Itinerary e : Application.getStorage().getItineraries()){
+			if( e.getId().contains(filter) ) 
+				filtered.add(e);
+			else for (Stop s : e.getStops()){
+					if(s.getLocation().getId().contains(filter) 
+							|| s.getLocation().getLocation().contains(filter)
+							|| s.getLocation().getName().contains(filter)){
+						filtered.add(e); break;
+					}
+				}
+		}
+		return filtered;
+	}
+	
+	public static List<TravelFacility> filterTravelFacilities(TravelType type, String filter){
+		// TODO add more cases ? IGNORE CASE !
+		List<TravelFacility> filtered = new ArrayList<TravelFacility>();
+		for(TravelFacility e : Application.getStorage().getTravelFacilities()){
+			if( e.getId().contains(filter) 
+					|| e.getName().contains(filter) 
+					|| e.getLocation().contains(filter) ) 
+				filtered.add(e);
+		}
+		return filtered;
+	}
+
+	public static List<TransportVehicleModel> filterTransportVehicleModels(TravelType type, String filter){
+		// TODO add more cases ? IGNORE CASE !
+		List<TransportVehicleModel> filtered = new ArrayList<TransportVehicleModel>();
+		for(TransportVehicleModel e : Application.getStorage().getVehicleModels()){
+			if( e.getID().contains(filter) 
+					|| e.getModelName().contains(filter) ) 
+				filtered.add(e);
+		}
+		return filtered;
+	}
+
+	public static List<TravelCompany> filterTravelCompanies(String filter){
+		// TODO add more cases ? IGNORE CASE !
+		List<TravelCompany> filtered = new ArrayList<TravelCompany>();
+		for(TravelCompany e : Application.getStorage().getCompanies()){
+			if( e.getID().contains(filter)
+					|| e.getName().contains(filter)) 
+				filtered.add(e);
+		}
+		return filtered;
 	}
 }
