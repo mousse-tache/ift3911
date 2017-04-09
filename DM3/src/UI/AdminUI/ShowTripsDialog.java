@@ -5,6 +5,9 @@
  */
 package UI.AdminUI;
 
+import Travel.TravelType;
+import UI.TripsPanel;
+
 /**
  *
  * @author localadmin
@@ -18,8 +21,14 @@ public class ShowTripsDialog extends javax.swing.JDialog {
         super(parent, modal);
         initComponents();
     }
-    public ShowTripsDialog() {
-        initComponents();
+    public ShowTripsDialog(TravelType e) {
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+       
+        TripsPanel tp = new TripsPanel(e);
+        this.getContentPane().add(tp);
+        this.setVisible(true);
+        this.pack();
+        
     }
     /**
      * This method is called from within the constructor to initialize the form.
@@ -30,25 +39,17 @@ public class ShowTripsDialog extends javax.swing.JDialog {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        tripsPanel1 = new UI.TripsPanel();
-
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(tripsPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 376, Short.MAX_VALUE)
-                .addContainerGap())
+            .addGap(0, 400, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(tripsPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 276, Short.MAX_VALUE)
-                .addContainerGap())
+            .addGap(0, 300, Short.MAX_VALUE)
         );
 
         pack();
@@ -97,6 +98,5 @@ public class ShowTripsDialog extends javax.swing.JDialog {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private UI.TripsPanel tripsPanel1;
     // End of variables declaration//GEN-END:variables
 }

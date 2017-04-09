@@ -5,6 +5,7 @@
  */
 package UI.AdminUI;
 
+import Travel.TravelType;
 import UI.UserFrame;
 import javax.swing.JDialog;
 import javax.swing.JFrame;
@@ -825,7 +826,7 @@ public class AdminFrame extends UserFrame {
 
     private void bShowFlightsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bShowFlightsActionPerformed
         // TODO add TripsPanel to dialog
-        ShowTripsDialog d = new ShowTripsDialog();
+        ShowTripsDialog d = new ShowTripsDialog(TravelType.Plane);
         d.setLocationRelativeTo(null);
         d.setVisible(true);
     }//GEN-LAST:event_bShowFlightsActionPerformed
@@ -886,7 +887,7 @@ public class AdminFrame extends UserFrame {
 
     private void bShowItineriesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bShowItineriesActionPerformed
         // TODO add TripsPanel to dialog
-        ShowTripsDialog d = new ShowTripsDialog();
+        ShowTripsDialog d = new ShowTripsDialog(TravelType.Train);
         d.setLocationRelativeTo(null);
         d.setVisible(true);
     }//GEN-LAST:event_bShowItineriesActionPerformed
@@ -947,7 +948,7 @@ public class AdminFrame extends UserFrame {
 
     private void bShowCruisesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bShowCruisesActionPerformed
         // TODO add TripsPanel to dialog
-        ShowTripsDialog d = new ShowTripsDialog();
+        ShowTripsDialog d = new ShowTripsDialog(TravelType.Cruise);
         d.setLocationRelativeTo(null);
         d.setVisible(true);
     }//GEN-LAST:event_bShowCruisesActionPerformed
