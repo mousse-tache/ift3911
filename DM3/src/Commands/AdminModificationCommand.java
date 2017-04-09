@@ -1,8 +1,9 @@
 package Commands;
 
-public abstract class AdminModificationCommand<T> extends AdminCommand {
+import Travel.Forms.*;
 
-	private T oldObject;
-	private T newObject;
+public abstract class AdminModificationCommand extends AdminCommand {
+
+	private BaseForm rollbackForm;
 
 }
