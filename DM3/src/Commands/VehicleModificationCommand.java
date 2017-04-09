@@ -2,7 +2,7 @@ package Commands;
 
 public class VehicleModificationCommand extends AdminModificationCommand {
     public boolean execute(){
-        this.rollbackForm = ModificationMediator.createModificationForm(this.getID());
+        this.rollbackForm = ModificationMediator.createModificationForm(this.args.getID());
         return ModificationMediator.modifyVehicle(this.args);//le résultat d'une modification est un booléen
     }
     public boolean unexecute(){
@@ -12,5 +12,4 @@ public class VehicleModificationCommand extends AdminModificationCommand {
             return false;
         }
     }
-
 }
