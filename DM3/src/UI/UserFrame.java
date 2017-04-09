@@ -6,16 +6,15 @@ import javax.swing.JFrame;
 import Sessions.Session;
 
 public class UserFrame extends JFrame{
-
-	JButton login = new JButton("Login");
-	JButton logout_button = new JButton("Logout");
 	
-	/**
-	 * 
-	 * @param s
-	 */
-	public boolean logout(Session s) {
-		// TODO - implement HomeFrame.logout
-		throw new UnsupportedOperationException();
+	String userID;
+	Session userSession;
+	
+	public UserFrame(String userID){
+		this.userID = userID;
+	}
+	
+	public void close(Session s) {
+		this.dispose();
 	}
 }
