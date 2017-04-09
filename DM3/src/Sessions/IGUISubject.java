@@ -1,18 +1,12 @@
 package Sessions;
 
+import UI.IGUIObserver;
+
 public interface IGUISubject {
 
-	/**
-	 * 
-	 * @param IGUIObserver
-	 */
-	void attach(int IGUIObserver);
+	void attach(IGUIObserver observer);
 
-	/**
-	 * 
-	 * @param IGUIObserver
-	 */
-	void detach(int IGUIObserver);
+	void detach(IGUIObserver observer);
 
 	void notifyObservers();
 
