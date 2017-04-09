@@ -18,6 +18,10 @@ public class DeleteVehicleDialog extends javax.swing.JDialog {
         super(parent, modal);
         initComponents();
     }
+    
+    public DeleteVehicleDialog(String type) {
+        initComponents();
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.

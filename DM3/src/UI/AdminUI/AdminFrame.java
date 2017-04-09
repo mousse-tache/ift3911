@@ -6,6 +6,7 @@
 package UI.AdminUI;
 
 import UI.UserFrame;
+import javax.swing.JDialog;
 import javax.swing.JFrame;
 
 /**
@@ -145,18 +146,53 @@ public class AdminFrame extends UserFrame {
         });
 
         bDeletePlane.setText("-");
+        bDeletePlane.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bDeletePlaneActionPerformed(evt);
+            }
+        });
 
         bDeleteAirport.setText("-");
+        bDeleteAirport.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bDeleteAirportActionPerformed(evt);
+            }
+        });
 
         bDeleteFlight.setText("-");
+        bDeleteFlight.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bDeleteFlightActionPerformed(evt);
+            }
+        });
 
         bDeleteFlightCompany.setText("-");
+        bDeleteFlightCompany.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bDeleteFlightCompanyActionPerformed(evt);
+            }
+        });
 
         bEditPlane.setText("Edit");
+        bEditPlane.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bEditPlaneActionPerformed(evt);
+            }
+        });
 
         bEditAirport.setText("Edit");
+        bEditAirport.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bEditAirportActionPerformed(evt);
+            }
+        });
 
         bEditFlight.setText("Edit");
+        bEditFlight.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bEditFlightActionPerformed(evt);
+            }
+        });
 
         bEditFlightCompany.setText("Edit");
         bEditFlightCompany.addActionListener(new java.awt.event.ActionListener() {
@@ -166,8 +202,18 @@ public class AdminFrame extends UserFrame {
         });
 
         assignPricePlane.setText("Assigner des prix");
+        assignPricePlane.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                assignPricePlaneActionPerformed(evt);
+            }
+        });
 
         bShowFlights.setText("Consulter les vols");
+        bShowFlights.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bShowFlightsActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout panelPlaneLayout = new javax.swing.GroupLayout(panelPlane);
         panelPlane.setLayout(panelPlaneLayout);
@@ -290,24 +336,74 @@ public class AdminFrame extends UserFrame {
         });
 
         bDeleteTrain.setText("-");
+        bDeleteTrain.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bDeleteTrainActionPerformed(evt);
+            }
+        });
 
         bDeleteTrainStation.setText("-");
+        bDeleteTrainStation.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bDeleteTrainStationActionPerformed(evt);
+            }
+        });
 
         bDeleteLine.setText("-");
+        bDeleteLine.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bDeleteLineActionPerformed(evt);
+            }
+        });
 
         bDeleteTrainCompany.setText("-");
+        bDeleteTrainCompany.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bDeleteTrainCompanyActionPerformed(evt);
+            }
+        });
 
         bEditTrain.setText("Edit");
+        bEditTrain.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bEditTrainActionPerformed(evt);
+            }
+        });
 
         bEditTrainStation.setText("Edit");
+        bEditTrainStation.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bEditTrainStationActionPerformed(evt);
+            }
+        });
 
         bEditLine.setText("Edit");
+        bEditLine.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bEditLineActionPerformed(evt);
+            }
+        });
 
         bEditTrainCompany.setText("Edit");
+        bEditTrainCompany.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bEditTrainCompanyActionPerformed(evt);
+            }
+        });
 
         assignPriceTrain.setText("Assigner des prix");
+        assignPriceTrain.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                assignPriceTrainActionPerformed(evt);
+            }
+        });
 
         bShowItineries.setText("Consulter les lignes");
+        bShowItineries.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bShowItineriesActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout panelTrainLayout = new javax.swing.GroupLayout(panelTrain);
         panelTrain.setLayout(panelTrainLayout);
@@ -430,24 +526,74 @@ public class AdminFrame extends UserFrame {
         });
 
         bDeleteCruiser.setText("-");
+        bDeleteCruiser.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bDeleteCruiserActionPerformed(evt);
+            }
+        });
 
         bDeletePort.setText("-");
+        bDeletePort.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bDeletePortActionPerformed(evt);
+            }
+        });
 
         bDeleteCruise.setText("-");
+        bDeleteCruise.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bDeleteCruiseActionPerformed(evt);
+            }
+        });
 
         bDeleteCruiseCompany.setText("-");
+        bDeleteCruiseCompany.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bDeleteCruiseCompanyActionPerformed(evt);
+            }
+        });
 
         bEditCruiser.setText("Edit");
+        bEditCruiser.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bEditCruiserActionPerformed(evt);
+            }
+        });
 
         bEditPort.setText("Edit");
+        bEditPort.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bEditPortActionPerformed(evt);
+            }
+        });
 
         bEditCruise.setText("Edit");
+        bEditCruise.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bEditCruiseActionPerformed(evt);
+            }
+        });
 
         bEditCruiseCompany.setText("Edit");
+        bEditCruiseCompany.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bEditCruiseCompanyActionPerformed(evt);
+            }
+        });
 
         assignPriceCruise.setText("Assigner des prix");
+        assignPriceCruise.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                assignPriceCruiseActionPerformed(evt);
+            }
+        });
 
         bShowCruises.setText("Consulter les destinations");
+        bShowCruises.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bShowCruisesActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout panelCruiseLayout = new javax.swing.GroupLayout(panelCruise);
         panelCruise.setLayout(panelCruiseLayout);
@@ -541,7 +687,7 @@ public class AdminFrame extends UserFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(TabbedTravel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 302, Short.MAX_VALUE)
+            .addComponent(TabbedTravel, javax.swing.GroupLayout.Alignment.TRAILING)
         );
 
         pack();
@@ -552,56 +698,259 @@ public class AdminFrame extends UserFrame {
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void bAddCruiseCompanyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bAddCruiseCompanyActionPerformed
-        // TODO add your handling code here:
+        JDialog d = new AddCompanyDialog("Cruise");
+        d.setLocationRelativeTo(null);
+        d.setVisible(true);
     }//GEN-LAST:event_bAddCruiseCompanyActionPerformed
 
     private void bAddCruiseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bAddCruiseActionPerformed
-        // TODO add your handling code here:
+        JDialog d = new AddTripDialog("Cruise");
+        d.setLocationRelativeTo(null);
+        d.setVisible(true);
     }//GEN-LAST:event_bAddCruiseActionPerformed
 
     private void bAddPortActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bAddPortActionPerformed
-        // TODO add your handling code here:
+        JDialog d = new AddFacilityDialog("Cruise");
+        d.setLocationRelativeTo(null);
+        d.setVisible(true);
     }//GEN-LAST:event_bAddPortActionPerformed
 
     private void bAddCruiserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bAddCruiserActionPerformed
-        // TODO add your handling code here:
+        JDialog d = new AddVehicleDialog("Cruise");
+        d.setLocationRelativeTo(null);
+        d.setVisible(true);
     }//GEN-LAST:event_bAddCruiserActionPerformed
 
     private void bAddTrainCompanyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bAddTrainCompanyActionPerformed
-        // TODO add your handling code here:
+        JDialog d = new AddCompanyDialog("Train");
+        d.setLocationRelativeTo(null);
+        d.setVisible(true);
     }//GEN-LAST:event_bAddTrainCompanyActionPerformed
 
     private void bAddLineActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bAddLineActionPerformed
-        // TODO add your handling code here:
+        JDialog d = new AddTripDialog("Train");
+        d.setLocationRelativeTo(null);
+        d.setVisible(true);
     }//GEN-LAST:event_bAddLineActionPerformed
 
     private void bAddTrainStationActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bAddTrainStationActionPerformed
-        // TODO add your handling code here:
+        JDialog d = new AddFacilityDialog("Train");
+        d.setLocationRelativeTo(null);
+        d.setVisible(true);
     }//GEN-LAST:event_bAddTrainStationActionPerformed
 
     private void bAddTrainActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bAddTrainActionPerformed
-        // TODO add your handling code here:
+        JDialog d = new AddVehicleDialog("Train");
+        d.setLocationRelativeTo(null);
+        d.setVisible(true);
     }//GEN-LAST:event_bAddTrainActionPerformed
 
     private void bAddFlightCompanyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bAddFlightCompanyActionPerformed
-        // TODO add your handling code here:
+        JDialog d = new AddCompanyDialog("Plane");
+        d.setLocationRelativeTo(null);
+        d.setVisible(true);
     }//GEN-LAST:event_bAddFlightCompanyActionPerformed
 
     private void bAddFlightActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bAddFlightActionPerformed
-        // TODO add your handling code here:
+       JDialog d = new AddTripDialog("Plane");
+        d.setLocationRelativeTo(null);
+        d.setVisible(true);
     }//GEN-LAST:event_bAddFlightActionPerformed
 
     private void bAddAirportActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bAddAirportActionPerformed
-        // TODO add your handling code here:
+       JDialog d = new AddFacilityDialog("Plane");
+        d.setLocationRelativeTo(null);
+        d.setVisible(true);
     }//GEN-LAST:event_bAddAirportActionPerformed
 
     private void bAddPlaneActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bAddPlaneActionPerformed
-        // TODO add your handling code here:
+        JDialog d = new AddVehicleDialog("Plane");
+        d.setLocationRelativeTo(null);
+        d.setVisible(true);
     }//GEN-LAST:event_bAddPlaneActionPerformed
 
     private void bEditFlightCompanyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bEditFlightCompanyActionPerformed
-        // TODO add your handling code here:
+        JDialog d = new EditCompanyDialog("Plane");
+        d.setLocationRelativeTo(null);
+        d.setVisible(true);
     }//GEN-LAST:event_bEditFlightCompanyActionPerformed
+
+    private void bDeletePlaneActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bDeletePlaneActionPerformed
+        JDialog d = new DeleteVehicleDialog("Plane");
+        d.setLocationRelativeTo(null);
+        d.setVisible(true);
+    }//GEN-LAST:event_bDeletePlaneActionPerformed
+
+    private void bDeleteAirportActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bDeleteAirportActionPerformed
+        JDialog d = new DeleteFacilityDialog("Plane");
+        d.setLocationRelativeTo(null);
+        d.setVisible(true);
+    }//GEN-LAST:event_bDeleteAirportActionPerformed
+
+    private void bDeleteFlightActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bDeleteFlightActionPerformed
+        JDialog d = new DeleteTripDialog("Plane");
+        d.setLocationRelativeTo(null);
+        d.setVisible(true);
+    }//GEN-LAST:event_bDeleteFlightActionPerformed
+
+    private void bDeleteFlightCompanyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bDeleteFlightCompanyActionPerformed
+        JDialog d = new DeleteCompanyDialog("Plane");
+        d.setLocationRelativeTo(null);
+        d.setVisible(true);
+    }//GEN-LAST:event_bDeleteFlightCompanyActionPerformed
+
+    private void bEditPlaneActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bEditPlaneActionPerformed
+        JDialog d = new EditVehicleDialog("Plane");
+        d.setLocationRelativeTo(null);
+        d.setVisible(true);
+    }//GEN-LAST:event_bEditPlaneActionPerformed
+
+    private void bEditAirportActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bEditAirportActionPerformed
+        JDialog d = new EditFacilityDialog("Plane");
+        d.setLocationRelativeTo(null);
+        d.setVisible(true);
+    }//GEN-LAST:event_bEditAirportActionPerformed
+
+    private void bEditFlightActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bEditFlightActionPerformed
+        JDialog d = new EditTripDialog("Plane");
+        d.setLocationRelativeTo(null);
+        d.setVisible(true);
+    }//GEN-LAST:event_bEditFlightActionPerformed
+
+    private void assignPricePlaneActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_assignPricePlaneActionPerformed
+        JDialog d = new AssignPriceDialog("Plane");
+        d.setLocationRelativeTo(null);
+        d.setVisible(true);
+    }//GEN-LAST:event_assignPricePlaneActionPerformed
+
+    private void bShowFlightsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bShowFlightsActionPerformed
+        // TODO add TripsPanel to dialog
+        JDialog d = new JDialog();
+        d.setLocationRelativeTo(null);
+        d.setVisible(true);
+    }//GEN-LAST:event_bShowFlightsActionPerformed
+
+    private void bDeleteTrainActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bDeleteTrainActionPerformed
+        JDialog d = new DeleteVehicleDialog("Train");
+        d.setLocationRelativeTo(null);
+        d.setVisible(true);
+    }//GEN-LAST:event_bDeleteTrainActionPerformed
+
+    private void bDeleteTrainStationActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bDeleteTrainStationActionPerformed
+        JDialog d = new DeleteFacilityDialog("Train");
+        d.setLocationRelativeTo(null);
+        d.setVisible(true);
+    }//GEN-LAST:event_bDeleteTrainStationActionPerformed
+
+    private void bDeleteLineActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bDeleteLineActionPerformed
+        JDialog d = new DeleteTripDialog("Train");
+        d.setLocationRelativeTo(null);
+        d.setVisible(true);
+    }//GEN-LAST:event_bDeleteLineActionPerformed
+
+    private void bDeleteTrainCompanyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bDeleteTrainCompanyActionPerformed
+        JDialog d = new DeleteCompanyDialog("Train");
+        d.setLocationRelativeTo(null);
+        d.setVisible(true);
+    }//GEN-LAST:event_bDeleteTrainCompanyActionPerformed
+
+    private void bEditTrainActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bEditTrainActionPerformed
+        JDialog d = new EditVehicleDialog("Train");
+        d.setLocationRelativeTo(null);
+        d.setVisible(true);
+    }//GEN-LAST:event_bEditTrainActionPerformed
+
+    private void bEditTrainStationActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bEditTrainStationActionPerformed
+        JDialog d = new EditFacilityDialog("Train");
+        d.setLocationRelativeTo(null);
+        d.setVisible(true);
+    }//GEN-LAST:event_bEditTrainStationActionPerformed
+
+    private void bEditLineActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bEditLineActionPerformed
+        JDialog d = new EditTripDialog("Train");
+        d.setLocationRelativeTo(null);
+        d.setVisible(true);
+    }//GEN-LAST:event_bEditLineActionPerformed
+
+    private void bEditTrainCompanyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bEditTrainCompanyActionPerformed
+        JDialog d = new EditCompanyDialog("Train");
+        d.setLocationRelativeTo(null);
+        d.setVisible(true);
+    }//GEN-LAST:event_bEditTrainCompanyActionPerformed
+
+    private void assignPriceTrainActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_assignPriceTrainActionPerformed
+        JDialog d = new AssignPriceDialog("Train");
+        d.setLocationRelativeTo(null);
+        d.setVisible(true);
+    }//GEN-LAST:event_assignPriceTrainActionPerformed
+
+    private void bShowItineriesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bShowItineriesActionPerformed
+        // TODO add TripsPanel to dialog
+        JDialog d = new JDialog();
+        d.setLocationRelativeTo(null);
+        d.setVisible(true);
+    }//GEN-LAST:event_bShowItineriesActionPerformed
+
+    private void bDeleteCruiserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bDeleteCruiserActionPerformed
+        JDialog d = new DeleteVehicleDialog("Cruise");
+        d.setLocationRelativeTo(null);
+        d.setVisible(true);
+    }//GEN-LAST:event_bDeleteCruiserActionPerformed
+
+    private void bDeletePortActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bDeletePortActionPerformed
+        JDialog d = new DeleteFacilityDialog("Cruise");
+        d.setLocationRelativeTo(null);
+        d.setVisible(true);
+    }//GEN-LAST:event_bDeletePortActionPerformed
+
+    private void bDeleteCruiseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bDeleteCruiseActionPerformed
+        JDialog d = new DeleteTripDialog("Cruise");
+        d.setLocationRelativeTo(null);
+        d.setVisible(true);
+    }//GEN-LAST:event_bDeleteCruiseActionPerformed
+
+    private void bDeleteCruiseCompanyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bDeleteCruiseCompanyActionPerformed
+        JDialog d = new DeleteCompanyDialog("Cruise");
+        d.setLocationRelativeTo(null);
+        d.setVisible(true);
+    }//GEN-LAST:event_bDeleteCruiseCompanyActionPerformed
+
+    private void bEditCruiserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bEditCruiserActionPerformed
+        JDialog d = new EditVehicleDialog("Cruise");
+        d.setLocationRelativeTo(null);
+        d.setVisible(true);
+    }//GEN-LAST:event_bEditCruiserActionPerformed
+
+    private void bEditPortActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bEditPortActionPerformed
+        JDialog d = new EditFacilityDialog("Cruise");
+        d.setLocationRelativeTo(null);
+        d.setVisible(true);
+    }//GEN-LAST:event_bEditPortActionPerformed
+
+    private void bEditCruiseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bEditCruiseActionPerformed
+        JDialog d = new EditTripDialog("Cruise");
+        d.setLocationRelativeTo(null);
+        d.setVisible(true);
+    }//GEN-LAST:event_bEditCruiseActionPerformed
+
+    private void bEditCruiseCompanyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bEditCruiseCompanyActionPerformed
+        JDialog d = new EditCompanyDialog("Cruise");
+        d.setLocationRelativeTo(null);
+        d.setVisible(true);
+    }//GEN-LAST:event_bEditCruiseCompanyActionPerformed
+
+    private void assignPriceCruiseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_assignPriceCruiseActionPerformed
+        JDialog d = new AssignPriceDialog("Cruise");
+        d.setLocationRelativeTo(null);
+        d.setVisible(true);
+    }//GEN-LAST:event_assignPriceCruiseActionPerformed
+
+    private void bShowCruisesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bShowCruisesActionPerformed
+        // TODO add TripsPanel to dialog
+        JDialog d = new JDialog();
+        d.setLocationRelativeTo(null);
+        d.setVisible(true);
+    }//GEN-LAST:event_bShowCruisesActionPerformed
 
     /**
      * @param args the command line arguments

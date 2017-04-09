@@ -18,6 +18,10 @@ public class DeleteTripDialog extends javax.swing.JDialog {
         super(parent, modal);
         initComponents();
     }
+    
+    public DeleteTripDialog(String type) {
+        initComponents();
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.

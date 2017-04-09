@@ -13,6 +13,8 @@ public class ReservationPanel extends javax.swing.JPanel {
 
     /**
      * Creates new form ReservationPanel
+     * Lists all reservation, printed strings on a line for all infos and a 
+     * button to do a reservation at the end of the line
      */
     public ReservationPanel() {
         initComponents();

@@ -18,6 +18,10 @@ public class EditVehicleDialog extends javax.swing.JDialog {
         super(parent, modal);
         initComponents();
     }
+    
+    public EditVehicleDialog(String type) {
+        initComponents();
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.

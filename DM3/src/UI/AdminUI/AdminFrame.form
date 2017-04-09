@@ -38,7 +38,7 @@
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Component id="TabbedTravel" alignment="1" pref="302" max="32767" attributes="0"/>
+          <Component id="TabbedTravel" alignment="1" max="32767" attributes="0"/>
       </Group>
     </DimensionLayout>
   </Layout>
@@ -215,36 +215,57 @@
               <Properties>
                 <Property name="text" type="java.lang.String" value="-"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="bDeletePlaneActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="bDeleteAirport">
               <Properties>
                 <Property name="text" type="java.lang.String" value="-"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="bDeleteAirportActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="bDeleteFlight">
               <Properties>
                 <Property name="text" type="java.lang.String" value="-"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="bDeleteFlightActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="bDeleteFlightCompany">
               <Properties>
                 <Property name="text" type="java.lang.String" value="-"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="bDeleteFlightCompanyActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="bEditPlane">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Edit"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="bEditPlaneActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="bEditAirport">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Edit"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="bEditAirportActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="bEditFlight">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Edit"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="bEditFlightActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="bEditFlightCompany">
               <Properties>
@@ -258,11 +279,17 @@
               <Properties>
                 <Property name="text" type="java.lang.String" value="Assigner des prix"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="assignPricePlaneActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="bShowFlights">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Consulter les vols"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="bShowFlightsActionPerformed"/>
+              </Events>
             </Component>
           </SubComponents>
         </Container>
@@ -434,51 +461,81 @@
               <Properties>
                 <Property name="text" type="java.lang.String" value="-"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="bDeleteTrainActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="bDeleteTrainStation">
               <Properties>
                 <Property name="text" type="java.lang.String" value="-"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="bDeleteTrainStationActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="bDeleteLine">
               <Properties>
                 <Property name="text" type="java.lang.String" value="-"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="bDeleteLineActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="bDeleteTrainCompany">
               <Properties>
                 <Property name="text" type="java.lang.String" value="-"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="bDeleteTrainCompanyActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="bEditTrain">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Edit"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="bEditTrainActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="bEditTrainStation">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Edit"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="bEditTrainStationActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="bEditLine">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Edit"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="bEditLineActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="bEditTrainCompany">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Edit"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="bEditTrainCompanyActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="assignPriceTrain">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Assigner des prix"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="assignPriceTrainActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="bShowItineries">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Consulter les lignes"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="bShowItineriesActionPerformed"/>
+              </Events>
             </Component>
           </SubComponents>
         </Container>
@@ -650,51 +707,81 @@
               <Properties>
                 <Property name="text" type="java.lang.String" value="-"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="bDeleteCruiserActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="bDeletePort">
               <Properties>
                 <Property name="text" type="java.lang.String" value="-"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="bDeletePortActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="bDeleteCruise">
               <Properties>
                 <Property name="text" type="java.lang.String" value="-"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="bDeleteCruiseActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="bDeleteCruiseCompany">
               <Properties>
                 <Property name="text" type="java.lang.String" value="-"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="bDeleteCruiseCompanyActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="bEditCruiser">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Edit"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="bEditCruiserActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="bEditPort">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Edit"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="bEditPortActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="bEditCruise">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Edit"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="bEditCruiseActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="bEditCruiseCompany">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Edit"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="bEditCruiseCompanyActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="assignPriceCruise">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Assigner des prix"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="assignPriceCruiseActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="bShowCruises">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Consulter les destinations"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="bShowCruisesActionPerformed"/>
+              </Events>
             </Component>
           </SubComponents>
         </Container>

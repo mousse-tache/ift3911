@@ -18,6 +18,10 @@ public class EditCompanyDialog extends javax.swing.JDialog {
         super(parent, modal);
         initComponents();
     }
+    
+    public EditCompanyDialog(String type) {
+        initComponents();
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.

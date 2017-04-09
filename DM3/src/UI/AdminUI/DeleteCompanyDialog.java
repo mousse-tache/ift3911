@@ -18,6 +18,9 @@ public class DeleteCompanyDialog extends javax.swing.JDialog {
         super(parent, modal);
         initComponents();
     }
+    public DeleteCompanyDialog(String type) {
+        initComponents();
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.
