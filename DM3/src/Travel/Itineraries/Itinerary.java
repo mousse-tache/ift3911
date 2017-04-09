@@ -28,7 +28,7 @@ public abstract class Itinerary {
 			if (tf == null){
 				throw new IllegalArgumentException("Facility with ID=" + locIDs.get(i) + "can't be found");
 			}
-			if (i>0 && i<times.size()-1 && times.get(i) < times.get(i+1)) {
+			if (i>0 && i<times.size() && times.get(i-1) > times.get(i)) {
 				throw new IllegalArgumentException("Times for itineraries' stops must be ascendant");
 			}
 			stops.add(new Stop(tf,times.get(i)));

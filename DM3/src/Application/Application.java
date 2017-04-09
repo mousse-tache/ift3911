@@ -21,7 +21,9 @@ public class Application {
 	}
 	
 	public void tests(){
-		LiveStorage.getInstance().populate();
+		LiveStorage.getInstance().populatePlaneTravels();
+		LiveStorage.getInstance().populateCruiseTravels();
+		LiveStorage.getInstance().populateTrainTravels();
 
 		Trip trip = Searcher.getTripFromID("AC720");
 
@@ -47,8 +49,8 @@ public class Application {
 	}
 
 	public Application(String args[]) {
-//		mainFrame = new HomeFrame();
 		tests();
+                mainFrame = new HomeFrame();
 	}
 
 	public static LiveStorage getStorage() {

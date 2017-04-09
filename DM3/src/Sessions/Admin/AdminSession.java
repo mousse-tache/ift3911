@@ -4,6 +4,10 @@ import Sessions.Session;
 
 public class AdminSession extends Session {
 
+	public AdminSession(String userID) {
+		super(userID);
+	}
+
 	public boolean createTrip() {
 		// TODO - implement AdminSession.createTrip
 		throw new UnsupportedOperationException();

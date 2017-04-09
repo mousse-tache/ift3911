@@ -1,30 +1,47 @@
 package Commands;
 
-import java.util.List;
+import java.util.Stack;
 
 public class Executor {
 
-	private List<Command> history;
+	private Stack<Command> history;
+	
+	public Executor(){
+		this.history = new Stack<Command>();
+	}
 
 	/**
-	 * 
-	 * @param c
+	 * execute command and add it to history
+	 * @param command
 	 */
-	public boolean execute(Command c) {
-		// TODO - implement Executor.execute
-                history.add(c);
-                c.execute();
-                return true;
+	public boolean execute(Command command) {
+		// Only push unexecutable commands on stack
+		if(command.canUndo())
+			this.history.push(command);
+        // TODO - faire quelquechose avec le résultat du execute
+        command.execute();
+        return true;
 	}
 
+	/**
+	 * Undo last command
+	 */
 	public boolean undo() {
-		// TODO - implement Executor.undo
-		throw new UnsupportedOperationException();
+		if (!this.canUndo())
+			return false;
+		// Unexecute returns a boolean ?
+		return this.history.pop().unexecute();
 	}
 
+	/**
+	 * verifies if there is a unexecutable command on stack
+	 */
 	public boolean canUndo() {
-		// TODO - implement Executor.canUndo
-		throw new UnsupportedOperationException();
+		if (this.history.isEmpty())
+			return false;
+		if (!this.history.peek().canUndo())
+			throw new IllegalArgumentException("There shouldn't be a command that is not unexecutable on stack!");
+        return true;
 	}
 
 }

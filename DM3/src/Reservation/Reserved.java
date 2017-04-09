@@ -11,7 +11,7 @@ public class Reserved extends ReservableState {
 
 	@Override
 	public void reserve(Reservable ctx, Reservation r) {
-		System.out.println("This place is already reserved");
+		throw new IllegalStateException("This place is already reserved");
 	}
 
 	@Override
@@ -27,13 +27,13 @@ public class Reserved extends ReservableState {
 	Reserved(Reservable ctx, Reservation r){
 		this.reservation = r;
 		this.timer = new Timer();
+		Reserved that = this;
 		TimerTask task = new TimerTask(){
 			@Override
 			public void run(){
-				Reserved.this.cancel(ctx);
+				that.cancel(ctx);
 			}
 		};
-
 		this.timer.schedule(task, delay);
 	}
 

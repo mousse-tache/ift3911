@@ -1,21 +1,24 @@
 package UI;
 
-import javax.swing.JButton;
 import javax.swing.JFrame;
 
 import Sessions.Session;
 
-public class UserFrame extends JFrame{
-
-	JButton login = new JButton("Login");
-	JButton logout_button = new JButton("Logout");
+public abstract class UserFrame extends JFrame{
 	
-	/**
-	 * 
-	 * @param s
-	 */
-	public boolean logout(Session s) {
-		// TODO - implement HomeFrame.logout
-		throw new UnsupportedOperationException();
+	String userID;
+	Session userSession;
+	public UserFrame() {
+        initComponents();
+    }
+        
+	public UserFrame(String userID){
+		this.userID = userID;
 	}
+	
+	public void close(Session s) {
+		this.dispose();
+	}
+        
+        private void initComponents(){}
 }

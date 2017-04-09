@@ -4,7 +4,7 @@ public class Assigned extends ReservableState {
 
 	@Override
 	public void reserve(Reservable ctx, Reservation r) {
-		System.out.println("Place already reserved");
+		throw new IllegalStateException("Place already reserved");
 	}
 
 	@Override

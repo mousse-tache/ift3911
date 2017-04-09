@@ -1,6 +1,10 @@
 package Commands;
 
 public class Command {
+	
+	public Command(){
+		this.status = CommandStatus.Pending;
+	}
 
 	public boolean execute() {
 		// TODO - implement Command.execute
