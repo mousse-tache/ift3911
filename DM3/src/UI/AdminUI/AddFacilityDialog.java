@@ -5,6 +5,8 @@
  */
 package UI.AdminUI;
 
+import Sessions.Session;
+
 /**
  *
  * @author localadmin
@@ -19,7 +21,7 @@ public class AddFacilityDialog extends javax.swing.JDialog {
         initComponents();
     }
 
-    AddFacilityDialog(String type) {
+    AddFacilityDialog(String type,Session session) {
         initComponents();
     }
 

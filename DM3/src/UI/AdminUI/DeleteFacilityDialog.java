@@ -5,6 +5,8 @@
  */
 package UI.AdminUI;
 
+import Sessions.Session;
+
 /**
  *
  * @author localadmin
@@ -19,7 +21,7 @@ public class DeleteFacilityDialog extends javax.swing.JDialog {
         initComponents();
     }
     
-    public DeleteFacilityDialog(String type) {
+    public DeleteFacilityDialog(String type,Session session) {
         initComponents();
     }
 

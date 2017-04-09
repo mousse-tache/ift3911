@@ -5,6 +5,8 @@
  */
 package UI.AdminUI;
 
+import Sessions.Session;
+
 /**
  *
  * @author localadmin
@@ -19,7 +21,7 @@ public class AddCompanyDialog extends javax.swing.JDialog {
         initComponents();
     }
 
-    public AddCompanyDialog(String type) {
+    public AddCompanyDialog(String type,Session session) {
         initComponents();
     }
 

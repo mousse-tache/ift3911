@@ -5,6 +5,8 @@
  */
 package UI.AdminUI;
 
+import Sessions.Session;
+
 /**
  *
  * @author localadmin
@@ -19,7 +21,7 @@ public class DeleteVehicleDialog extends javax.swing.JDialog {
         initComponents();
     }
     
-    public DeleteVehicleDialog(String type) {
+    public DeleteVehicleDialog(String type,Session session) {
         initComponents();
     }
 

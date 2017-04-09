@@ -5,6 +5,8 @@
  */
 package UI.AdminUI;
 
+import Sessions.Session;
+
 /**
  *
  * @author localadmin
@@ -19,7 +21,7 @@ public class EditVehicleDialog extends javax.swing.JDialog {
         initComponents();
     }
     
-    public EditVehicleDialog(String type) {
+    public EditVehicleDialog(String type,Session session) {
         initComponents();
     }
 
