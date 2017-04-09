@@ -22,6 +22,8 @@ public class Application {
 	
 	public void tests(){
 		LiveStorage.getInstance().populatePlaneTravels();
+		LiveStorage.getInstance().populateCruiseTravels();
+		LiveStorage.getInstance().populateTrainTravels();
 
 		Trip trip = Searcher.getTripFromID("AC720");
 
