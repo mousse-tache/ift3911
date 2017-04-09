@@ -1,16 +1,25 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package UI;
 
+import javax.swing.JButton;
 import javax.swing.JFrame;
 
-/**
- *
- * @author localadmin
- */
-public class UserFrame extends JFrame{
-    
+import Sessions.Session;
+
+public abstract class UserFrame extends JFrame{
+	
+	String userID;
+	Session userSession;
+	public UserFrame() {
+        initComponents();
+    }
+        
+	public UserFrame(String userID){
+		this.userID = userID;
+	}
+	
+	public void close(Session s) {
+		this.dispose();
+	}
+        
+        private void initComponents(){}
 }

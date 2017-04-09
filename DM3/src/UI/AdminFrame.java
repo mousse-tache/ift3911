@@ -5,18 +5,29 @@
  */
 package UI;
 
+import javax.swing.JFrame;
+
 /**
  *
  * @author localadmin
  */
-public class AdminFrame extends javax.swing.JFrame {
+public class AdminFrame extends UserFrame {
 
     /**
      * Creates new form AdminFrame
      */
     public AdminFrame() {
-        initComponents();
+        super();
     }
+    public AdminFrame(String adminID) {
+		super(adminID);
+		this.setTitle("ADMIN SESSION");
+		this.setSize(400,200);
+		this.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+		this.setLocationRelativeTo(null);
+                initComponents();
+		this.setVisible(true);
+	}
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -56,15 +67,15 @@ public class AdminFrame extends javax.swing.JFrame {
         bAddTrain = new javax.swing.JButton();
         bAddTrainStation = new javax.swing.JButton();
         bAddLine = new javax.swing.JButton();
-        bAddFlightCompany1 = new javax.swing.JButton();
+        bAddTrainCompany = new javax.swing.JButton();
         bDeleteTrain = new javax.swing.JButton();
         bDeleteTrainStation = new javax.swing.JButton();
         bDeleteLine = new javax.swing.JButton();
-        bDeleteFlightCompany1 = new javax.swing.JButton();
+        bDeleteTrainCompany = new javax.swing.JButton();
         bEditTrain = new javax.swing.JButton();
         bEditTrainStation = new javax.swing.JButton();
         bEditLine = new javax.swing.JButton();
-        bEditFlightCompany1 = new javax.swing.JButton();
+        bEditTrainCompany = new javax.swing.JButton();
         assignPriceTrain = new javax.swing.JButton();
         bShowItineries = new javax.swing.JButton();
         panelCruise = new javax.swing.JPanel();
@@ -72,18 +83,18 @@ public class AdminFrame extends javax.swing.JFrame {
         jLabel10 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
-        bAddPlane2 = new javax.swing.JButton();
-        bAddAirport2 = new javax.swing.JButton();
-        bAddFlight2 = new javax.swing.JButton();
-        bAddFlightCompany2 = new javax.swing.JButton();
-        bDeletePlane2 = new javax.swing.JButton();
-        bDeleteAirport2 = new javax.swing.JButton();
-        bDeleteFlight2 = new javax.swing.JButton();
-        bDeleteFlightCompany2 = new javax.swing.JButton();
-        bEditPlane2 = new javax.swing.JButton();
-        bEditAirport2 = new javax.swing.JButton();
-        bEditFlight2 = new javax.swing.JButton();
-        bEditFlightCompany2 = new javax.swing.JButton();
+        bAddCruiser = new javax.swing.JButton();
+        bAddPort = new javax.swing.JButton();
+        bAddCruise = new javax.swing.JButton();
+        bAddCruiseCompany = new javax.swing.JButton();
+        bDeleteCruiser = new javax.swing.JButton();
+        bDeletePort = new javax.swing.JButton();
+        bDeleteCruise = new javax.swing.JButton();
+        bDeleteCruiseCompany = new javax.swing.JButton();
+        bEditCruiser = new javax.swing.JButton();
+        bEditPort = new javax.swing.JButton();
+        bEditCruise = new javax.swing.JButton();
+        bEditCruiseCompany = new javax.swing.JButton();
         assignPriceCruise = new javax.swing.JButton();
         bShowCruises = new javax.swing.JButton();
 
@@ -270,10 +281,10 @@ public class AdminFrame extends javax.swing.JFrame {
             }
         });
 
-        bAddFlightCompany1.setText("+");
-        bAddFlightCompany1.addActionListener(new java.awt.event.ActionListener() {
+        bAddTrainCompany.setText("+");
+        bAddTrainCompany.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                bAddFlightCompany1ActionPerformed(evt);
+                bAddTrainCompanyActionPerformed(evt);
             }
         });
 
@@ -283,7 +294,7 @@ public class AdminFrame extends javax.swing.JFrame {
 
         bDeleteLine.setText("-");
 
-        bDeleteFlightCompany1.setText("-");
+        bDeleteTrainCompany.setText("-");
 
         bEditTrain.setText("Edit");
 
@@ -291,7 +302,7 @@ public class AdminFrame extends javax.swing.JFrame {
 
         bEditLine.setText("Edit");
 
-        bEditFlightCompany1.setText("Edit");
+        bEditTrainCompany.setText("Edit");
 
         assignPriceTrain.setText("Assigner des prix");
 
@@ -313,11 +324,11 @@ public class AdminFrame extends javax.swing.JFrame {
                         .addGap(31, 31, 31)
                         .addGroup(panelTrainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(panelTrainLayout.createSequentialGroup()
-                                .addComponent(bAddFlightCompany1)
+                                .addComponent(bAddTrainCompany)
                                 .addGap(18, 18, 18)
-                                .addComponent(bDeleteFlightCompany1)
+                                .addComponent(bDeleteTrainCompany)
                                 .addGap(18, 18, 18)
-                                .addComponent(bEditFlightCompany1))
+                                .addComponent(bEditTrainCompany))
                             .addGroup(panelTrainLayout.createSequentialGroup()
                                 .addComponent(bAddLine)
                                 .addGap(18, 18, 18)
@@ -369,9 +380,9 @@ public class AdminFrame extends javax.swing.JFrame {
                 .addGroup(panelTrainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel8)
                     .addGroup(panelTrainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(bAddFlightCompany1)
-                        .addComponent(bDeleteFlightCompany1)
-                        .addComponent(bEditFlightCompany1)))
+                        .addComponent(bAddTrainCompany)
+                        .addComponent(bDeleteTrainCompany)
+                        .addComponent(bEditTrainCompany)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 41, Short.MAX_VALUE)
                 .addGroup(panelTrainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(assignPriceTrain)
@@ -389,49 +400,49 @@ public class AdminFrame extends javax.swing.JFrame {
 
         jLabel12.setText("Compagnie maritime");
 
-        bAddPlane2.setText("+");
-        bAddPlane2.addActionListener(new java.awt.event.ActionListener() {
+        bAddCruiser.setText("+");
+        bAddCruiser.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                bAddPlane2ActionPerformed(evt);
+                bAddCruiserActionPerformed(evt);
             }
         });
 
-        bAddAirport2.setText("+");
-        bAddAirport2.addActionListener(new java.awt.event.ActionListener() {
+        bAddPort.setText("+");
+        bAddPort.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                bAddAirport2ActionPerformed(evt);
+                bAddPortActionPerformed(evt);
             }
         });
 
-        bAddFlight2.setText("+");
-        bAddFlight2.addActionListener(new java.awt.event.ActionListener() {
+        bAddCruise.setText("+");
+        bAddCruise.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                bAddFlight2ActionPerformed(evt);
+                bAddCruiseActionPerformed(evt);
             }
         });
 
-        bAddFlightCompany2.setText("+");
-        bAddFlightCompany2.addActionListener(new java.awt.event.ActionListener() {
+        bAddCruiseCompany.setText("+");
+        bAddCruiseCompany.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                bAddFlightCompany2ActionPerformed(evt);
+                bAddCruiseCompanyActionPerformed(evt);
             }
         });
 
-        bDeletePlane2.setText("-");
+        bDeleteCruiser.setText("-");
 
-        bDeleteAirport2.setText("-");
+        bDeletePort.setText("-");
 
-        bDeleteFlight2.setText("-");
+        bDeleteCruise.setText("-");
 
-        bDeleteFlightCompany2.setText("-");
+        bDeleteCruiseCompany.setText("-");
 
-        bEditPlane2.setText("Edit");
+        bEditCruiser.setText("Edit");
 
-        bEditAirport2.setText("Edit");
+        bEditPort.setText("Edit");
 
-        bEditFlight2.setText("Edit");
+        bEditCruise.setText("Edit");
 
-        bEditFlightCompany2.setText("Edit");
+        bEditCruiseCompany.setText("Edit");
 
         assignPriceCruise.setText("Assigner des prix");
 
@@ -453,29 +464,29 @@ public class AdminFrame extends javax.swing.JFrame {
                         .addGap(31, 31, 31)
                         .addGroup(panelCruiseLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(panelCruiseLayout.createSequentialGroup()
-                                .addComponent(bAddFlightCompany2)
+                                .addComponent(bAddCruiseCompany)
                                 .addGap(18, 18, 18)
-                                .addComponent(bDeleteFlightCompany2)
+                                .addComponent(bDeleteCruiseCompany)
                                 .addGap(18, 18, 18)
-                                .addComponent(bEditFlightCompany2))
+                                .addComponent(bEditCruiseCompany))
                             .addGroup(panelCruiseLayout.createSequentialGroup()
-                                .addComponent(bAddFlight2)
+                                .addComponent(bAddCruise)
                                 .addGap(18, 18, 18)
-                                .addComponent(bDeleteFlight2)
+                                .addComponent(bDeleteCruise)
                                 .addGap(18, 18, 18)
-                                .addComponent(bEditFlight2))
+                                .addComponent(bEditCruise))
                             .addGroup(panelCruiseLayout.createSequentialGroup()
-                                .addComponent(bAddAirport2)
+                                .addComponent(bAddPort)
                                 .addGap(18, 18, 18)
-                                .addComponent(bDeleteAirport2)
+                                .addComponent(bDeletePort)
                                 .addGap(18, 18, 18)
-                                .addComponent(bEditAirport2))
+                                .addComponent(bEditPort))
                             .addGroup(panelCruiseLayout.createSequentialGroup()
-                                .addComponent(bAddPlane2)
+                                .addComponent(bAddCruiser)
                                 .addGap(18, 18, 18)
-                                .addComponent(bDeletePlane2)
+                                .addComponent(bDeleteCruiser)
                                 .addGap(18, 18, 18)
-                                .addComponent(bEditPlane2))))
+                                .addComponent(bEditCruiser))))
                     .addGroup(panelCruiseLayout.createSequentialGroup()
                         .addComponent(assignPriceCruise)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -489,29 +500,29 @@ public class AdminFrame extends javax.swing.JFrame {
                 .addGroup(panelCruiseLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel9)
                     .addGroup(panelCruiseLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(bAddPlane2)
-                        .addComponent(bDeletePlane2)
-                        .addComponent(bEditPlane2)))
+                        .addComponent(bAddCruiser)
+                        .addComponent(bDeleteCruiser)
+                        .addComponent(bEditCruiser)))
                 .addGap(18, 18, 18)
                 .addGroup(panelCruiseLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel10)
                     .addGroup(panelCruiseLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(bAddAirport2)
-                        .addComponent(bDeleteAirport2)
-                        .addComponent(bEditAirport2)))
+                        .addComponent(bAddPort)
+                        .addComponent(bDeletePort)
+                        .addComponent(bEditPort)))
                 .addGap(18, 18, 18)
                 .addGroup(panelCruiseLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel11)
-                    .addComponent(bAddFlight2)
-                    .addComponent(bDeleteFlight2)
-                    .addComponent(bEditFlight2))
+                    .addComponent(bAddCruise)
+                    .addComponent(bDeleteCruise)
+                    .addComponent(bEditCruise))
                 .addGap(10, 10, 10)
                 .addGroup(panelCruiseLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel12)
                     .addGroup(panelCruiseLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(bAddFlightCompany2)
-                        .addComponent(bDeleteFlightCompany2)
-                        .addComponent(bEditFlightCompany2)))
+                        .addComponent(bAddCruiseCompany)
+                        .addComponent(bDeleteCruiseCompany)
+                        .addComponent(bEditCruiseCompany)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 41, Short.MAX_VALUE)
                 .addGroup(panelCruiseLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(assignPriceCruise)
@@ -539,25 +550,25 @@ public class AdminFrame extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton4ActionPerformed
 
-    private void bAddFlightCompany2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bAddFlightCompany2ActionPerformed
+    private void bAddCruiseCompanyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bAddCruiseCompanyActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_bAddFlightCompany2ActionPerformed
+    }//GEN-LAST:event_bAddCruiseCompanyActionPerformed
 
-    private void bAddFlight2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bAddFlight2ActionPerformed
+    private void bAddCruiseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bAddCruiseActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_bAddFlight2ActionPerformed
+    }//GEN-LAST:event_bAddCruiseActionPerformed
 
-    private void bAddAirport2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bAddAirport2ActionPerformed
+    private void bAddPortActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bAddPortActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_bAddAirport2ActionPerformed
+    }//GEN-LAST:event_bAddPortActionPerformed
 
-    private void bAddPlane2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bAddPlane2ActionPerformed
+    private void bAddCruiserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bAddCruiserActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_bAddPlane2ActionPerformed
+    }//GEN-LAST:event_bAddCruiserActionPerformed
 
-    private void bAddFlightCompany1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bAddFlightCompany1ActionPerformed
+    private void bAddTrainCompanyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bAddTrainCompanyActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_bAddFlightCompany1ActionPerformed
+    }//GEN-LAST:event_bAddTrainCompanyActionPerformed
 
     private void bAddLineActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bAddLineActionPerformed
         // TODO add your handling code here:
@@ -632,40 +643,40 @@ public class AdminFrame extends javax.swing.JFrame {
     private javax.swing.JButton assignPricePlane;
     private javax.swing.JButton assignPriceTrain;
     private javax.swing.JButton bAddAirport;
-    private javax.swing.JButton bAddAirport2;
+    private javax.swing.JButton bAddCruise;
+    private javax.swing.JButton bAddCruiseCompany;
+    private javax.swing.JButton bAddCruiser;
     private javax.swing.JButton bAddFlight;
-    private javax.swing.JButton bAddFlight2;
     private javax.swing.JButton bAddFlightCompany;
-    private javax.swing.JButton bAddFlightCompany1;
-    private javax.swing.JButton bAddFlightCompany2;
     private javax.swing.JButton bAddLine;
     private javax.swing.JButton bAddPlane;
-    private javax.swing.JButton bAddPlane2;
+    private javax.swing.JButton bAddPort;
     private javax.swing.JButton bAddTrain;
+    private javax.swing.JButton bAddTrainCompany;
     private javax.swing.JButton bAddTrainStation;
     private javax.swing.JButton bDeleteAirport;
-    private javax.swing.JButton bDeleteAirport2;
+    private javax.swing.JButton bDeleteCruise;
+    private javax.swing.JButton bDeleteCruiseCompany;
+    private javax.swing.JButton bDeleteCruiser;
     private javax.swing.JButton bDeleteFlight;
-    private javax.swing.JButton bDeleteFlight2;
     private javax.swing.JButton bDeleteFlightCompany;
-    private javax.swing.JButton bDeleteFlightCompany1;
-    private javax.swing.JButton bDeleteFlightCompany2;
     private javax.swing.JButton bDeleteLine;
     private javax.swing.JButton bDeletePlane;
-    private javax.swing.JButton bDeletePlane2;
+    private javax.swing.JButton bDeletePort;
     private javax.swing.JButton bDeleteTrain;
+    private javax.swing.JButton bDeleteTrainCompany;
     private javax.swing.JButton bDeleteTrainStation;
     private javax.swing.JButton bEditAirport;
-    private javax.swing.JButton bEditAirport2;
+    private javax.swing.JButton bEditCruise;
+    private javax.swing.JButton bEditCruiseCompany;
+    private javax.swing.JButton bEditCruiser;
     private javax.swing.JButton bEditFlight;
-    private javax.swing.JButton bEditFlight2;
     private javax.swing.JButton bEditFlightCompany;
-    private javax.swing.JButton bEditFlightCompany1;
-    private javax.swing.JButton bEditFlightCompany2;
     private javax.swing.JButton bEditLine;
     private javax.swing.JButton bEditPlane;
-    private javax.swing.JButton bEditPlane2;
+    private javax.swing.JButton bEditPort;
     private javax.swing.JButton bEditTrain;
+    private javax.swing.JButton bEditTrainCompany;
     private javax.swing.JButton bEditTrainStation;
     private javax.swing.JButton bShowCruises;
     private javax.swing.JButton bShowFlights;
