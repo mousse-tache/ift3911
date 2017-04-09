@@ -12,14 +12,14 @@ public class Executor {
 
 	/**
 	 * execute command and add it to history
-	 * @param c
+	 * @param command
 	 */
-	public boolean execute(Command c) {
+	public boolean execute(Command command) {
 		// Only push unexecutable commands on stack
-		if(c.canUndo())
-			this.history.push(c);
+		if(command.canUndo())
+			this.history.push(command);
         // TODO - faire quelquechose avec le résultat du execute
-        c.execute();
+        command.execute();
         return true;
 	}
 
