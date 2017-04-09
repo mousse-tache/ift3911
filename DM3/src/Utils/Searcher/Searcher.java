@@ -116,7 +116,8 @@ public class Searcher {
 		// TODO add more cases ? IGNORE CASE !
 		List<ConcreteVehicle> filtered = new ArrayList<ConcreteVehicle>();
 		for(ConcreteVehicle e : Application.getStorage().getConcreteVehicles()){
-			if( e.getId().contains(filter) 
+			if( e.getType() == type
+					|| e.getId().contains(filter) 
 					|| e.getModel().getID().contains(filter) 
 					|| e.getModel().getModelName().contains(filter) ) 
 				filtered.add(e);
@@ -128,7 +129,8 @@ public class Searcher {
 		// TODO add more cases ? IGNORE CASE !
 		List<Itinerary> filtered = new ArrayList<Itinerary>();
 		for(Itinerary e : Application.getStorage().getItineraries()){
-			if( e.getId().contains(filter) ) 
+			if( e.getType() == type
+					|| e.getId().contains(filter) ) 
 				filtered.add(e);
 			else for (Stop s : e.getStops()){
 					if(s.getLocation().getId().contains(filter) 
@@ -145,7 +147,8 @@ public class Searcher {
 		// TODO add more cases ? IGNORE CASE !
 		List<TravelFacility> filtered = new ArrayList<TravelFacility>();
 		for(TravelFacility e : Application.getStorage().getTravelFacilities()){
-			if( e.getId().contains(filter) 
+			if( e.getType() == type
+					|| e.getId().contains(filter) 
 					|| e.getName().contains(filter) 
 					|| e.getLocation().contains(filter) ) 
 				filtered.add(e);
@@ -157,7 +160,8 @@ public class Searcher {
 		// TODO add more cases ? IGNORE CASE !
 		List<TransportVehicleModel> filtered = new ArrayList<TransportVehicleModel>();
 		for(TransportVehicleModel e : Application.getStorage().getVehicleModels()){
-			if( e.getID().contains(filter) 
+			if( e.getType() == type
+					|| e.getID().contains(filter) 
 					|| e.getModelName().contains(filter) ) 
 				filtered.add(e);
 		}
