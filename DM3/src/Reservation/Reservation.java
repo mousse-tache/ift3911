@@ -5,41 +5,29 @@ import Payment.IPayable;
 import Payment.Payment;
 import Sessions.Client.Client;
 import Sessions.Client.ClientPaymentInfo;
-import Travel.ReservableForTrip;
+import Utils.DateUtils;
 
 public class Reservation implements IPayable {
 
-	private Integer reservationNumber;
-	private Client client;
 	Reservable reservable;
+	private Client client;
+	private ClientPaymentInfo paymentInfo;
 	Payment payment;
+	private String confirmationString;
 	private Double amount;
-	private ClientPaymentInfo attribute;
-	public ClientPaymentInfo paymentInfo;
 
-	/**
-	 * 
-	 * @param r
-	 * @param c
-	 */
 	public Reservation(Reservable r, Client c) {
 		this.reservable = r;
 		this.client = c;
 	}
 
-	/**
-	 * 
-	 * @param r
-	 */
-	public void changeFor(ReservableForTrip r) {
-		// TODO - implement Reservation.modify
-		throw new UnsupportedOperationException();
+	public boolean changeFor(Reservable r) {
+		if(!this.reservable.cancel())
+			return false;
+		this.reservable = r;
+		return this.reservable.reserve(DateUtils.now(), this);
 	}
 
-	/**
-	 * 
-	 * @param ClientPaymentInfo
-	 */
 	public String pay(ClientPaymentInfo clientPaymentInfo) {
 		payment = new CreditPayment(this, amount);
 		payment.pay(reservable.getPrice());
@@ -47,39 +35,39 @@ public class Reservation implements IPayable {
 	}
 
 	public boolean cancelReservation() {
-		// TODO - implement Reservation.cancelReservation
-		throw new UnsupportedOperationException();
+		if(this.reservable.getState() instanceof Assigned && !this.reservable.isCancelable())
+			return false;
+		// TODO Refund client !
+		return this.reservable.cancel();
 	}
 
-	public String getConfirmationNumber() {
-		// TODO - implement Reservation.getConfirmationNumber
-		throw new UnsupportedOperationException();
-	}
+	public Client getClient() { return this.client; }
 
-	public Integer getReservationNumber() {
-		return this.reservationNumber;
-	}
+	public Payment getPayment() { return this.payment; }
 
-	public Client getClient() {
-		return this.client;
+	public Double getAmount() { return this.amount; }
+
+	public String getConfirmationString() { return this.confirmationString; }
+
+	public boolean isFullyPaid() {
+		if (this.payment == null)
+			return false;
+		return this.payment.getStatus() == Payment.Status.PAID;
 	}
 
 	@Override
-	public Payment getPayment() {
-		// TODO Auto-generated method stub
-		throw new UnsupportedOperationException();
+	public Double getAmountLeft(){
+		if (this.payment == null)
+			return this.amount;
+		return this.payment.getAmountLeft(); 
 	}
 
-	public Double getAmount() {
-		return this.amount;
-	}
+	@Override
+	public ClientPaymentInfo getPaymentInfo() { return this.paymentInfo; }
 
-	public ClientPaymentInfo getAttribute() {
-		return this.attribute;
+	@Override
+	public String pay(double ammountToPay) {
+		this.payment = new CreditPayment(this, this.amount);;
+		return this.payment.pay(ammountToPay);
 	}
-
-	public ClientPaymentInfo getPaymentInfo() {
-		return this.paymentInfo;
-	}
-
 }

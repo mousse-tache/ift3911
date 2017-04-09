@@ -17,35 +17,29 @@ public abstract class Reservable {
 			state.reserve(this, r);
 			return true;
 		}
-		return false;
+		throw new IllegalStateException("Can't reserve an already reserved place");
+//		return false;
 	}
 
 	public boolean cancel() {
-		if(state instanceof Assigned || state instanceof Reserved) {
+		if(!this.state.isAvailable()) {
 			state.cancel(this);
 			return true;
 		}
-		return false;
+		throw new IllegalStateException("Can't cancel an unasigned place");
+//		return false;
 	}
 	
-	public Reservation getReservation(){
-		return state.getReservation();
-	}
+	public Reservation getReservation(){ return state.getReservation(); }
 
-	public double getPrice() {
-		return this.price;
-	}
+	public double getPrice() { return this.price; }
 
-	public ReservableState getState() {
-		return this.state;
-	}
+	public ReservableState getState() { return this.state; }
 
-	public void setState(ReservableState state) {
-		this.state = state;
-	}
+	public void setState(ReservableState state) { this.state = state; }
 
-	public boolean isAvailable() {
-		return state.isAvailable();
-	}
+	public boolean isAvailable() { return state.isAvailable(); }
+
+	public abstract boolean isCancelable();
 
 }

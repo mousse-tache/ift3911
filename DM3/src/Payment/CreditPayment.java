@@ -16,7 +16,7 @@ public class CreditPayment extends Payment {
 		ClientPaymentInfo paymentInfo = this.payable.getPaymentInfo();
 		this.status = Status.PAID;
 		this.transactionTime = Date.from(Instant.now());
-		this.amountLeft = 0.0;
+		this.amountLeft -= ammount;
 		this.confirmationNumber = "23462346";
 		return confirmationNumber;
 	}
