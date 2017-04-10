@@ -1,6 +1,12 @@
 package Commands;
 
+import Travel.Forms.TravelCompanyForm;
+
 public class TravelCompanyCreationCommand extends AdminCreationCommand {
+
+    public TravelCompanyCreationCommand(TravelCompanyForm form) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     boolean execute(){
         this.result = CreationMediator.createCompany(this.args);
         if (this.result){

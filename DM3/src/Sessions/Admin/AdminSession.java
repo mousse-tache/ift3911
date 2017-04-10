@@ -35,7 +35,7 @@ public class AdminSession extends Session {
 	}
 
 	public boolean modifyTravelFacility(String ID, TravelFacilityForm newSpecifications) {
-		Command command = new TripModificationCommand(ID, newSpecifications);
+		Command command = new TravelFacilityModificationCommand(ID, newSpecifications);
 		this.executeCommand(command);
 		return (command.getStatus() == CommandStatus.Success);
 	}
@@ -47,7 +47,7 @@ public class AdminSession extends Session {
 	}
 
 	public boolean createCompany(TravelCompanyForm form) {
-		Command command = new TravelFacilityCreationCommand(form);
+		Command command = new TravelCompanyCreationCommand(form);
 		this.executeCommand(command);
 		return (command.getStatus() == CommandStatus.Success);
 	}
@@ -81,7 +81,7 @@ public class AdminSession extends Session {
 		this.executeCommand(command);
 		return (command.getStatus() == CommandStatus.Success);
 	}
-
+        /* //Pas de commandes pour ça
 	public boolean createConcreteVehicle(ConcreteVehicleForm form) {
 		Command command = new ConcreteVehicleCreationCommand(form);
 		this.executeCommand(command);
@@ -99,5 +99,6 @@ public class AdminSession extends Session {
 		this.executeCommand(command);
 		return (command.getStatus() == CommandStatus.Success);
 	}
+        */
 
 }
