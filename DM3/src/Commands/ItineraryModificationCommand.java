@@ -1,9 +1,13 @@
 package Commands;
+import Utils.CommandMediators.*;
+import Travel.Forms.*;
 
 public class ItineraryModificationCommand extends AdminModificationCommand {
     public boolean execute(){
-        this.rollbackForm = ModificationMediator.createModificationForm(this.args.getID());
-        return ModificationMediator.modifyItinerary(this.args);//le résultat d'une modification est un booléen
+        this.rollbackForm = FormCreationMediator.createItineraryForm(this.args.getID());
+        this.status = (this.rollbackForm && ModificationMediator.modifyItinerary(this.args))?CommandStatus.success:CommandStatus.failure;
+        return (this.status == CommandStatus.success);
+
     }
     public boolean unexecute(){
         if (this.status == CommandStatus.success){

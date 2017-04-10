@@ -1,5 +1,5 @@
 package Commands;
-
+import Utils.CommandMediators.*;
 import Travel.Forms.TripForm;
 
 public class TripCreationCommand extends AdminCreationCommand {
