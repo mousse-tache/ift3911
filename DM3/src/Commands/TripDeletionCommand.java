@@ -1,6 +1,4 @@
 package Commands;
-import Utils.CommandMediators.*;
-import Travel.Forms.*;
 
 public class TripDeletionCommand extends AdminDeletionCommand {
 

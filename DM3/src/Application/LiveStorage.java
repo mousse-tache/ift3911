@@ -19,7 +19,6 @@ import Travel.Forms.TravelFacilityForm;
 import Travel.Forms.TripForm;
 import Travel.Forms.VehicleModelForm;
 import Travel.Forms.VehicleSectionForm;
-import Travel.Itineraries.FlightRoute;
 import Travel.Itineraries.Itinerary;
 import Travel.Trip.Trip;
 import Travel.VehicleModels.Sections.BusinessSection;
@@ -30,7 +29,6 @@ import Travel.VehicleModels.Sections.FirstClassSection;
 import Travel.VehicleModels.Sections.InteriorSection;
 import Travel.VehicleModels.Sections.OceanViewSection;
 import Travel.VehicleModels.Sections.Row.RowType;
-import Travel.VehicleModels.Vehicle.Plane;
 import Travel.VehicleModels.Vehicle.TransportVehicleModel;
 import Utils.DateUtils;
 

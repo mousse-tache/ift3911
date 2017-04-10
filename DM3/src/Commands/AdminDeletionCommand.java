@@ -1,6 +1,6 @@
 package Commands;
 
-import Travel.Forms.*;
+import Travel.Forms.BaseForm;
 
 public abstract class AdminDeletionCommand extends AdminCommand {
 

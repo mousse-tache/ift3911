@@ -5,11 +5,12 @@
  */
 package UI.AdminUI;
 
+import javax.swing.JDialog;
+import javax.swing.JFrame;
+
 import Sessions.Admin.AdminSession;
 import Travel.TravelType;
 import UI.UserFrame;
-import javax.swing.JDialog;
-import javax.swing.JFrame;
 
 /**
  *

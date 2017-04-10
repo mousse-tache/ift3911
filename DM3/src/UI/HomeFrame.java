@@ -1,7 +1,5 @@
 package UI;
 
-import UI.ClientUI.ClientFrame;
-import UI.AdminUI.AdminFrame;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -10,6 +8,9 @@ import java.util.Map;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
+
+import UI.AdminUI.AdminFrame;
+import UI.ClientUI.ClientFrame;
 
 public class HomeFrame extends JFrame {
 	
