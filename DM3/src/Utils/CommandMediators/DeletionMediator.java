@@ -2,6 +2,10 @@ package Utils.CommandMediators;
 
 public class DeletionMediator {
 
+    public static boolean deleteItinerary(String result) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
 	public void deleteTrip() {
 		// TODO - implement DeletionMediator.deleteTrip
 		throw new UnsupportedOperationException();

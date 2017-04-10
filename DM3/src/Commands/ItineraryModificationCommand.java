@@ -4,14 +4,15 @@ import Travel.Forms.*;
 
 public class ItineraryModificationCommand extends AdminModificationCommand {
     public boolean execute(){
-        this.rollbackForm = FormCreationMediator.createItineraryForm(this.args.getID());
-        this.status = (this.rollbackForm && ModificationMediator.modifyItinerary(this.args))?CommandStatus.success:CommandStatus.failure;
-        return (this.status == CommandStatus.success);
+        //this.rollbackForm = FormCreationMediator.createItineraryForm(this.args.getID());
+        //this.status = (this.rollbackForm && ModificationMediator.modifyItinerary())?CommandStatus.Success:CommandStatus.Failure;
+        return (this.status == CommandStatus.Success);
 
     }
     public boolean unexecute(){
-        if (this.status == CommandStatus.success){
-            return ModificationMediator.modifyItinerary(this.rollbackForm);
+        if (this.status == CommandStatus.Success){
+            //return ModificationMediator.modifyItinerary(this.rollbackForm);
+            return false;
         } else {
             return false;
         }

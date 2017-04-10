@@ -8,15 +8,16 @@ public class VehicleCreationCommand extends AdminCreationCommand {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     public boolean execute(){
-        this.result = CreationMediator.createVehicle(this.args);
-        if (this.result){
-            this.status = CommandStatus.success;
+        //this.result = CreationMediator.createVehicle(this.args);
+        if (this.result != null){
+            this.status = CommandStatus.Success;
         }
         return true;
     }
     public boolean unexecute(){
-        if (this.status == CommandStatus.success){
-            return DeletionMediator.deleteVehicle(this.result);
+        if (this.status == CommandStatus.Success){
+            // return DeletionMediator.deleteVehicle(this.result);
+            return true;
         } else {
             return false;
         }
