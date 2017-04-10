@@ -1,4 +1,6 @@
 package Commands;
+import Utils.CommandMediators.*;
+import Travel.Forms.*;
 
 public class TravelFacilityDeletionCommand extends AdminDeletionCommand {
 
@@ -7,8 +9,8 @@ public class TravelFacilityDeletionCommand extends AdminDeletionCommand {
     }
     public boolean execute(){
         //crée un "rollbackForm", qui va permettre de recréer l'objet détruit.
-        this.rollbackForm = creationMediator.createCreationForm(this.args.getID());
-        this.status = DeletionMediator.deleteFacility(this.args)? CommandStatus.success: CommandStatus.failure;
+        this.rollbackForm = FormCreationMediator.createFacilityForm(this.args.getID());
+        this.status = (this.rollbackForm && DeletionMediator.deleteFacility(this.args))? CommandStatus.success: CommandStatus.failure;
         return (this.status == CommandStatus.success);
     }
     public boolean unexecute(){

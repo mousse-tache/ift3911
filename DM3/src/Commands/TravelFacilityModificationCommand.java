@@ -1,6 +1,6 @@
 package Commands;
-
 import Travel.Forms.TravelFacilityForm;
+import Utils.CommandMediators.*;
 
 public class TravelFacilityModificationCommand extends AdminModificationCommand {
 
@@ -8,8 +8,9 @@ public class TravelFacilityModificationCommand extends AdminModificationCommand 
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     public boolean execute(){
-        this.rollbackForm = ModificationMediator.createModificationForm(this.args.getID());
-        return ModificationMediator.modifyFacility(this.args);//le résultat d'une modification est un booléen
+        this.rollbackForm = FormCreationMediator.createFacilityForm(this.args.getID());
+        this.status = (this.rollbackForm && ModificationMediator.modifyFacility(this.args))?CommandStatus.success:CommandStatus.failure;
+        return (this.status == CommandStatus.success);
     }
     public boolean unexecute(){
         if (this.status == CommandStatus.success){

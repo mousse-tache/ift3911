@@ -2,8 +2,6 @@ package Commands;
 
 public class Command {
 
-
-	protected CommandStatus attribute;
 	protected CommandStatus status;
 
 	public CommandStatus getStatus() {
@@ -29,7 +27,7 @@ public class Command {
 		throw new UnsupportedOperationException();
 	}
         
-        public boolean undo() {
+    public boolean undo() {
 		// TODO - implement Command.canUndo
 		throw new UnsupportedOperationException();
 	}
