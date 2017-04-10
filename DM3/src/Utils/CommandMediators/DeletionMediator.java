@@ -26,4 +26,14 @@ public class DeletionMediator {
 		throw new UnsupportedOperationException();
 	}
 
+	public boolean deleteFacility() {
+		// TODO - implement DeletionMediator.deleteFacility
+		throw new UnsupportedOperationException();
+	}
+
+	public boolean deleteItinerary() {
+		// TODO - implement DeletionMediator.deleteItinerary
+		throw new UnsupportedOperationException();
+	}
+
 }

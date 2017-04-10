@@ -1,6 +1,6 @@
 package Utils.CommandMediators;
 
-import Travel.Forms.BaseForm;
+import Travel.Forms.*;
 
 public class ModificationMediator {
 
@@ -25,6 +25,21 @@ public class ModificationMediator {
 
 	public void modifyProfile() {
 		// TODO - implement ModificationMediator.modifyProfile
+		throw new UnsupportedOperationException();
+	}
+
+	public BaseForm createModificationForm() {
+		// TODO - implement ModificationMediator.createModificationForm
+		throw new UnsupportedOperationException();
+	}
+
+	public boolean modifyFacility() {
+		// TODO - implement ModificationMediator.modifyFacility
+		throw new UnsupportedOperationException();
+	}
+
+	public boolean modifiyItinerary() {
+		// TODO - implement ModificationMediator.modifiyItinerary
 		throw new UnsupportedOperationException();
 	}
 

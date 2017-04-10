@@ -1,29 +1,48 @@
 package Utils.CommandMediators;
 
+import Travel.Forms.*;
+
 public class CreationMediator {
 
-    public static String createItinerary() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-	public void createVehicle() {
-		// TODO - implement CreationMediator.createVehicle
-		throw new UnsupportedOperationException();
+	public string createVehicle(ConcreteVehicleForm specs) {
+        TravelFactory fac = TravelFactory.getInstance(specs.type);
+        ConcreteVehicle vec = fac.createConcreteVehicle(specs);
+        LiveStorage.getInstance().addVehicle(vec);
+        return vec.getID();
 	}
 
-	public void createTrip() {
-		// TODO - implement CreationMediator.createTrip
-		throw new UnsupportedOperationException();
+	public string createTrip(TripForm specs) {
+        TravelFactory fac = TravelFactory.getInstance(specs.type);
+        Trip trip = fac.createTrip(specs);
+        LiveStorage.getInstance().addTrip(trip);
+        return vec.getID();
 	}
 
-	public void createCompany() {
-		// TODO - implement CreationMediator.createCompany
-		throw new UnsupportedOperationException();
+	public string createCompany(TravelCompanyForm specs) {
+        TravelFactory fac = TravelFactory.getInstance(specs.type);
+        Company company = fac.createCompany(specs);
+        LiveStorage.getInstance().addCompany(company);
+        return company.getID();
 	}
 
-	public void createClient() {
-		// TODO - implement CreationMediator.createClient
-		throw new UnsupportedOperationException();
+	public string createClient(ClientForm specs) {
+        TravelFactory fac = TravelFactory.getInstance(specs.type);
+        Client client = fac.createClient(specs);
+        LiveStorage.getInstance().addClient(client);
+        return client.getID();
 	}
 
+	public string createFacility(TravelFacilityForm specs) {
+        TravelFactory fac = TravelFactory.getInstance(specs.type);
+        TravelFacility facility = fac.createFacility(specs);
+        LiveStorage.getInstance().addFacility(facility);
+        return facility.getID();
+	}
+
+	public string createItinerary(ItineraryForm specs) {
+        TravelFactory fac = TravelFactory.getInstance(specs.type);
+        Itinerary itinerary = fac.createItinerary(specs);
+        LiveStorage.getInstance().addItinerary(itinerary);
+        return itinerary.getID();
+	}
 }
