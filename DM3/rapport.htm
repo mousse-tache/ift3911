@@ -119,14 +119,14 @@
 					</tr>
 					<tr>
 						<td class="first_col">Autres</td>
-						
+
 						<td>Mise en page du rapport, réseau de Pétri, discussion sur la qualité</td>
-						
+
 						<td></td>
 						<td></td>
 						<td></td>
 					</tr>
-					
+
 				</tbody>
 			</table>
 
@@ -140,77 +140,88 @@
                 <p>Le fichier principal est <a href="./Design/design.vpp">ici</a></p>
                 <h3>Diagramme complet</h3>
                 <img src="./images/diagrammeconceptuel.png" alt="diagramme de classes">
-		<h3>DSS</h3>
+
+		<h3>Patrons de conceptions</h3>
+    <h4>Commande<h4>
 		<img src="./images/SequenceCommand.png" alt="dss commande">
-                <img src="./images/SequenceFactory.png" alt="dss fabrique">
-                <img src="./images/SequenceObserver.png" alt="dss observateur">
-                <img src="./images/SequenceEtat.png" alt="dss etat">
-                <h3>Diagramme de communication</h3>
-                <img src="./images/SequenceFactoryCommunications.png" alt="communication fabrique">
+		<img src="./images/ClassDiagramCommand.png" alt="classes commande">
+    <h4>Fabrique et Singleton<h4>
+    <img src="./images/SequenceFactory.png" alt="dss fabrique">
+    <img src="./images/ClassDiagramFactory.png" alt="classes fabrique">
+    <h4>Observateur<h4>
+    <img src="./images/SequenceObserver.png" alt="dss observateur">
+    <img src="./images/ClassDiagramObserver.png" alt="classes observateur">
+    <h4>État<h4>
+    <img src="./images/SequenceEtat.png" alt="dss etat">
+    <img src="./images/ClassDiagramEtat.png" alt="classes etat">
+    <h4>Visiteur<h4>
+    <img src="./images/ClassDiagramVisitor.png" alt="classes visiteur">
+
 		<h3>Diagramme de paquets</h3>
-                <img src="./images/PackageDiagram.png" alt="communication fabrique">
+    <img src="./images/PackageDiagram.png" alt="communication fabrique">
+
 		<h2 id="qual">Discussion sur la qualité</h2>
-                <h3>Graphe IA</h3>
-                 
-                    <figure>
-                        <img src="./qual/iaDM2.png" alt="" />
-                        <figcaption>Graphe IA du DM2</figcaption>
-                     </figure>
-                    <figure>
-                        <img src="./qual/iaDM3.png" alt="" />
-                        <figcaption>Graphe IA du DM3</figcaption>
-                     </figure>
-                  
-                <p>
-			Par rapport au graphe IA, le design précédent ne semblait pas montrer de grandes problématiques au niveau du design. Pour ce design-ci, l'analyse d'un tel graphe nous a forcé à nous pencher sur
-                        plusieurs paquets qui se retrouvaient dans la zone de la douleur. Deux paquets, Travel.Itineries et Travel.Facilities, faisaient partie de ce lot et nous avons remarqué qu'ils étaient étroitement couplés avec Trip,
-                        mais rien d'autres. Notre solution a été de fusionné les paquets, puisque ces éléments n'avaient pas de sens les uns sans les autres. Si on compare les deux graphes, on constate premièrement
-                        que le nombre de paquets est beaucoup plus grand. On voit aussi que plusieurs paquets ne sont pas du tout abstraits. En l'occurence, ce sont les paquets Application, Commands, Travel.Forms,
-                        Travel. et Travel.Factories qui ne possèdent aucune abstraction. On peut également constater que certains points n'ont bouger, ce sont les rares paquets qui n'ont pas subis de modification, tels que Travel.Place 
-                        et Travel.Vehicle. Globalement, on constate que le degré d'abstraction a diminué, de même que le degré d'indépendance, ce qui nous laisse avec un design assez bon, mais plus difficile à implémenter comparativement
-                        au précédent.
+    <h3>Graphe IA</h3>
+
+    <figure>
+        <img src="./qual/iaDM2.png" alt="" />
+        <figcaption>Graphe IA du DM2</figcaption>
+    </figure>
+    <figure>
+        <img src="./qual/iaDM3.png" alt="" />
+        <figcaption>Graphe IA du DM3</figcaption>
+    </figure>
+
+    <p>
+			  Par rapport au graphe IA, le design précédent ne semblait pas montrer de grandes problématiques au niveau du design. Pour ce design-ci, l'analyse d'un tel graphe nous a forcé à nous pencher sur
+        plusieurs paquets qui se retrouvaient dans la zone de la douleur. Deux paquets, Travel.Itineries et Travel.Facilities, faisaient partie de ce lot et nous avons remarqué qu'ils étaient étroitement couplés avec Trip,
+        mais rien d'autres. Notre solution a été de fusionné les paquets, puisque ces éléments n'avaient pas de sens les uns sans les autres. Si on compare les deux graphes, on constate premièrement
+        que le nombre de paquets est beaucoup plus grand. On voit aussi que plusieurs paquets ne sont pas du tout abstraits. En l'occurence, ce sont les paquets Application, Commands, Travel.Forms,
+        Travel. et Travel.Factories qui ne possèdent aucune abstraction. On peut également constater que certains points n'ont bouger, ce sont les rares paquets qui n'ont pas subis de modification, tels que Travel.Place
+        et Travel.Vehicle. Globalement, on constate que le degré d'abstraction a diminué, de même que le degré d'indépendance, ce qui nous laisse avec un design assez bon, mais plus difficile à implémenter comparativement
+        au précédent.
 		</p>
-                <p>
-                   L'application des patrons de conception s'est montrée très efficace sur le plan du ratio IA, particulièrement le patron de Commande qui crée un paquet très dépendant avec un seul point
-                   d'entré par l'utilisation de l'invocateur. Nous avons également ajouté un paquet Application qui est invoqué par la main. Celle-ci sert d'initialisateur principal et sert de lien entre l'UI et
-                   le reste du logiciel. De cette façon, Toute forme d'UI peut facilement être remplacé, car il n'y a aucune dépendance directe.
-                </p>
-                <p>
-                    Notre design est un bon exemple du SRP, en général, les méthodes n'ont qu'un point d'accès et font un nombre de choses limitées. La plus grande cause de l'enflement du nombre de classes, mise à part
-                    les patrons de conceptions, est la séparation de nos classes pour réduire la responsabilité de chacune. À ce titre, le patron de commande est encore une fois merveilleux pour créer des 
-                    controlleurs simples et conserver un faible couplage. Les interfaces que nous utilisions précédemment sont encore présentes et, par leurs responsabilités limitées dès le départ, nous n'avons
-                    pas usé du ISP pour les spécialisées. Le DIP est quand même respecté sur ce plan, car la plupart de nos liens de dépendances sont vers les classes abstraites de nos paquets et les versions concrètes
-                     sont gérées à partir des Fabriques, ce qui fait en sorte que les dépendances ne sont presque jamais concrètes dans l'entièreté du logiciel. Cela donne un design assez flexible et facilement extensible.
-                     Les Fabriques font d'ailleurs en sorte qu'il serait presque trivial d'ajouter un nouveau mode de transport. Avec tout ce qui est déjà présent, peu de choses auraient besoin d'être ajoutées. En respectant 
-                     ces principes, nous respectons également le OCP, surtout avec notre soin apporté au respect du DIP.
-  
-                </p>
+    <p>
+        L'application des patrons de conception s'est montrée très efficace sur le plan du ratio IA, particulièrement le patron de Commande qui crée un paquet très dépendant avec un seul point
+        d'entré par l'utilisation de l'invocateur. Nous avons également ajouté un paquet Application qui est invoqué par la main. Celle-ci sert d'initialisateur principal et sert de lien entre l'UI et
+        le reste du logiciel. De cette façon, Toute forme d'UI peut facilement être remplacé, car il n'y a aucune dépendance directe.
+    </p>
+    <p>
+        Notre design est un bon exemple du SRP, en général, les méthodes n'ont qu'un point d'accès et font un nombre de choses limitées. La plus grande cause de l'enflement du nombre de classes, mise à part
+        les patrons de conceptions, est la séparation de nos classes pour réduire la responsabilité de chacune. À ce titre, le patron de commande est encore une fois merveilleux pour créer des
+        controlleurs simples et conserver un faible couplage. Les interfaces que nous utilisions précédemment sont encore présentes et, par leurs responsabilités limitées dès le départ, nous n'avons
+        pas usé du ISP pour les spécialisées. Le DIP est quand même respecté sur ce plan, car la plupart de nos liens de dépendances sont vers les classes abstraites de nos paquets et les versions concrètes
+        sont gérées à partir des Fabriques, ce qui fait en sorte que les dépendances ne sont presque jamais concrètes dans l'entièreté du logiciel. Cela donne un design assez flexible et facilement extensible.
+        Les Fabriques font d'ailleurs en sorte qu'il serait presque trivial d'ajouter un nouveau mode de transport. Avec tout ce qui est déjà présent, peu de choses auraient besoin d'être ajoutées. En respectant
+        ces principes, nous respectons également le OCP, surtout avec notre soin apporté au respect du DIP.
+
+    </p>
 		<h2>Génération et implémentation</h2>
 		<h2>Réseau de Pétri</h2>
-                <img src="./images/pn.png">
-                <p>marquage initial [k,0,k,0]. Tous les arcs sont pondérés à 1 sauf deux arcs pondérés à une constante k. </p>
-                <ol>
+    <img src="./images/pn.png">
+    <p>marquage initial [k,0,k,0]. Tous les arcs sont pondérés à 1 sauf deux arcs pondérés à une constante k. </p>
+    <ol>
 				<li><img src="./images/gak1.png" />	Pour k=1, pour les k > 1, on aura l'option d'approfondir la branche jusqu'à ce que p1 et p3 soient égaux à 0, avec possibilité de franchir t3 à chacune des étapes de la branche pour revenir au marquage précédent.</li>
-				
+
 				<li>Prouvez si le réseau est borné. </li>
-				
+
 				<li>Déterminez la vivacité des quatre transitions. </li>
 				<li>Déterminez si le réseau est conservateur.</li>
-				
-			</ol>
+
+		</ol>
 		<p>
-                    
-                    
-			
-                        Pour n'importe quel k > 0, :</br>
-                        Si on regarde le AC pour k=1, on voit qu'on peut toujours retourner au marquage précédent à partir du marquage actuel. C'est également le cas pour toutes les valeurs de k subséquentes. À ce titre, le nombre de marquage possible est fonction de K+1 + |M(K-1)|, c'est à dire que M(K-1) est un sous-ensemble de M(K). On peut donc conclure est le réseau est borné, car son AC ne contient pas d'Omega peu un K de valeur quelconque.
-			
-			Le réseau est borné, mais il n'a aucune configuration d'interblocage, ce qui lui permet de faire une infinité de transitions. À ce titre, l'ensemble des transitions sont L2-vivantes, car aucune des transitions ne peut être faite infiniment, il y a une limite à ce qu'une transition peut être faite avant de devoir passer par une autre.
-			[k,0,k,0] t2 [k-1,0,0,1] 
-                        Le réseau est conservateur. Le vecteur vertical [1,2,1,k+1] permet d'obtenir une constante sur l'ensemble des marquages du réseau. Par exemple: <br/>
+
+
+
+        Pour n'importe quel k > 0, :</br>
+        Si on regarde le AC pour k=1, on voit qu'on peut toujours retourner au marquage précédent à partir du marquage actuel. C'est également le cas pour toutes les valeurs de k subséquentes. À ce titre, le nombre de marquage possible est fonction de K+1 + |M(K-1)|, c'est à dire que M(K-1) est un sous-ensemble de M(K). On peut donc conclure est le réseau est borné, car son AC ne contient pas d'Omega peu un K de valeur quelconque.
+
+			  Le réseau est borné, mais il n'a aucune configuration d'interblocage, ce qui lui permet de faire une infinité de transitions. À ce titre, l'ensemble des transitions sont L2-vivantes, car aucune des transitions ne peut être faite infiniment, il y a une limite à ce qu'une transition peut être faite avant de devoir passer par une autre.
+			  [k,0,k,0] t2 [k-1,0,0,1]
+        Le réseau est conservateur. Le vecteur vertical [1,2,1,k+1] permet d'obtenir une constante sur l'ensemble des marquages du réseau. Par exemple: <br/>
 				[1,2,1,k+1] * [k,0,k,0] = k+0+k+0 = 2k <br/>
 				[1,2,1,k+1] * [k-1,0,0,1] = (k-1)/2 + k-1 + 0 + 0 + k+1 = 2k
-                                
+
 		</p>
 	</main>
 
