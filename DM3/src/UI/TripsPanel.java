@@ -5,13 +5,15 @@
  */
 package UI;
 
+import java.util.List;
+
+import javax.swing.BoxLayout;
+import javax.swing.JLabel;
+
 import Application.LiveStorage;
 import Travel.TravelType;
 import Travel.Trip.Trip;
 import Utils.TripVisitor.AdminVisitor;
-import java.util.List;
-import javax.swing.BoxLayout;
-import javax.swing.JLabel;
 
 /**
  *

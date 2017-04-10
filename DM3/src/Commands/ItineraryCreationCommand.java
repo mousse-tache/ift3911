@@ -1,6 +1,5 @@
 package Commands;
-import Utils.CommandMediators.*;
-import Utils.CommandMediators.CreationMediator;
+import Utils.CommandMediators.DeletionMediator;
 
 public class ItineraryCreationCommand extends AdminCreationCommand {
     public boolean execute(){

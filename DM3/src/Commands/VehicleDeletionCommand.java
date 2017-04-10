@@ -1,6 +1,5 @@
 package Commands;
-import Utils.CommandMediators.*;
-import Travel.Forms.*;
+
 public class VehicleDeletionCommand extends AdminDeletionCommand {
 
     public VehicleDeletionCommand(String ID) {

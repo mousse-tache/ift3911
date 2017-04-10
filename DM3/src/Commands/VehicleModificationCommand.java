@@ -1,6 +1,5 @@
 package Commands;
 import Travel.Forms.VehicleModelForm;
-import Utils.CommandMediators.*;
 public class VehicleModificationCommand extends AdminModificationCommand {
 
     public VehicleModificationCommand(String ID, VehicleModelForm newSpecifications) {

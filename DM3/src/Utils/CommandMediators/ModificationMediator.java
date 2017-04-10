@@ -1,6 +1,6 @@
 package Utils.CommandMediators;
 
-import Travel.Forms.*;
+import Travel.Forms.BaseForm;
 
 public class ModificationMediator {
 

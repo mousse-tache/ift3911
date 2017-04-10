@@ -5,9 +5,10 @@
  */
 package UI.ClientUI;
 
+import javax.swing.JFrame;
+
 import UI.TripsPanel;
 import UI.UserFrame;
-import javax.swing.JFrame;
 
 /**
  *
