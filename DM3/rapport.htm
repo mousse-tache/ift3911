@@ -30,7 +30,7 @@
 					<dt>Courriel: </dt>
 					<dd>felix.belanger-robillard@umontreal.ca</dd>
 					<dt>Temps mis:</dt>
-					<dd>30 heures</dd>
+					<dd>40 heures</dd>
 				</dl>
 			</div>
 			<div class="student">
@@ -66,7 +66,7 @@
 					<dt>Courriel:</dt>
 					<dd>francois.poitras@umontreal.ca</dd>
 					<dt>Temps mis:</dt>
-					<dd>environ 20 heures</dd>
+					<dd>25 heures</dd>
 				</dl>
 			</div>
 		</div>
@@ -112,10 +112,10 @@
 					</tr>
 					<tr>
 						<td class="first_col">Code</td>
-						<td>GUI, </td>
+						<td>GUI, arriver à compiler </td>
 						<td>Génération du code, implantation des paquets Travel et Utils, patron Visiteur, État, Observateur et Fabrique</td>
 						<td>Génération du code, Patron de Commande</td>
-						<td></td>
+						<td>Correction de bugs, Forms (partiellement)</td>
 					</tr>
 					<tr>
 						<td class="first_col">Autres</td>
@@ -134,29 +134,36 @@
 		<h2>Hypothèses</h2>
 		<ul>
 			<li>Considérant que les patrons sont très adaptables, certains ont été modifiés en conséquence, mais demeurent tout de même fidèles au patron de base.</li>
-                        <li>Le focus a été mis sur le design et l'implantation, considérant l'ampleur de la tâche, n'a pas pu être complétée intégralement.</li>
+      <li>Le focus a été mis sur le design et l'implantation, considérant l'ampleur de la tâche, n'a pas pu être complétée intégralement.</li>
 		</ul>
 		<h2 id="diag">Design logiciel</h2>
-                <p>Le fichier principal est <a href="./Design/design.vpp">ici</a></p>
-                <h3>Diagramme complet</h3>
-                <img src="./images/diagrammeconceptuel.png" alt="diagramme de classes">
+    <p>Le fichier principal est <a href="./Design/design.vpp">ici</a></p>
+    <h3>Diagramme complet</h3>
+    <img src="./images/diagrammeconceptuel.png" alt="diagramme de classes">
 
 		<h3>Patrons de conceptions</h3>
     <h4>Commande</h4>
 		<img src="./images/SequenceCommand.png" alt="dss commande">
 		<img src="./images/ClassDiagramCommand.png" alt="classes commande">
+
     <h4>Fabrique et Singleton</h4>
-        <p>Fonctionnel à 90% dans le code: Ne fait potentiellement pas toutes les vérifications des objets créés, mais utilisable </p>
+    <p>Fonctionnel à 90% dans le code: Ne fait potentiellement pas toutes les vérifications des objets créés, mais utilisable </p>
     <img src="./images/SequenceFactory.png" alt="dss fabrique">
     <img src="./images/ClassDiagramFactory.png" alt="classes fabrique">
+
     <h4>Observateur</h4>
-        <p>Implémenté mais pas appliqué dans le code nous avons choisi de faire l'observateur sur </p>
+    <p>Implémenté mais pas appliqué dans le code.</p>
+    <p>Nous avons choisi de d'implanter l'Observateur entre le système (représenté par la session) et l'interface utilisateur. Il aurait été possible de définir chaque objets du système (Trip, Company, Itinerary, etc.) comme sujet, mais dans ce cas lors de la création d'un nouvel objet aucun observateur n'y est connecté et ainsi aucun changement ne se propagerait aux interfaces. Notre sujets maintenant est en quelque sorte le système lui-même, qui notifie les utilisateurs dès qu'un changement est effectué</p>
     <img src="./images/SequenceObserver.png" alt="dss observateur">
     <img src="./images/ClassDiagramObserver.png" alt="classes observateur">
+
     <h4>État</h4>
+    <p>Implémenté et appliqué aux 'Reservables' avec en plus un Timer de 24h sur l'état Assigned</p>
     <img src="./images/SequenceEtat.png" alt="dss etat">
     <img src="./images/ClassDiagramEtat.png" alt="classes etat">
+
     <h4>Visiteur</h4>
+    <p>Implémenté pour tous les types de Trip, pour les Admins et Clients</p>
     <img src="./images/ClassDiagramVisitor.png" alt="classes visiteur">
 
 		<h3>Diagramme de paquets</h3>
