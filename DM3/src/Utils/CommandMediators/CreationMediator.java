@@ -1,48 +1,64 @@
 package Utils.CommandMediators;
 
+import Application.LiveStorage;
+import Travel.ConcreteVehicle;
+import Travel.Facilities.TravelFacility;
+import Travel.Factories.TravelFactory;
 import Travel.Forms.*;
+import Travel.Itineraries.Itinerary;
 
 public class CreationMediator {
 
-	public string createVehicle(ConcreteVehicleForm specs) {
-        TravelFactory fac = TravelFactory.getInstance(specs.type);
-        ConcreteVehicle vec = fac.createConcreteVehicle(specs);
-        LiveStorage.getInstance().addVehicle(vec);
-        return vec.getID();
+	public String createVehicle(ConcreteVehicleForm specs) {
+        //TravelFactory fac = TravelFactory.getInstance(specs.getType());
+        //ConcreteVehicle vec = fac.createConcreteVehicle(specs);
+        //LiveStorage.getInstance().addVehicle(vec);
+        //return vec.getID();
+        return null;
 	}
 
-	public string createTrip(TripForm specs) {
-        TravelFactory fac = TravelFactory.getInstance(specs.type);
+	public String createTrip(TripForm specs) {
+            /*
+        TravelFactory fac = TravelFactory.getInstance(specs.getType());
         Trip trip = fac.createTrip(specs);
         LiveStorage.getInstance().addTrip(trip);
         return vec.getID();
+        */
+        return null;
 	}
 
-	public string createCompany(TravelCompanyForm specs) {
-        TravelFactory fac = TravelFactory.getInstance(specs.type);
+	public String createCompany(TravelCompanyForm specs) {
+            /*
+        TravelFactory fac = TravelFactory.getInstance(specs.getType());
         Company company = fac.createCompany(specs);
         LiveStorage.getInstance().addCompany(company);
         return company.getID();
+        */
+        return null;
 	}
-
-	public string createClient(ClientForm specs) {
-        TravelFactory fac = TravelFactory.getInstance(specs.type);
+        /*
+	public String createClient(ClientForm specs) {
+        TravelFactory fac = TravelFactory.getInstance(specs.getType());
         Client client = fac.createClient(specs);
         LiveStorage.getInstance().addClient(client);
         return client.getID();
+        return null;
 	}
+        */
 
-	public string createFacility(TravelFacilityForm specs) {
-        TravelFactory fac = TravelFactory.getInstance(specs.type);
+	public String createFacility(TravelFacilityForm specs) {
+            
+        TravelFactory fac = TravelFactory.getInstance(specs.getType());
         TravelFacility facility = fac.createFacility(specs);
-        LiveStorage.getInstance().addFacility(facility);
-        return facility.getID();
+        //LiveStorage.getInstance().addFacility(facility);
+        return facility.getId();
 	}
 
-	public string createItinerary(ItineraryForm specs) {
-        TravelFactory fac = TravelFactory.getInstance(specs.type);
+	public String createItinerary(ItineraryForm specs) {
+        TravelFactory fac = TravelFactory.getInstance(specs.getType());
         Itinerary itinerary = fac.createItinerary(specs);
-        LiveStorage.getInstance().addItinerary(itinerary);
-        return itinerary.getID();
+        //LiveStorage.getInstance().addItinerary(itinerary);
+        return itinerary.getId();
+       
 	}
 }
