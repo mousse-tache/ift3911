@@ -5,6 +5,7 @@
  */
 package UI.AdminUI;
 
+import Sessions.Admin.AdminSession;
 import Travel.TravelType;
 import UI.UserFrame;
 import javax.swing.JDialog;
@@ -24,6 +25,7 @@ public class AdminFrame extends UserFrame {
     }
     public AdminFrame(String adminID) {
 		super(adminID);
+                userSession = new AdminSession(adminID);
 		this.setTitle("ADMIN SESSION");
 		this.setSize(400,200);
 		this.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
@@ -699,256 +701,256 @@ public class AdminFrame extends UserFrame {
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void bAddCruiseCompanyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bAddCruiseCompanyActionPerformed
-        JDialog d = new AddCompanyDialog("Cruise");
+        JDialog d = new AddCompanyDialog("Cruise", userSession);
         d.setLocationRelativeTo(null);
         d.setVisible(true);
     }//GEN-LAST:event_bAddCruiseCompanyActionPerformed
 
     private void bAddCruiseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bAddCruiseActionPerformed
-        JDialog d = new AddTripDialog("Cruise");
+        JDialog d = new AddTripDialog("Cruise", userSession);
         d.setLocationRelativeTo(null);
         d.setVisible(true);
     }//GEN-LAST:event_bAddCruiseActionPerformed
 
     private void bAddPortActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bAddPortActionPerformed
-        JDialog d = new AddFacilityDialog("Cruise");
+        JDialog d = new AddFacilityDialog("Cruise", userSession);
         d.setLocationRelativeTo(null);
         d.setVisible(true);
     }//GEN-LAST:event_bAddPortActionPerformed
 
     private void bAddCruiserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bAddCruiserActionPerformed
-        JDialog d = new AddVehicleDialog("Cruise");
+        JDialog d = new AddVehicleDialog("Cruise", userSession);
         d.setLocationRelativeTo(null);
         d.setVisible(true);
     }//GEN-LAST:event_bAddCruiserActionPerformed
 
     private void bAddTrainCompanyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bAddTrainCompanyActionPerformed
-        JDialog d = new AddCompanyDialog("Train");
+        JDialog d = new AddCompanyDialog("Train", userSession);
         d.setLocationRelativeTo(null);
         d.setVisible(true);
     }//GEN-LAST:event_bAddTrainCompanyActionPerformed
 
     private void bAddLineActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bAddLineActionPerformed
-        JDialog d = new AddTripDialog("Train");
+        JDialog d = new AddTripDialog("Train", userSession);
         d.setLocationRelativeTo(null);
         d.setVisible(true);
     }//GEN-LAST:event_bAddLineActionPerformed
 
     private void bAddTrainStationActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bAddTrainStationActionPerformed
-        JDialog d = new AddFacilityDialog("Train");
+        JDialog d = new AddFacilityDialog("Train", userSession);
         d.setLocationRelativeTo(null);
         d.setVisible(true);
     }//GEN-LAST:event_bAddTrainStationActionPerformed
 
     private void bAddTrainActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bAddTrainActionPerformed
-        JDialog d = new AddVehicleDialog("Train");
+        JDialog d = new AddVehicleDialog("Train", userSession);
         d.setLocationRelativeTo(null);
         d.setVisible(true);
     }//GEN-LAST:event_bAddTrainActionPerformed
 
     private void bAddFlightCompanyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bAddFlightCompanyActionPerformed
-        JDialog d = new AddCompanyDialog("Plane");
+        JDialog d = new AddCompanyDialog("Plane", userSession);
         d.setLocationRelativeTo(null);
         d.setVisible(true);
     }//GEN-LAST:event_bAddFlightCompanyActionPerformed
 
     private void bAddFlightActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bAddFlightActionPerformed
-       JDialog d = new AddTripDialog("Plane");
+       JDialog d = new AddTripDialog("Plane",userSession);
         d.setLocationRelativeTo(null);
         d.setVisible(true);
     }//GEN-LAST:event_bAddFlightActionPerformed
 
     private void bAddAirportActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bAddAirportActionPerformed
-       JDialog d = new AddFacilityDialog("Plane");
+       JDialog d = new AddFacilityDialog("Plane",userSession);
         d.setLocationRelativeTo(null);
         d.setVisible(true);
     }//GEN-LAST:event_bAddAirportActionPerformed
 
     private void bAddPlaneActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bAddPlaneActionPerformed
-        JDialog d = new AddVehicleDialog("Plane");
+        JDialog d = new AddVehicleDialog("Plane",userSession);
         d.setLocationRelativeTo(null);
         d.setVisible(true);
     }//GEN-LAST:event_bAddPlaneActionPerformed
 
     private void bEditFlightCompanyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bEditFlightCompanyActionPerformed
-        JDialog d = new EditCompanyDialog("Plane");
+        JDialog d = new EditCompanyDialog("Plane",userSession);
         d.setLocationRelativeTo(null);
         d.setVisible(true);
     }//GEN-LAST:event_bEditFlightCompanyActionPerformed
 
     private void bDeletePlaneActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bDeletePlaneActionPerformed
-        JDialog d = new DeleteVehicleDialog("Plane");
+        JDialog d = new DeleteVehicleDialog("Plane",userSession);
         d.setLocationRelativeTo(null);
         d.setVisible(true);
     }//GEN-LAST:event_bDeletePlaneActionPerformed
 
     private void bDeleteAirportActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bDeleteAirportActionPerformed
-        JDialog d = new DeleteFacilityDialog("Plane");
+        JDialog d = new DeleteFacilityDialog("Plane",userSession);
         d.setLocationRelativeTo(null);
         d.setVisible(true);
     }//GEN-LAST:event_bDeleteAirportActionPerformed
 
     private void bDeleteFlightActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bDeleteFlightActionPerformed
-        JDialog d = new DeleteTripDialog("Plane");
+        JDialog d = new DeleteTripDialog("Plane",userSession);
         d.setLocationRelativeTo(null);
         d.setVisible(true);
     }//GEN-LAST:event_bDeleteFlightActionPerformed
 
     private void bDeleteFlightCompanyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bDeleteFlightCompanyActionPerformed
-        JDialog d = new DeleteCompanyDialog("Plane");
+        JDialog d = new DeleteCompanyDialog("Plane",userSession);
         d.setLocationRelativeTo(null);
         d.setVisible(true);
     }//GEN-LAST:event_bDeleteFlightCompanyActionPerformed
 
     private void bEditPlaneActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bEditPlaneActionPerformed
-        JDialog d = new EditVehicleDialog("Plane");
+        JDialog d = new EditVehicleDialog("Plane",userSession);
         d.setLocationRelativeTo(null);
         d.setVisible(true);
     }//GEN-LAST:event_bEditPlaneActionPerformed
 
     private void bEditAirportActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bEditAirportActionPerformed
-        JDialog d = new EditFacilityDialog("Plane");
+        JDialog d = new EditFacilityDialog("Plane",userSession);
         d.setLocationRelativeTo(null);
         d.setVisible(true);
     }//GEN-LAST:event_bEditAirportActionPerformed
 
     private void bEditFlightActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bEditFlightActionPerformed
-        JDialog d = new EditTripDialog("Plane");
+        JDialog d = new EditTripDialog("Plane",userSession);
         d.setLocationRelativeTo(null);
         d.setVisible(true);
     }//GEN-LAST:event_bEditFlightActionPerformed
 
     private void assignPricePlaneActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_assignPricePlaneActionPerformed
-        JDialog d = new AssignPriceDialog("Plane");
+        JDialog d = new AssignPriceDialog("Plane",userSession);
         d.setLocationRelativeTo(null);
         d.setVisible(true);
     }//GEN-LAST:event_assignPricePlaneActionPerformed
 
     private void bShowFlightsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bShowFlightsActionPerformed
         // TODO add TripsPanel to dialog
-        ShowTripsDialog d = new ShowTripsDialog(TravelType.Plane);
+        ShowTripsDialog d = new ShowTripsDialog(TravelType.Plane,userSession);
         d.setLocationRelativeTo(null);
         d.setVisible(true);
     }//GEN-LAST:event_bShowFlightsActionPerformed
 
     private void bDeleteTrainActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bDeleteTrainActionPerformed
-        JDialog d = new DeleteVehicleDialog("Train");
+        JDialog d = new DeleteVehicleDialog("Train",userSession);
         d.setLocationRelativeTo(null);
         d.setVisible(true);
     }//GEN-LAST:event_bDeleteTrainActionPerformed
 
     private void bDeleteTrainStationActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bDeleteTrainStationActionPerformed
-        JDialog d = new DeleteFacilityDialog("Train");
+        JDialog d = new DeleteFacilityDialog("Train",userSession);
         d.setLocationRelativeTo(null);
         d.setVisible(true);
     }//GEN-LAST:event_bDeleteTrainStationActionPerformed
 
     private void bDeleteLineActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bDeleteLineActionPerformed
-        JDialog d = new DeleteTripDialog("Train");
+        JDialog d = new DeleteTripDialog("Train",userSession);
         d.setLocationRelativeTo(null);
         d.setVisible(true);
     }//GEN-LAST:event_bDeleteLineActionPerformed
 
     private void bDeleteTrainCompanyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bDeleteTrainCompanyActionPerformed
-        JDialog d = new DeleteCompanyDialog("Train");
+        JDialog d = new DeleteCompanyDialog("Train",userSession);
         d.setLocationRelativeTo(null);
         d.setVisible(true);
     }//GEN-LAST:event_bDeleteTrainCompanyActionPerformed
 
     private void bEditTrainActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bEditTrainActionPerformed
-        JDialog d = new EditVehicleDialog("Train");
+        JDialog d = new EditVehicleDialog("Train",userSession);
         d.setLocationRelativeTo(null);
         d.setVisible(true);
     }//GEN-LAST:event_bEditTrainActionPerformed
 
     private void bEditTrainStationActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bEditTrainStationActionPerformed
-        JDialog d = new EditFacilityDialog("Train");
+        JDialog d = new EditFacilityDialog("Train",userSession);
         d.setLocationRelativeTo(null);
         d.setVisible(true);
     }//GEN-LAST:event_bEditTrainStationActionPerformed
 
     private void bEditLineActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bEditLineActionPerformed
-        JDialog d = new EditTripDialog("Train");
+        JDialog d = new EditTripDialog("Train",userSession);
         d.setLocationRelativeTo(null);
         d.setVisible(true);
     }//GEN-LAST:event_bEditLineActionPerformed
 
     private void bEditTrainCompanyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bEditTrainCompanyActionPerformed
-        JDialog d = new EditCompanyDialog("Train");
+        JDialog d = new EditCompanyDialog("Train",userSession);
         d.setLocationRelativeTo(null);
         d.setVisible(true);
     }//GEN-LAST:event_bEditTrainCompanyActionPerformed
 
     private void assignPriceTrainActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_assignPriceTrainActionPerformed
-        JDialog d = new AssignPriceDialog("Train");
+        JDialog d = new AssignPriceDialog("Train",userSession);
         d.setLocationRelativeTo(null);
         d.setVisible(true);
     }//GEN-LAST:event_assignPriceTrainActionPerformed
 
     private void bShowItineriesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bShowItineriesActionPerformed
         // TODO add TripsPanel to dialog
-        ShowTripsDialog d = new ShowTripsDialog(TravelType.Train);
+        ShowTripsDialog d = new ShowTripsDialog(TravelType.Train,userSession);
         d.setLocationRelativeTo(null);
         d.setVisible(true);
     }//GEN-LAST:event_bShowItineriesActionPerformed
 
     private void bDeleteCruiserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bDeleteCruiserActionPerformed
-        JDialog d = new DeleteVehicleDialog("Cruise");
+        JDialog d = new DeleteVehicleDialog("Cruise",userSession);
         d.setLocationRelativeTo(null);
         d.setVisible(true);
     }//GEN-LAST:event_bDeleteCruiserActionPerformed
 
     private void bDeletePortActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bDeletePortActionPerformed
-        JDialog d = new DeleteFacilityDialog("Cruise");
+        JDialog d = new DeleteFacilityDialog("Cruise",userSession);
         d.setLocationRelativeTo(null);
         d.setVisible(true);
     }//GEN-LAST:event_bDeletePortActionPerformed
 
     private void bDeleteCruiseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bDeleteCruiseActionPerformed
-        JDialog d = new DeleteTripDialog("Cruise");
+        JDialog d = new DeleteTripDialog("Cruise",userSession);
         d.setLocationRelativeTo(null);
         d.setVisible(true);
     }//GEN-LAST:event_bDeleteCruiseActionPerformed
 
     private void bDeleteCruiseCompanyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bDeleteCruiseCompanyActionPerformed
-        JDialog d = new DeleteCompanyDialog("Cruise");
+        JDialog d = new DeleteCompanyDialog("Cruise",userSession);
         d.setLocationRelativeTo(null);
         d.setVisible(true);
     }//GEN-LAST:event_bDeleteCruiseCompanyActionPerformed
 
     private void bEditCruiserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bEditCruiserActionPerformed
-        JDialog d = new EditVehicleDialog("Cruise");
+        JDialog d = new EditVehicleDialog("Cruise",userSession);
         d.setLocationRelativeTo(null);
         d.setVisible(true);
     }//GEN-LAST:event_bEditCruiserActionPerformed
 
     private void bEditPortActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bEditPortActionPerformed
-        JDialog d = new EditFacilityDialog("Cruise");
+        JDialog d = new EditFacilityDialog("Cruise",userSession);
         d.setLocationRelativeTo(null);
         d.setVisible(true);
     }//GEN-LAST:event_bEditPortActionPerformed
 
     private void bEditCruiseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bEditCruiseActionPerformed
-        JDialog d = new EditTripDialog("Cruise");
+        JDialog d = new EditTripDialog("Cruise",userSession);
         d.setLocationRelativeTo(null);
         d.setVisible(true);
     }//GEN-LAST:event_bEditCruiseActionPerformed
 
     private void bEditCruiseCompanyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bEditCruiseCompanyActionPerformed
-        JDialog d = new EditCompanyDialog("Cruise");
+        JDialog d = new EditCompanyDialog("Cruise",userSession);
         d.setLocationRelativeTo(null);
         d.setVisible(true);
     }//GEN-LAST:event_bEditCruiseCompanyActionPerformed
 
     private void assignPriceCruiseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_assignPriceCruiseActionPerformed
-        JDialog d = new AssignPriceDialog("Cruise");
+        JDialog d = new AssignPriceDialog("Cruise",userSession);
         d.setLocationRelativeTo(null);
         d.setVisible(true);
     }//GEN-LAST:event_assignPriceCruiseActionPerformed
 
     private void bShowCruisesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bShowCruisesActionPerformed
         // TODO add TripsPanel to dialog
-        ShowTripsDialog d = new ShowTripsDialog(TravelType.Cruise);
+        ShowTripsDialog d = new ShowTripsDialog(TravelType.Cruise,userSession);
         d.setLocationRelativeTo(null);
         d.setVisible(true);
     }//GEN-LAST:event_bShowCruisesActionPerformed

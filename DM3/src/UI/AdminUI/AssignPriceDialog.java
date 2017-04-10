@@ -5,6 +5,8 @@
  */
 package UI.AdminUI;
 
+import Sessions.Session;
+
 /**
  *
  * @author localadmin
@@ -19,7 +21,7 @@ public class AssignPriceDialog extends javax.swing.JDialog {
         initComponents();
     }
     
-    public AssignPriceDialog(String type) {
+    public AssignPriceDialog(String type,Session session) {
         initComponents();
     }
     /**

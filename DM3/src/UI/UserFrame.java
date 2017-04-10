@@ -6,8 +6,8 @@ import Sessions.Session;
 
 public abstract class UserFrame extends JFrame{
 	
-	String userID;
-	Session userSession;
+	protected String userID;
+	protected Session userSession;
 	public UserFrame() {
         initComponents();
     }

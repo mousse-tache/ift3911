@@ -1,6 +1,8 @@
 package Sessions.Admin;
 
+import Commands.*;
 import Sessions.Session;
+import Travel.Forms.*;
 
 public class AdminSession extends Session {
 
@@ -8,96 +10,94 @@ public class AdminSession extends Session {
 		super(userID);
 	}
 
-	public boolean createTrip() {
-		// TODO - implement AdminSession.createTrip
-		throw new UnsupportedOperationException();
+	public boolean createTrip(TripForm form) {
+		Command command = new TripCreationCommand(form);
+		this.executeCommand(command);
+		return (command.getStatus() == CommandStatus.Success);
 	}
 
-	/**
-	 * 
-	 * @param id
-	 */
-	public boolean modifyTrip(String id) {
-		// TODO - implement AdminSession.modifyTrip
-		throw new UnsupportedOperationException();
+	public boolean modifyTrip(String ID, TripForm newSpecifications) {
+		Command command = new TripModificationCommand(ID, newSpecifications);
+		this.executeCommand(command);
+		return (command.getStatus() == CommandStatus.Success);
 	}
 
-	/**
-	 * 
-	 * @param id
-	 */
-	public boolean deleteTrip(String id) {
-		// TODO - implement AdminSession.deleteTrip
-		throw new UnsupportedOperationException();
+	public boolean deleteTrip(String ID) {
+		Command command = new TripDeletionCommand(ID);
+		this.executeCommand(command);
+		return (command.getStatus() == CommandStatus.Success);
 	}
 
-	public boolean createTravelFacility() {
-		// TODO - implement AdminSession.createTravelFacility
-		throw new UnsupportedOperationException();
+	public boolean createTravelFacility(TravelFacilityForm form) {
+		Command command = new TravelFacilityCreationCommand(form);
+		this.executeCommand(command);
+		return (command.getStatus() == CommandStatus.Success);
 	}
 
-	/**
-	 * 
-	 * @param id
-	 */
-	public boolean modifyTravelFacility(String id) {
-		// TODO - implement AdminSession.modifyTravelFacility
-		throw new UnsupportedOperationException();
+	public boolean modifyTravelFacility(String ID, TravelFacilityForm newSpecifications) {
+		Command command = new TripModificationCommand(ID, newSpecifications);
+		this.executeCommand(command);
+		return (command.getStatus() == CommandStatus.Success);
 	}
 
-	/**
-	 * 
-	 * @param id
-	 */
-	public boolean deleteTravelFacility(String id) {
-		// TODO - implement AdminSession.deleteTravelFacility
-		throw new UnsupportedOperationException();
+	public boolean deleteTravelFacility(String ID) {
+		Command command = new TravelFacilityDeletionCommand(ID);
+		this.executeCommand(command);
+		return (command.getStatus() == CommandStatus.Success);
 	}
 
-	public boolean createCompany() {
-		// TODO - implement AdminSession.createCompany
-		throw new UnsupportedOperationException();
+	public boolean createCompany(TravelCompanyForm form) {
+		Command command = new TravelFacilityCreationCommand(form);
+		this.executeCommand(command);
+		return (command.getStatus() == CommandStatus.Success);
 	}
 
-	/**
-	 * 
-	 * @param id
-	 */
-	public boolean modifyCompany(String id) {
-		// TODO - implement AdminSession.modifyCompany
-		throw new UnsupportedOperationException();
+	public boolean modifyCompany(String ID, TravelCompanyForm newSpecifications) {
+		Command command = new TravelCompanyModificationCommand(ID, newSpecifications);
+		this.executeCommand(command);
+		return (command.getStatus() == CommandStatus.Success);
 	}
 
-	/**
-	 * 
-	 * @param id
-	 */
-	public boolean deleteCompany(String id) {
-		// TODO - implement AdminSession.deleteCompany
-		throw new UnsupportedOperationException();
+	public boolean deleteCompany(String ID) {
+		Command command = new TravelCompanyDeletionCommand(ID);
+		this.executeCommand(command);
+		return (command.getStatus() == CommandStatus.Success);
 	}
 
-	public boolean createVehicle() {
-		// TODO - implement AdminSession.createVehicle
-		throw new UnsupportedOperationException();
+	public boolean createVehicleModel(VehicleModelForm form) {
+		Command command = new VehicleCreationCommand(form);
+		this.executeCommand(command);
+		return (command.getStatus() == CommandStatus.Success);
 	}
 
-	/**
-	 * 
-	 * @param id
-	 */
-	public boolean modifyVehicle(String id) {
-		// TODO - implement AdminSession.modifyVehicle
-		throw new UnsupportedOperationException();
+	public boolean modifyVehicleModel(String ID, VehicleModelForm newSpecifications) {
+		Command command = new VehicleModificationCommand(ID, newSpecifications);
+		this.executeCommand(command);
+		return (command.getStatus() == CommandStatus.Success);
 	}
 
-	/**
-	 * 
-	 * @param id
-	 */
-	public boolean deleteVehicle(String id) {
-		// TODO - implement AdminSession.deleteVehicle
-		throw new UnsupportedOperationException();
+	public boolean deleteVehicleModel(String ID) {
+		Command command = new VehicleDeletionCommand(ID);
+		this.executeCommand(command);
+		return (command.getStatus() == CommandStatus.Success);
+	}
+
+	public boolean createConcreteVehicle(ConcreteVehicleForm form) {
+		Command command = new ConcreteVehicleCreationCommand(form);
+		this.executeCommand(command);
+		return (command.getStatus() == CommandStatus.Success);
+	}
+
+	public boolean modifyConcreteVehicle(String ID, ConcreteVehicleForm newSpecifications) {
+		Command command = new ConcreteVehicleModificationCommand(ID, newSpecifications);
+		this.executeCommand(command);
+		return (command.getStatus() == CommandStatus.Success);
+	}
+
+	public boolean deleteConcreteVehicle(String ID) {
+		Command command = new ConcreteVehicleDeletionCommand(ID);
+		this.executeCommand(command);
+		return (command.getStatus() == CommandStatus.Success);
 	}
 
 }

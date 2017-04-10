@@ -11,8 +11,4 @@ public class TrainLine extends Itinerary {
 			throw new IllegalArgumentException("Wrong form type for TrainItinerary");
 	}
 
-	public java.util.List<Stop> getStops() {
-		// TODO - implement TrainLine.getStops
-		throw new UnsupportedOperationException();
-	}
 }

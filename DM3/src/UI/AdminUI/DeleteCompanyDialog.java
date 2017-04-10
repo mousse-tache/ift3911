@@ -5,6 +5,8 @@
  */
 package UI.AdminUI;
 
+import Sessions.Session;
+
 /**
  *
  * @author localadmin
@@ -18,7 +20,7 @@ public class DeleteCompanyDialog extends javax.swing.JDialog {
         super(parent, modal);
         initComponents();
     }
-    public DeleteCompanyDialog(String type) {
+    public DeleteCompanyDialog(String type,Session session) {
         initComponents();
     }
 

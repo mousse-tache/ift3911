@@ -5,6 +5,8 @@
  */
 package UI.AdminUI;
 
+import Sessions.Session;
+
 /**
  *
  * @author localadmin
@@ -19,7 +21,7 @@ public class AddTripDialog extends javax.swing.JDialog {
         initComponents();
     }
 
-    AddTripDialog(String type) {
+    AddTripDialog(String type,Session session) {
         initComponents();
     }
 

@@ -5,6 +5,7 @@
  */
 package UI.AdminUI;
 
+import Sessions.Session;
 import Travel.TravelType;
 import UI.TripsPanel;
 
@@ -21,7 +22,7 @@ public class ShowTripsDialog extends javax.swing.JDialog {
         super(parent, modal);
         initComponents();
     }
-    public ShowTripsDialog(TravelType e) {
+    public ShowTripsDialog(TravelType e, Session session) {
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
        
         TripsPanel tp = new TripsPanel(e);
