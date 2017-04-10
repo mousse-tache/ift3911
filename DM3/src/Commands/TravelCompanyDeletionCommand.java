@@ -9,14 +9,15 @@ public class TravelCompanyDeletionCommand extends AdminDeletionCommand {
     }
     public boolean execute(){
         //crée un "rollbackForm", qui va permettre de recréer l'objet détruit.
-        this.rollbackForm = FormCreationMediator.createCompanyForm(this.args.getID());
-        this.status = (this.rollbackForm && DeletionMediator.deleteCompany(this.args))? CommandStatus.success: CommandStatus.failure;
-        return (this.status == CommandStatus.success);
+        //this.rollbackForm = FormCreationMediator.createCompanyForm(this.args.getID());
+        //this.status = (this.rollbackForm && DeletionMediator.deleteCompany(this.args))? CommandStatus.success: CommandStatus.failure;
+        return (this.status == CommandStatus.Success);
     }
     public boolean unexecute(){
-        if (this.status == CommandStatus.success){
-            this.result = CreationMediator.createCompany(this.rollbackForm);
-            return (this.result)?true:false;
+        if (this.status == CommandStatus.Success){
+           // this.result = CreationMediator.createCompany(this.rollbackForm);
+           // return (this.result)?true:false;
+           return true;
         } else {
             return false;
         }

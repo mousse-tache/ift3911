@@ -1,6 +1,12 @@
 package Utils.CommandMediators;
 
+import Travel.Forms.BaseForm;
+
 public class ModificationMediator {
+
+    public static BaseForm modifyItinerary() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 
 	public void modifyTrip() {
 		// TODO - implement ModificationMediator.modifyTrip

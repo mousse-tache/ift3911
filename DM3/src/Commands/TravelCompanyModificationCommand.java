@@ -8,13 +8,14 @@ public class TravelCompanyModificationCommand extends AdminModificationCommand {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     public boolean execute(){
-        this.rollbackForm = FormCreationMediator.createCompanyForm(this.args.getID());
-        this.status = (this.rollbackForm && ModificationMediator.modifyCompany(this.args))?CommandStatus.success:CommandStatus.failure;
-        return (this.status == CommandStatus.success);
+       // this.rollbackForm = FormCreationMediator.createCompanyForm(this.args.getID());
+       // this.status = (this.rollbackForm && ModificationMediator.modifyCompany(this.args))?CommandStatus.success:CommandStatus.failure;
+        return (this.status == CommandStatus.Success);
     }
     public boolean unexecute(){
-        if (this.status == CommandStatus.success){
-            return ModificationMediator.modifyCompany(this.rollbackForm);
+        if (this.status == CommandStatus.Success){
+            //return ModificationMediator.modifyCompany(this.rollbackForm);
+            return true;
         } else {
             return false;
         }
