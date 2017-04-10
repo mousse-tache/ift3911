@@ -28,4 +28,9 @@ public class Command {
 		// TODO - implement Command.canUndo
 		throw new UnsupportedOperationException();
 	}
+        
+        public boolean undo() {
+		// TODO - implement Command.canUndo
+		throw new UnsupportedOperationException();
+	}
 }

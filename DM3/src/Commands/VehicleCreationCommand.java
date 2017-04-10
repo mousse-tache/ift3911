@@ -1,6 +1,12 @@
 package Commands;
 
+import Travel.Forms.VehicleModelForm;
+
 public class VehicleCreationCommand extends AdminCreationCommand {
+
+    public VehicleCreationCommand(VehicleModelForm form) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     public boolean execute(){
         this.result = CreationMediator.createVehicle(this.args);
         if (this.result){
