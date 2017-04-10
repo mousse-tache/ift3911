@@ -1,5 +1,5 @@
 package Commands;
-
+import Utils.CommandMediators.*;
 import Utils.CommandMediators.CreationMediator;
 
 public class ItineraryCreationCommand extends AdminCreationCommand {

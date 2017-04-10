@@ -4,6 +4,6 @@ import Travel.Forms.*;
 
 public abstract class AdminModificationCommand extends AdminCommand {
 
-	private BaseForm rollbackForm;
+	protected BaseForm rollbackForm;
 
 }
